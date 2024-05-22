@@ -23,7 +23,7 @@ public class PlayingField : MonoBehaviour {
     }
 
     private void SpawnCellAndSave(int y, int x) {
-        cells[y][x] = Instantiate(cell, new Vector3(x, y, 0), Quaternion.identity);
+        cells[y][x] = Instantiate(cell, new Vector3(x, y, -1), Quaternion.identity);
         cells[y][x].Initialize(y, x);
     }
 
