@@ -1,9 +1,24 @@
-<mxfile host="Electron" modified="2024-05-22T12:55:57.817Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="GzZKSKw8RvsLzt70AQaS" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-05-23T05:17:22.251Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="2rGdPbCunTnK7Vt0vfjc" version="24.0.4" type="device">
   <diagram name="Page-1" id="9ERZN32lPl3h9mEKJxOg">
-    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="PodBbFc40IM1UIUFSGZW-1" value="Что нужно реализовать" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry y="-1100" width="200" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="PodBbFc40IM1UIUFSGZW-2" value="+ Смотрим как в бодобных играх реализовано движение блока и делаем также или подобным образом" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="26" width="200" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="PodBbFc40IM1UIUFSGZW-3" value="&lt;div&gt;+ Реализуем столкновение блоков с другими объектами.&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="90" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PodBbFc40IM1UIUFSGZW-4" value="+ Реализуем вращение блока" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="130" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="njmjiSDrXn_-ehjwF7IH-5" value="+ Реализуем спавн блока" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PodBbFc40IM1UIUFSGZW-1">
+          <mxGeometry y="156" width="200" height="26" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
