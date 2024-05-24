@@ -44,12 +44,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5321f0277e19201498369c7073c1c0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cell: {fileID: 128612788123828147, guid: a295bc51c073d544e994601e8dab07a8, type: 3}
-  cells: []
-  position: {x: 5, y: 10, z: 0}
-  speed: 1
-  positionCells:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 1, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: -1, y: 0, z: 0}
+  position: {x: 5, y: 17, z: 0}
+  timeStandart: 0.2
+  rotationPositions:
+  - cells:
+    - {x: 0, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+  - cells:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: 0, z: 0}
+  - cells:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+  - cells:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: 0, y: 1, z: 0}
+  currenPositionRotation: 0

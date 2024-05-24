@@ -1,23 +1,47 @@
-<mxfile host="Electron" modified="2024-05-23T08:41:59.850Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="sUDxQrmOuZRZS7zebSnt" version="24.4.0" type="device">
+<mxfile host="Electron" modified="2024-05-24T05:22:21.739Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="D6-0688ELXASnkt_iemD" version="24.0.4" type="device">
   <diagram name="Page-1" id="9ERZN32lPl3h9mEKJxOg">
     <mxGraphModel dx="1434" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="PodBbFc40IM1UIUFSGZW-1" value="Что нужно реализовать" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-1100" width="210" height="192" as="geometry" />
+          <mxGeometry y="-1100" width="210" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="PodBbFc40IM1UIUFSGZW-2" value="+ Рефакторинг кода, разделение классов, методов и т.д." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+        <mxCell id="PodBbFc40IM1UIUFSGZW-2" value="+ Пофиксить момент с тем, что остаётся кубик после спавна" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
           <mxGeometry y="26" width="210" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="PodBbFc40IM1UIUFSGZW-3" value="&lt;div&gt;+ Реализовать спавн нового блока, после того как, старый упёрся в другой блок, то есть передача управления новому блоку&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+        <mxCell id="PodBbFc40IM1UIUFSGZW-3" value="&lt;div&gt;+ Отрефакторить код(разбить на сущности выделить ввод с клавиатуры в другой класс и т.д)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
           <mxGeometry y="70" width="210" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="PodBbFc40IM1UIUFSGZW-4" value="+ Реализовать удаление строк&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="140" width="210" height="26" as="geometry" />
+        <mxCell id="zjJiLorLlID6DXoC11au-1" value="Основные механики тетриса" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="-1100" width="210" height="310" as="geometry" />
         </mxCell>
-        <mxCell id="njmjiSDrXn_-ehjwF7IH-5" value="+ Отрефакторить код" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="166" width="210" height="26" as="geometry" />
+        <mxCell id="zjJiLorLlID6DXoC11au-2" value="+ Спавн фигуры, либо за предалами карты, либо в ней" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-1" vertex="1">
+          <mxGeometry y="26" width="210" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-3" value="&lt;div&gt;+ Управление фигурой(перемещение вправо/влево, вращение, ускорение, моментальное опускание фигуры)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-1" vertex="1">
+          <mxGeometry y="70" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-4" value="+ При сборе всей линии, она уничтожается и зачисляется бал" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-1" vertex="1">
+          <mxGeometry y="140" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-5" value="+ Свап фигуры, то есть смена её на другую" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-1" vertex="1">
+          <mxGeometry y="180" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-6" value="+ Заранее мы знаем 4 фигуры, какие и в каком порядке идут" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-1" vertex="1">
+          <mxGeometry y="220" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-7" value="+ Тень фигуры, то есть отображение того куда она будет падать" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-1" vertex="1">
+          <mxGeometry y="260" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-8" value="Основные проблемы" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="-1100" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-9" value="+ Когда фигура как бы не может двигаться, но у неё остаётся ещё 1 секунда, чтобы повернуться и она может повернуться, что не совсем приятно" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
+          <mxGeometry y="26" width="240" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="zjJiLorLlID6DXoC11au-13" value="+ Иногда при вращениях остаётся кубик на поле, сразу после спавна&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
+          <mxGeometry y="110" width="240" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

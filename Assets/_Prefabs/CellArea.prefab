@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullCell: {fileID: 2661264430208903412}
   fill: 0
-  textMeshPro: {fileID: 3735954955780850725}
+  text: {fileID: 3735954955780850725}
 --- !u!1 &7623631740216556564
 GameObject:
   m_ObjectHideFlags: 0
