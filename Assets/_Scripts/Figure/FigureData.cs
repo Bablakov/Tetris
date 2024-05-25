@@ -4,7 +4,7 @@ using UnityEngine;
 
 [Serializable]
 public class FigureData {
-    [SerializeField] private readonly List<Vector3Int> _сells;
+    [SerializeField] private List<Vector3Int> _сells;
 
-    public List<Vector3Int> Cells => _сells;
+    public IReadOnlyList<Vector3Int> Cells => _сells;
 }

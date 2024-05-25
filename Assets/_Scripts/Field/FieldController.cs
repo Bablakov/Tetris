@@ -10,7 +10,7 @@ public class FieldController : MonoBehaviour {
     private int _hieght;
     private int _width;
 
-    public FieldController(Cell[][] field) {
+    public void Initialize(Cell[][] field) {
         _field = field;
         _width = field[0].Length;
         _hieght = field.GetLength(0);
@@ -24,15 +24,16 @@ public class FieldController : MonoBehaviour {
         return true;
     }
 
-    public void ShowFigure(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells = null) {
+    public void ShowNewFigure(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells) {
         HideFigure(oldPositionCells);
         ShowFigure(newPositionCells);
     }
 
-    private void CheckFillLines() {
-        for (int i = 0; i < _field[0].Length; i++) {
+    public void CheckFillLines() {
+        for (int i = 0; i < _field.GetLength(0); i++) {
             if (_field[i].All(cell => cell.IsVisible())) {
                 DeleteLine(i);
+                i = -1; // нужно для того, чтобы заново проходили массив массивов и не оставили заполненых строк
             }
         }
     }
@@ -53,8 +54,14 @@ public class FieldController : MonoBehaviour {
     }
 
     private void HideFigure(IEnumerable<Vector3Int> currentPositionFigures) {
-        foreach (var c in currentPositionFigures) {
-            HideCell(c);
+        foreach (var cell in currentPositionFigures) {
+            HideCell(cell);
+        }
+    }
+
+    private void ShowFigure(IEnumerable<Vector3Int> currentPositionFigures) {
+        foreach (var cell in currentPositionFigures) {
+            ShowCell(cell);
         }
     }
 
@@ -68,11 +75,11 @@ public class FieldController : MonoBehaviour {
 
     private bool IsOccupiedCell(Vector3Int cell) {
         if (IsBoarder(cell)) {
-            Debug.Log("IsBoarder");
             return true;
         }
-        if (IsOtherCellFigure(cell))
+        if (IsOtherCellFigure(cell)) {
             return true;
+        }
 
         return false;
     }

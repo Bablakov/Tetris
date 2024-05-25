@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Figure {
-    private readonly List<FigureData> _rotateFigure;
+    private readonly IReadOnlyList<FigureData> _rotateFigure;
     private readonly Material _materialCell;
     private readonly Cell _cell;
     private int _currentRotateFigure;
@@ -20,9 +20,9 @@ public class Figure {
 
     public Vector3Int Position { get; private set; }
     public FigureData PositionCells => _rotateFigure[_currentRotateFigure];
-    public FigureData NextPositionRotateCells => _rotateFigure[_currentRotateFigure + 1];
+    public FigureData NextPositionRotateCells => _rotateFigure[(_currentRotateFigure + 1) % _rotateFigure.Count];
 
-    public Figure(List<FigureData> rotateFigure, Material materialCell, Cell cell, Vector3Int spawnPosition) {
+    public Figure(IReadOnlyList<FigureData> rotateFigure, Material materialCell, Cell cell, Vector3Int spawnPosition) {
         _rotateFigure = rotateFigure;
         _materialCell = materialCell;
         _cell = cell;

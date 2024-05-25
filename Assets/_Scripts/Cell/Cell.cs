@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+[SelectionBase]
 public class Cell : MonoBehaviour {
     [SerializeField] private VisualElement visualCell;
     [SerializeField] private bool fill;
@@ -18,11 +19,13 @@ public class Cell : MonoBehaviour {
     }
 
     public void Show(/*Material material*/) {
+        visualCell.gameObject.SetActive( true );
         visualCell.Enable(/*material*/);
         fill = true;
     }
 
     public void Hide() {
+        visualCell.gameObject.SetActive( false );
         visualCell.Disable();
         fill = false;
     }

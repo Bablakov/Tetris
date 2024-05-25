@@ -7,7 +7,7 @@ public class SpawnerField : MonoBehaviour{
     private Cell _cell;
     private Cell[][] _fieldGame;
 
-    public Cell[][] Spawn(FieldConfigSO spawnConfig) {
+    public Cell[][] Spawn(FieldConfig spawnConfig) {
         _hieght = spawnConfig.Hieght;
         _width = spawnConfig.Wieght;
         _cell = spawnConfig.Cell;

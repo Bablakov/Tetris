@@ -31,6 +31,7 @@ public class FigureController : MonoBehaviour {
 
     public void SetFigure(Figure figure) {
         _figure = figure;
+        CalculateCurrentPositionCells();
     }
 
     private void Update() {
@@ -38,6 +39,7 @@ public class FigureController : MonoBehaviour {
 
             if (!Move(Down)) {
                 Stopped?.Invoke();
+                _fieldController.CheckFillLines();
             }
             _time = timeStandart;
         }
@@ -48,21 +50,24 @@ public class FigureController : MonoBehaviour {
         _inputGame.InputedLeft += OnInputedLeft;
         _inputGame.InputedRight += OnInputedRight;
         _inputGame.InputedRotate += OnInputedRotate;
+        _inputGame.InputedDown += OnInputedDown;
     }
 
     private void Unsubscibe() {
         _inputGame.InputedLeft -= OnInputedLeft;
         _inputGame.InputedRight -= OnInputedRight;
         _inputGame.InputedRotate -= OnInputedRotate;
+        _inputGame.InputedDown -= OnInputedDown;
     }
 
     private void OnInputedRotate() {
         if (_fieldController.ICanMoveHere(FindUniqueCellPosition(_figure.NextPositionRotateCells.Cells))) {
 
-            _fieldController.ShowFigure(CalculatePositionCells(Position, _figure.NextPositionRotateCells.Cells),
+            _fieldController.ShowNewFigure(CalculatePositionCells(Position, _figure.NextPositionRotateCells.Cells),
                 _currentPositionCell);
 
             _figure.SetNextPositionRotate();
+            CalculateCurrentPositionCells();
         }
     }
 
@@ -74,13 +79,19 @@ public class FigureController : MonoBehaviour {
         Move(Left);
     }
 
+    private void OnInputedDown() {
+        Move(Down);
+    }
+
     private bool Move(Vector3Int moveDirection) {
+        //Debug.Log(moveDirection.ToString());
         if (_fieldController.ICanMoveHere(FindUniqueCellPosition(Position + moveDirection))) {
 
-            _fieldController.ShowFigure(CalculatePositionCells(Position + moveDirection, Cells),
+            _fieldController.ShowNewFigure(CalculatePositionCells(Position + moveDirection, Cells),
                 _currentPositionCell);
 
             _figure.SetPosition(Position + moveDirection);
+            _currentPositionCell = _newPositionCell;
             return true;
         }
         return false;
@@ -102,7 +113,7 @@ public class FigureController : MonoBehaviour {
         return result;
     }
 
-    private void CalculateCurrentPosition() {
+    private void CalculateCurrentPositionCells() {
         _currentPositionCell = CalculatePositionCells(Position, Cells);
     }
 }
