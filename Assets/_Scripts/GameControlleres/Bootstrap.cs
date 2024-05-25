@@ -5,6 +5,6 @@ public class Bootstrap : MonoBehaviour {
     [SerializeField] private InputGame _inputGame;
 
     private void Awake() {
-        playingField.Initialize(_inputGame);
+        //playingField.Initialize(_inputGame);
     }
 }

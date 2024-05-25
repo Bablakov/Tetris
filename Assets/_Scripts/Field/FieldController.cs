@@ -1,25 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayingField : MonoBehaviour {
-    /*public static PlayingField instance;
-
-    [SerializeField] private FigureController figure;
-    [SerializeField] private Vector3Int pointSpawn;
-    [SerializeField] private Cell cell;
-    [SerializeField, Range(10, 100, order = 1)] private int hieght;
-    [SerializeField, Range(10, 100, order = 1)] private int wieght;
-
+public class FieldController : MonoBehaviour {
     private const int BEGIN_BOARDER_FIELD = -1;
-
+    
     private Cell[][] _field;
+    private int _hieght;
+    private int _width;
 
-    public void Initialize(InputGame inputGame) {
-        instance = this;
-        figure = Instantiate(figure);
-        figure.Initialize(pointSpawn, inputGame);
-        figure.Stopped += OnStopped;
+    public FieldController(Cell[][] field) {
+        _field = field;
+        _width = field[0].Length;
+        _hieght = field.GetLength(0);
     }
 
     public bool ICanMoveHere(IEnumerable<Vector3Int> positionCellsFigure) {
@@ -30,20 +24,9 @@ public class PlayingField : MonoBehaviour {
         return true;
     }
 
-    public void ShowFigure(IEnumerable<Vector3Int> newPositionCells) {
-        foreach(var cell in newPositionCells) {
-            ShowCell(cell);
-        }
-    }
-
-    public void ShowFigure(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells) {
-        HideOldFigure(oldPositionCells);
+    public void ShowFigure(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells = null) {
+        HideFigure(oldPositionCells);
         ShowFigure(newPositionCells);
-    } 
-
-    private void OnStopped() {
-        figure.SetNewPosition(pointSpawn);
-        CheckFillLines();
     }
 
     private void CheckFillLines() {
@@ -55,21 +38,21 @@ public class PlayingField : MonoBehaviour {
     }
 
     private void DeleteLine(int idLine) {
-        for(int x = 0; x < wieght; x++) {
+        for (int x = 0; x < _width; x++) {
             _field[idLine][x].Hide();
         }
-        
-        for (int y = idLine + 1; y < hieght; y++) {
-            for (int x = 0; x < wieght; x++) {
+
+        for (int y = idLine + 1; y < _hieght; y++) {
+            for (int x = 0; x < _width; x++) {
                 if (_field[y][x].IsVisible()) {
                     _field[y][x].Hide();
-                    _field[y-1][x].Show();
+                    _field[y - 1][x].Show();
                 }
             }
         }
     }
 
-    private void HideOldFigure(IEnumerable<Vector3Int> currentPositionFigures) {
+    private void HideFigure(IEnumerable<Vector3Int> currentPositionFigures) {
         foreach (var c in currentPositionFigures) {
             HideCell(c);
         }
@@ -95,11 +78,11 @@ public class PlayingField : MonoBehaviour {
     }
 
     private bool IsBoarder(Vector3Int cell) {
-        return cell.x <= BEGIN_BOARDER_FIELD || cell.x >= wieght 
-            || cell.y <= BEGIN_BOARDER_FIELD || cell.y >= hieght;
+        return cell.x <= BEGIN_BOARDER_FIELD || cell.x >= _width
+            || cell.y <= BEGIN_BOARDER_FIELD || cell.y >= _hieght;
     }
 
     private bool IsOtherCellFigure(Vector3Int cell) {
         return _field[cell.y][cell.x].IsVisible();
-    }*/
+    }
 }
