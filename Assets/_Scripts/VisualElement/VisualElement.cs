@@ -8,12 +8,12 @@ public class VisualElement : MonoBehaviour {
         _meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
 
-    public void Enable(/*Material material*/) {
-        enabled = true;
-        //_meshRenderer.material = material;
+    public void Enable(Material material) {
+        _meshRenderer.material = material;
+        gameObject.SetActive(true);
     }
 
     public void Disable() {
-        enabled = false;
+        gameObject.SetActive(false);
     }
 }

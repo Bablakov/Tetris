@@ -4,8 +4,10 @@ using TMPro;
 [SelectionBase]
 public class Cell : MonoBehaviour {
     [SerializeField] private VisualElement visualCell;
+    [SerializeField] private GameObject ghostCell;
     [SerializeField] private bool fill;
     [SerializeField] private TextMeshProUGUI text;
+    public Material Material;
 
     private Vector3Int _position;
 
@@ -18,15 +20,22 @@ public class Cell : MonoBehaviour {
         return fill;
     }
 
-    public void Show(/*Material material*/) {
-        visualCell.gameObject.SetActive( true );
-        visualCell.Enable(/*material*/);
+    public void Show(Material material) {
+        Material = material;
+        visualCell.Enable(material);
         fill = true;
     }
 
     public void Hide() {
-        visualCell.gameObject.SetActive( false );
         visualCell.Disable();
         fill = false;
+    }
+
+    public void ShowGhost() {
+        ghostCell.SetActive(true);
+    }
+
+    public void HideGhost() {
+        ghostCell.SetActive(false);
     }
 }

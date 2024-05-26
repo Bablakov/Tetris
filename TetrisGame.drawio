@@ -1,17 +1,23 @@
-<mxfile host="Electron" modified="2024-05-25T06:40:11.204Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="9Aphv-_opBTL-vpuZ9ZC" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-05-26T09:38:39.413Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="O1UU-Wz5RPcnBqN29l3h" version="24.0.4" type="device">
   <diagram name="Page-1" id="9ERZN32lPl3h9mEKJxOg">
-    <mxGraphModel dx="1233" dy="1820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="PodBbFc40IM1UIUFSGZW-1" value="Что нужно реализовать" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-1100" width="210" height="110" as="geometry" />
+          <mxGeometry y="-1100" width="210" height="168" as="geometry" />
         </mxCell>
-        <mxCell id="PodBbFc40IM1UIUFSGZW-2" value="+ Реализовать оставшиеся виды управление, кроме свапа фигуры" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="26" width="210" height="44" as="geometry" />
+        <mxCell id="PodBbFc40IM1UIUFSGZW-3" value="&lt;div&gt;+ Разбить методы по принципам чистого кода&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="26" width="210" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="PodBbFc40IM1UIUFSGZW-3" value="&lt;div&gt;+ Реализовать удаление заполненых линий&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="70" width="210" height="40" as="geometry" />
+        <mxCell id="QwO9GxHi9beq8bvfx92t-1" value="&lt;div&gt;+ Разбиение классов по принципам чистого кода&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="60" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5YNu1GTEXiOttsThYkZK-8" value="+ Абстрагируем методы от друг друга" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="100" width="210" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="PodBbFc40IM1UIUFSGZW-2" value="+ Реализуем загрузку конфигов автоматически" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="134" width="210" height="34" as="geometry" />
         </mxCell>
         <mxCell id="zjJiLorLlID6DXoC11au-1" value="Основные механики тетриса" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="640" y="-1100" width="210" height="310" as="geometry" />
@@ -43,7 +49,7 @@
         <mxCell id="zjJiLorLlID6DXoC11au-13" value="+ Пофиксить, то что у меня ячейки старой фигуры не все убираются&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
           <mxGeometry y="90" width="240" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="CoE3__FQMbsw07bgxihD-1" value="+ Протестировать, чтобы всё работало как раньше" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zjJiLorLlID6DXoC11au-8">
+        <mxCell id="CoE3__FQMbsw07bgxihD-1" value="+ Протестировать, чтобы всё работало как раньше" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
           <mxGeometry y="130" width="240" height="40" as="geometry" />
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-1" value="Какой класс за что отвечает" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -240,6 +246,21 @@
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-96" value="- IsVisible" style="text;strokeColor=#001DBC;fillColor=#0050ef;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontColor=#ffffff;" parent="uNBo-7ra3uC1L5kDhG56-91" vertex="1">
           <mxGeometry y="130" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="5YNu1GTEXiOttsThYkZK-1" value="что я хочу отточить на этом проекте" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="640" y="-760" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="5YNu1GTEXiOttsThYkZK-2" value="+ Принципы SOLID (разбиение классов, абстрогирование)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YNu1GTEXiOttsThYkZK-1" vertex="1">
+          <mxGeometry y="26" width="210" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="5YNu1GTEXiOttsThYkZK-3" value="&lt;div&gt;+ Подгрузка ресурсов из resources, для того, чтобы меньше было прокидований в инспекторе&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YNu1GTEXiOttsThYkZK-1" vertex="1">
+          <mxGeometry y="70" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5YNu1GTEXiOttsThYkZK-4" value="+ Принцип чистого кода" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YNu1GTEXiOttsThYkZK-1" vertex="1">
+          <mxGeometry y="130" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5YNu1GTEXiOttsThYkZK-5" value="+ Патерн Observe" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YNu1GTEXiOttsThYkZK-1" vertex="1">
+          <mxGeometry y="170" width="210" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

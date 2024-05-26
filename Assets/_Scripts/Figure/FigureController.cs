@@ -51,20 +51,23 @@ public class FigureController : MonoBehaviour {
         _inputGame.InputedRight += OnInputedRight;
         _inputGame.InputedRotate += OnInputedRotate;
         _inputGame.InputedDown += OnInputedDown;
+        _inputGame.InputedSpace += OnInputedSpace;
     }
+
 
     private void Unsubscibe() {
         _inputGame.InputedLeft -= OnInputedLeft;
         _inputGame.InputedRight -= OnInputedRight;
         _inputGame.InputedRotate -= OnInputedRotate;
         _inputGame.InputedDown -= OnInputedDown;
+        _inputGame.InputedSpace -= OnInputedSpace;
     }
 
     private void OnInputedRotate() {
         if (_fieldController.ICanMoveHere(FindUniqueCellPosition(_figure.NextPositionRotateCells.Cells))) {
 
             _fieldController.ShowNewFigure(CalculatePositionCells(Position, _figure.NextPositionRotateCells.Cells),
-                _currentPositionCell);
+                _currentPositionCell, _figure.MaterialCells);
 
             _figure.SetNextPositionRotate();
             CalculateCurrentPositionCells();
@@ -83,12 +86,18 @@ public class FigureController : MonoBehaviour {
         Move(Down);
     }
 
+    private void OnInputedSpace() {
+        while (Move(Down)) {
+        }
+        Stopped?.Invoke();
+        _fieldController.CheckFillLines();
+    }
+
     private bool Move(Vector3Int moveDirection) {
-        //Debug.Log(moveDirection.ToString());
         if (_fieldController.ICanMoveHere(FindUniqueCellPosition(Position + moveDirection))) {
 
             _fieldController.ShowNewFigure(CalculatePositionCells(Position + moveDirection, Cells),
-                _currentPositionCell);
+                _currentPositionCell, _figure.MaterialCells);
 
             _figure.SetPosition(Position + moveDirection);
             _currentPositionCell = _newPositionCell;
@@ -96,6 +105,7 @@ public class FigureController : MonoBehaviour {
         }
         return false;
     }
+
     private IEnumerable<Vector3Int> CalculatePositionCells(Vector3Int value, IEnumerable<Vector3Int> cells) {
         var result = cells.Select(cell => cell += value).ToList();
         return result;

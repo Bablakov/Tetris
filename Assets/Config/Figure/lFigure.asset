@@ -33,5 +33,5 @@ MonoBehaviour:
     - {x: 0, y: 1, z: 0}
     - {x: 0, y: 2, z: 0}
     - {x: 0, y: -1, z: 0}
-  materialCell: {fileID: 0}
+  materialCell: {fileID: 2100000, guid: 66397bf2963c5fb4a982e61fa8657dfb, type: 2}
   cell: {fileID: 1816408370631526072, guid: 545cdc6b68d96c44bbedb812322b2308, type: 3}

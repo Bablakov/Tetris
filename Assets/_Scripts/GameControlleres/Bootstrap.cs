@@ -11,6 +11,7 @@ public class Bootstrap : MonoBehaviour {
     private void Awake() {
         fieldController.Initialize(spawnerField.Spawn(fieldConfig));
         figureController.Initialize(inputGame, fieldController);
-        spawnerFigure.Initialize(fieldConfig.PositionSpawn, figureController);
+        var n = new FigureGhostController(fieldController);
+        spawnerFigure.Initialize(fieldConfig.PositionSpawn, figureController, n);
     }
 }

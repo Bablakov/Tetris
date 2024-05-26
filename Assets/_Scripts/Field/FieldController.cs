@@ -24,9 +24,14 @@ public class FieldController : MonoBehaviour {
         return true;
     }
 
-    public void ShowNewFigure(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells) {
+    public void ShowNewFigure(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Material materialeCell) {
         HideFigure(oldPositionCells);
-        ShowFigure(newPositionCells);
+        ShowFigure(newPositionCells, materialeCell);
+    }
+
+    public void ShowNewFigureGhost(IEnumerable<Vector3Int> newPositionCells) {
+        HideFigureGhost();
+        ShowFigureGhost(newPositionCells);
     }
 
     public void CheckFillLines() {
@@ -47,7 +52,7 @@ public class FieldController : MonoBehaviour {
             for (int x = 0; x < _width; x++) {
                 if (_field[y][x].IsVisible()) {
                     _field[y][x].Hide();
-                    _field[y - 1][x].Show();
+                    _field[y - 1][x].Show(_field[y][x].Material);
                 }
             }
         }
@@ -59,18 +64,40 @@ public class FieldController : MonoBehaviour {
         }
     }
 
-    private void ShowFigure(IEnumerable<Vector3Int> currentPositionFigures) {
-        foreach (var cell in currentPositionFigures) {
-            ShowCell(cell);
+    private void HideFigureGhost() {
+        foreach (var arrayCell in _field) {
+            foreach (var cell in arrayCell) {
+                cell.HideGhost();
+            }
         }
     }
 
-    private void ShowCell(Vector3Int cell) {
-        _field[cell.y][cell.x].Show();
+    private void ShowFigure(IEnumerable<Vector3Int> currentPositionFigures, Material materialCell) {
+        foreach (var cell in currentPositionFigures) {
+            ShowCell(cell, materialCell);
+        }
+    }
+
+    private void ShowFigureGhost(IEnumerable<Vector3Int> currentPositionFigures) {
+        foreach (var cell in currentPositionFigures) {
+            ShowCellGhost(cell);
+        }
+    }
+
+    private void ShowCell(Vector3Int cell, Material materialCell) {
+        _field[cell.y][cell.x].Show(materialCell);
+    }
+
+    private void ShowCellGhost(Vector3Int cell) {
+        _field[cell.y][cell.x].ShowGhost();
     }
 
     private void HideCell(Vector3Int cell) {
         _field[cell.y][cell.x].Hide();
+    }
+    
+    private void HideCellGhost(Vector3Int cell) {
+        _field[cell.y][cell.x].HideGhost();
     }
 
     private bool IsOccupiedCell(Vector3Int cell) {
@@ -85,8 +112,8 @@ public class FieldController : MonoBehaviour {
     }
 
     private bool IsBoarder(Vector3Int cell) {
-        return cell.x <= BEGIN_BOARDER_FIELD || cell.x >= _width
-            || cell.y <= BEGIN_BOARDER_FIELD || cell.y >= _hieght;
+        return cell.x < 0 || cell.x >= _width
+            || cell.y < 0 || cell.y >= _hieght;
     }
 
     private bool IsOtherCellFigure(Vector3Int cell) {
