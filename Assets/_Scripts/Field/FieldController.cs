@@ -11,11 +11,8 @@ public class FieldController : MonoBehaviour, IService {
     private EventBus _eventBus;
 
     public void Initialize(Cell[][] field) {
-        _field = field;
-        _width = field[0].Length;
-        _hieght = field.GetLength(0);
-        _eventBus = ServiceLocator.Current.Get<EventBus>();
-        _eventBus.Subscribe<PutFigureSignal>(CheckFillLines);
+        AssignValue(field);
+        GetComponents();
     }
 
     public bool ICanMoveHere(IEnumerable<Vector3Int> positionCellsFigure) {
@@ -43,6 +40,17 @@ public class FieldController : MonoBehaviour, IService {
                 i = -1; // нужно для того, чтобы заново проходили массив массивов и не оставили заполненых строк
             }
         }
+    }
+
+    private void AssignValue(Cell[][] field) {
+        _field = field;
+        _width = field[0].Length;
+        _hieght = field.GetLength(0);
+    }
+
+    private void GetComponents() {
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
+        _eventBus.Subscribe<PutFigureSignal>(CheckFillLines);
     }
 
     private void DeleteLine(int idLine) {
@@ -97,16 +105,12 @@ public class FieldController : MonoBehaviour, IService {
     private void HideCell(Vector3Int cell) {
         _field[cell.y][cell.x].Hide();
     }
-    
-    private void HideCellGhost(Vector3Int cell) {
-        _field[cell.y][cell.x].HideGhost();
-    }
 
     private bool IsOccupiedCell(Vector3Int cell) {
         if (IsBoarder(cell)) {
             return true;
         }
-        if (IsOtherCellFigure(cell)) {
+        else if (IsOtherCellFigure(cell)) {
             return true;
         }
 

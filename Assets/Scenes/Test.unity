@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,13 +165,13 @@ PrefabInstance:
     - target: {fileID: -2198283207016683197, guid: e7aaa336a58f1b249b4704668dd11793,
         type: 3}
       propertyPath: configFigures.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2198283207016683197, guid: e7aaa336a58f1b249b4704668dd11793,
         type: 3}
       propertyPath: configFigures.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 640cb1555fdee5b4e9d644f79f2a56d9,
+      objectReference: {fileID: 11400000, guid: 0b63c9abcaecead4ca9e175020e454b7,
         type: 2}
     - target: {fileID: -2198283207016683197, guid: e7aaa336a58f1b249b4704668dd11793,
         type: 3}
@@ -950,7 +950,7 @@ PrefabInstance:
     - target: {fileID: 5658921856505663421, guid: 5a7847e73c2ea6744af8d060e65fcb93,
         type: 3}
       propertyPath: timeInput
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

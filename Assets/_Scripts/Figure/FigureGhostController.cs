@@ -16,9 +16,13 @@ public class FigureGhostController: IService {
     }
 
     public void Initialize() {
+        GetComponents();
+        Subscribe();
+    }
+
+    private void GetComponents() {
         _fieldController = ServiceLocator.Current.Get<FieldController>();
         _eventBus = ServiceLocator.Current.Get<EventBus>();
-        Subscribe();
     }
 
     private void Subscribe() {
@@ -32,32 +36,42 @@ public class FigureGhostController: IService {
     }
 
     private void OnSpawnedFigure(SpawnedFigureSignal spawnedFigureSignal) {
-        _figure = spawnedFigureSignal.Figure;
-        position = Position;
+        AssignValue(spawnedFigureSignal);
         CalculateCurrentPositionCells();
         OnChangedPropertyFigure();
     }
-    
+
     private void OnChangedPropertyFigure() {
         position = Position;
-        while (Move(Down)) {
+        while (IsCanMove(Down)) {
+            UpdateDataMove(Down);
         }
-        _fieldController.ShowNewCellsGhost(CalculatePositionCells(position, Cells));
+        Move();
     }
 
     private void OnChangedPropertyFigure(ChangedPropertyFigureSignal changedPropertyFigureSignal) {
         position = Position;
-        while (Move(Down)) {
+        while (IsCanMove(Down)) {
+            UpdateDataMove(Down);
         }
+        Move();
+    }
+
+    private void AssignValue(SpawnedFigureSignal spawnedFigureSignal) {
+        _figure = spawnedFigureSignal.Figure;
+        position = Position;
+    }
+
+    private bool IsCanMove(Vector3Int moveDirection) {
+        return _fieldController.ICanMoveHere(FindUniqueCellPosition(position + moveDirection));
+    }
+
+    private void Move() {
         _fieldController.ShowNewCellsGhost(CalculatePositionCells(position, Cells));
     }
 
-    private bool Move(Vector3Int moveDirection) {
-        if (_fieldController.ICanMoveHere(FindUniqueCellPosition(position + moveDirection))) {
-            position += moveDirection;
-            return true;
-        }
-        return false;
+    private void UpdateDataMove(Vector3Int moveDirection) {
+        position += moveDirection;
     }
 
     private IEnumerable<Vector3Int> CalculatePositionCells(Vector3Int value, IEnumerable<Vector3Int> cells) {
