@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6085c3d89e9e3c04681dd69b18a129ae, type: 3}
-  m_Name: FieldInfo
+  m_Name: FieldConfig
   m_EditorClassIdentifier: 
   hieght: 20
   wieght: 10

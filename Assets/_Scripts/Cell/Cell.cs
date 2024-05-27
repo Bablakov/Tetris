@@ -1,41 +1,33 @@
 using UnityEngine;
-using TMPro;
 
 [SelectionBase]
 public class Cell : MonoBehaviour {
-    [SerializeField] private VisualElement visualCell;
-    [SerializeField] private GameObject ghostCell;
-    [SerializeField] private bool fill;
-    [SerializeField] private TextMeshProUGUI text;
-    public Material Material;
+    [SerializeField] private FilledCell filledCell;
+    [SerializeField] private GhostCell ghostCell;
 
-    private Vector3Int _position;
+    public bool IsVisible { get; private set; }
+    public Material Material { get; private set; }
 
-    public void Initialize(Vector3Int position) {
-        _position = position;
-        visualCell.Initialize();
-    }
-
-    public bool IsVisible() {
-        return fill;
+    public void Initialize() {
+        filledCell.Initialize();
     }
 
     public void Show(Material material) {
         Material = material;
-        visualCell.Enable(material);
-        fill = true;
+        filledCell.Enable(material);
+        IsVisible = true;
     }
 
     public void Hide() {
-        visualCell.Disable();
-        fill = false;
+        filledCell.Disable();
+        IsVisible = false;
     }
 
     public void ShowGhost() {
-        ghostCell.SetActive(true);
+        ghostCell.Enable();
     }
 
     public void HideGhost() {
-        ghostCell.SetActive(false);
+        ghostCell.Disable();
     }
 }

@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class FieldController : MonoBehaviour {
+public class FieldController : MonoBehaviour, IService {
     private const int BEGIN_BOARDER_FIELD = -1;
     
     private Cell[][] _field;
     private int _hieght;
     private int _width;
+    private EventBus _eventBus;
 
     public void Initialize(Cell[][] field) {
         _field = field;
         _width = field[0].Length;
         _hieght = field.GetLength(0);
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
+        _eventBus.Subscribe<PutFigureSignal>(CheckFillLines);
     }
 
     public bool ICanMoveHere(IEnumerable<Vector3Int> positionCellsFigure) {
@@ -24,19 +26,19 @@ public class FieldController : MonoBehaviour {
         return true;
     }
 
-    public void ShowNewFigure(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Material materialeCell) {
-        HideFigure(oldPositionCells);
-        ShowFigure(newPositionCells, materialeCell);
+    public void ShowNewCells(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Material materialeCell) {
+        HideCells(oldPositionCells);
+        ShowCells(newPositionCells, materialeCell);
     }
 
-    public void ShowNewFigureGhost(IEnumerable<Vector3Int> newPositionCells) {
-        HideFigureGhost();
-        ShowFigureGhost(newPositionCells);
+    public void ShowNewCellsGhost(IEnumerable<Vector3Int> newPositionCells) {
+        HideCellsGhost();
+        ShowCellsGhost(newPositionCells);
     }
 
-    public void CheckFillLines() {
+    public void CheckFillLines(PutFigureSignal putFigureSignal) {
         for (int i = 0; i < _field.GetLength(0); i++) {
-            if (_field[i].All(cell => cell.IsVisible())) {
+            if (_field[i].All(cell => cell.IsVisible)) {
                 DeleteLine(i);
                 i = -1; // нужно для того, чтобы заново проходили массив массивов и не оставили заполненых строк
             }
@@ -50,7 +52,7 @@ public class FieldController : MonoBehaviour {
 
         for (int y = idLine + 1; y < _hieght; y++) {
             for (int x = 0; x < _width; x++) {
-                if (_field[y][x].IsVisible()) {
+                if (_field[y][x].IsVisible) {
                     _field[y][x].Hide();
                     _field[y - 1][x].Show(_field[y][x].Material);
                 }
@@ -58,13 +60,13 @@ public class FieldController : MonoBehaviour {
         }
     }
 
-    private void HideFigure(IEnumerable<Vector3Int> currentPositionFigures) {
+    private void HideCells(IEnumerable<Vector3Int> currentPositionFigures) {
         foreach (var cell in currentPositionFigures) {
             HideCell(cell);
         }
     }
 
-    private void HideFigureGhost() {
+    private void HideCellsGhost() {
         foreach (var arrayCell in _field) {
             foreach (var cell in arrayCell) {
                 cell.HideGhost();
@@ -72,13 +74,13 @@ public class FieldController : MonoBehaviour {
         }
     }
 
-    private void ShowFigure(IEnumerable<Vector3Int> currentPositionFigures, Material materialCell) {
+    private void ShowCells(IEnumerable<Vector3Int> currentPositionFigures, Material materialCell) {
         foreach (var cell in currentPositionFigures) {
             ShowCell(cell, materialCell);
         }
     }
 
-    private void ShowFigureGhost(IEnumerable<Vector3Int> currentPositionFigures) {
+    private void ShowCellsGhost(IEnumerable<Vector3Int> currentPositionFigures) {
         foreach (var cell in currentPositionFigures) {
             ShowCellGhost(cell);
         }
@@ -112,11 +114,11 @@ public class FieldController : MonoBehaviour {
     }
 
     private bool IsBoarder(Vector3Int cell) {
-        return cell.x < 0 || cell.x >= _width
-            || cell.y < 0 || cell.y >= _hieght;
+        return cell.x <= BEGIN_BOARDER_FIELD || cell.x >= _width
+            || cell.y <= BEGIN_BOARDER_FIELD || cell.y >= _hieght;
     }
 
     private bool IsOtherCellFigure(Vector3Int cell) {
-        return _field[cell.y][cell.x].IsVisible();
+        return _field[cell.y][cell.x].IsVisible;
     }
 }

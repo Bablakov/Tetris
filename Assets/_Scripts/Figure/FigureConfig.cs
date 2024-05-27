@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FigureInfo", menuName = "Tetris/FigureInfo")]
+[CreateAssetMenu(fileName = "FigureInfo", menuName = "Tetris/FigureConfig")]
 public class FigureConfig : ScriptableObject {
-    [SerializeField] private List<FigureData> rotateFigure;
+    [SerializeField] private List<FigureShape> rotateFigure;
     [SerializeField] private Material materialCell;
     [SerializeField] private Cell cell;
 
-    public IReadOnlyList<FigureData> RotateFigure => rotateFigure;
+    public IReadOnlyList<FigureShape> RotateFigure => rotateFigure;
     public Material MaterialCell => materialCell;
     public Cell Cell => cell;
 }

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Figure {
-    public event Action Changed;
-
-    private readonly IReadOnlyList<FigureData> _rotateFigure;
+    private readonly IReadOnlyList<FigureShape> _rotateFigure;
     private readonly Material _materialCell;
     private readonly Cell _cell;
     private int _currentRotateFigure;
+    private EventBus _eventBus;
     private int CurrentRotateFigure {
         get { return _currentRotateFigure; }
         set {
@@ -21,25 +19,26 @@ public class Figure {
     }
 
     public Vector3Int Position { get; private set; }
-    public FigureData PositionCells => _rotateFigure[_currentRotateFigure];
-    public FigureData NextPositionRotateCells => _rotateFigure[(_currentRotateFigure + 1) % _rotateFigure.Count];
+    public FigureShape PositionCells => _rotateFigure[_currentRotateFigure];
+    public FigureShape NextPositionRotateCells => _rotateFigure[(_currentRotateFigure + 1) % _rotateFigure.Count];
     public Material MaterialCells => _materialCell;
 
-    public Figure(IReadOnlyList<FigureData> rotateFigure, Material materialCell, Cell cell, Vector3Int spawnPosition) {
-        _rotateFigure = rotateFigure;
-        _materialCell = materialCell;
-        _cell = cell;
-        Position = spawnPosition;
+    public Figure(FigureConfig figureConfig, Vector3Int startPosition, EventBus eventBus) {
+        _rotateFigure = figureConfig.RotateFigure;
+        _materialCell = figureConfig.MaterialCell;
+        _cell = figureConfig.Cell;
+        Position = startPosition;
         _currentRotateFigure = 0;
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
     }
 
     public void SetPosition(Vector3Int position) {
         Position = position;
-        Changed?.Invoke();
+        _eventBus.Invoke(new ChangedPropertyFigureSignal());
     }
 
     public void SetNextPositionRotate() {
         CurrentRotateFigure += 1;
-        Changed?.Invoke();
+        _eventBus.Invoke(new ChangedPropertyFigureSignal());
     }
 }

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
-public class FigureGhostController {
+public class FigureGhostController: IService {
     private FieldController _fieldController;
     private Figure _figure;
 
@@ -16,36 +13,49 @@ public class FigureGhostController {
 
     private Vector3Int Down = new Vector3Int(0, -1, 0);
     private IEnumerable<Vector3Int> _newPositionCell;
+    private EventBus _eventBus;
 
-    public FigureGhostController(FieldController fieldController) {
-        _fieldController = fieldController;
+    public FigureGhostController() {
     }
 
-    public void SetFigure(Figure figure) {
-        if (_figure != null) {
-            Unsubscribe();
-        }
-        _figure = figure;
-        position = Position;
-        CalculateCurrentPositionCells();
-        OnChanged();
+    public void Initialize() {
+        _fieldController = ServiceLocator.Current.Get<FieldController>();
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
         Subscribe();
     }
 
     private void Subscribe() {
-        _figure.Changed += OnChanged;
+        _eventBus.Subscribe<SpawnedFigureSignal>(OnSpawnedFigure);
+        _eventBus.Subscribe<ChangedPropertyFigureSignal>(OnChangedPropertyFigure);
     }
 
     private void Unsubscribe() {
-        _figure.Changed -= OnChanged;
+        _eventBus.Unsubscribe<SpawnedFigureSignal>(OnSpawnedFigure);
+        _eventBus.Unsubscribe<ChangedPropertyFigureSignal>(OnChangedPropertyFigure);
     }
 
-    private void OnChanged() {
-        Debug.Log("OnChanged");
+    private void OnSpawnedFigure(SpawnedFigureSignal spawnedFigureSignal) {
+        Debug.Log("Spawned");
+        _figure = spawnedFigureSignal.Figure;
+        position = Position;
+        CalculateCurrentPositionCells();
+        OnChangedPropertyFigure();
+    }
+    
+    private void OnChangedPropertyFigure() {
+        Debug.Log("Changed");
         position = Position;
         while (Move(Down)) {
         }
-        _fieldController.ShowNewFigureGhost(CalculatePositionCells(position, Cells));
+        _fieldController.ShowNewCellsGhost(CalculatePositionCells(position, Cells));
+    }
+
+    private void OnChangedPropertyFigure(ChangedPropertyFigureSignal changedPropertyFigureSignal) {
+        Debug.Log("Changed");
+        position = Position;
+        while (Move(Down)) {
+        }
+        _fieldController.ShowNewCellsGhost(CalculatePositionCells(position, Cells));
     }
 
     private bool Move(Vector3Int moveDirection) {

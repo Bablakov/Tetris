@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class InputGame : MonoBehaviour {
+public abstract class InputGame : MonoBehaviour, IService {
     public abstract event Action InputedRotate;
     public abstract event Action InputedRight;
     public abstract event Action InputedSpace;
