@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class FigureGhostController: IService {
-    private FieldController _fieldController;
-    private Figure _figure;
-
-    private Vector3Int position;
-    private Vector3Int Position => _figure.Position;
+    private readonly Vector3Int Down = new Vector3Int(0, -1, 0);
+    
     private IEnumerable<Vector3Int> Cells => _figure.PositionCells.Cells;
-
-    private Vector3Int Down = new Vector3Int(0, -1, 0);
-    private IEnumerable<Vector3Int> _newPositionCell;
+    private Vector3Int Position => _figure.Position;
+    
+    private FieldController _fieldController;
+    private Vector3Int position;
     private EventBus _eventBus;
+    private Figure _figure;
 
     public FigureGhostController() {
     }
@@ -35,7 +32,6 @@ public class FigureGhostController: IService {
     }
 
     private void OnSpawnedFigure(SpawnedFigureSignal spawnedFigureSignal) {
-        Debug.Log("Spawned");
         _figure = spawnedFigureSignal.Figure;
         position = Position;
         CalculateCurrentPositionCells();
@@ -43,7 +39,6 @@ public class FigureGhostController: IService {
     }
     
     private void OnChangedPropertyFigure() {
-        Debug.Log("Changed");
         position = Position;
         while (Move(Down)) {
         }
@@ -51,7 +46,6 @@ public class FigureGhostController: IService {
     }
 
     private void OnChangedPropertyFigure(ChangedPropertyFigureSignal changedPropertyFigureSignal) {
-        Debug.Log("Changed");
         position = Position;
         while (Move(Down)) {
         }
@@ -67,23 +61,14 @@ public class FigureGhostController: IService {
     }
 
     private IEnumerable<Vector3Int> CalculatePositionCells(Vector3Int value, IEnumerable<Vector3Int> cells) {
-        var result = cells.Select(cell => cell += value).ToList();
-        return result;
+        return Mathematics.CalculatePositionCells(value, cells);
     }
 
     private IEnumerable<Vector3Int> FindUniqueCellPosition(Vector3Int newPosition) {
-        _newPositionCell = CalculatePositionCells(newPosition, Cells);
-        var result = _newPositionCell.Where(cell => !CalculateCurrentPositionCells().Contains(cell));
-        return result;
-    }
-
-    private IEnumerable<Vector3Int> FindUniqueCellPosition(IEnumerable<Vector3Int> newCellsPosition) {
-        _newPositionCell = CalculatePositionCells(Position, newCellsPosition);
-        var result = _newPositionCell.Where(cell => !CalculateCurrentPositionCells().Contains(cell));
-        return result;
+        return Mathematics.FindUniqueCellPosition(Position, newPosition, Cells);
     }
 
     private IEnumerable<Vector3Int> CalculateCurrentPositionCells() {
-        return CalculatePositionCells(Position, Cells);
+        return Mathematics.CalculatePositionCells(Position, Cells);
     }
 }

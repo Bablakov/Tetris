@@ -165,7 +165,7 @@ PrefabInstance:
     - target: {fileID: -2198283207016683197, guid: e7aaa336a58f1b249b4704668dd11793,
         type: 3}
       propertyPath: configFigures.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2198283207016683197, guid: e7aaa336a58f1b249b4704668dd11793,
         type: 3}
@@ -630,6 +630,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5299052767756680613, guid: 61c8a75dd7d080742880bf047081ce5d,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5299052767756680613, guid: 61c8a75dd7d080742880bf047081ce5d,
         type: 3}
       propertyPath: timeStandart

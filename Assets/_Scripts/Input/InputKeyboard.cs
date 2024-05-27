@@ -55,5 +55,4 @@ public class InputKeyboard : InputGame {
     private void ResetTime() {
         _time = timeInput;
     }
-
 }

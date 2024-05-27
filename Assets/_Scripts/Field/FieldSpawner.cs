@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FieldSpawner : MonoBehaviour, IService {
     private int _hieght => _fieldConfig.Hieght;
