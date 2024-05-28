@@ -34,4 +34,5 @@ MonoBehaviour:
     - {x: -2, y: 1, z: 0}
     - {x: -1, y: -1, z: 0}
   materialCell: {fileID: 2100000, guid: dc54c1c910975dd4e934e21b7cbe997c, type: 2}
+  spriteFigure: {fileID: 21300000, guid: 29aa7592f9eb15843b358cd9edb688ac, type: 3}
   cell: {fileID: 1816408370631526072, guid: 545cdc6b68d96c44bbedb812322b2308, type: 3}

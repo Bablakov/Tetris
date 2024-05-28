@@ -5,6 +5,7 @@ using UnityEngine;
 public class FigureConfig : ScriptableObject {
     [SerializeField] private List<FigureShape> rotateFigure;
     [SerializeField] private Material materialCell;
+    [SerializeField] private Sprite spriteFigure;
     [SerializeField] private Cell cell;
 
     public IReadOnlyList<FigureShape> RotateFigure => rotateFigure;
