@@ -6,13 +6,13 @@ public class FieldSpawner : MonoBehaviour, IService {
     private Cell _cell => _fieldConfig.Cell;
     
     private FieldConfig _fieldConfig;
-    private Cell[][] _fieldGame;
+    private Cell[][] _field;
 
-    public Cell[][] Spawn(FieldConfig fieldConfig) {
+    public Field Spawn(FieldConfig fieldConfig) {
         AssignValues(fieldConfig);
         CreateCollectionCells();
         CreateCells();
-        return _fieldGame;
+        return new RectangularField(_field);
     }
 
     private void AssignValues(FieldConfig fieldConfig) {
@@ -20,9 +20,9 @@ public class FieldSpawner : MonoBehaviour, IService {
     }
 
     private void CreateCollectionCells() {
-        _fieldGame = new Cell[_hieght][];
+        _field = new Cell[_hieght][];
         for (int i = 0; i < _hieght; i++) {
-            _fieldGame[i] = new Cell[_width];
+            _field[i] = new Cell[_width];
         }
     }
 
@@ -36,10 +36,10 @@ public class FieldSpawner : MonoBehaviour, IService {
     }
 
     private void SpawnAndSaveCell(int y, int x) {
-        _fieldGame[y][x] = Instantiate(_cell, new Vector3Int(x, y, 0), Quaternion.identity, transform);
+        _field[y][x] = Instantiate(_cell, new Vector3Int(x, y, 0), Quaternion.identity, transform);
     }
 
     private void InitializeCell(int y, int x) {
-        _fieldGame[y][x].Initialize();
+        _field[y][x].Initialize();
     }
 }

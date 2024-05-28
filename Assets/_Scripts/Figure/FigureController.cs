@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FigureController : MonoBehaviour, IService {
-    [SerializeField, Range(0.1f, 100f)] private float speed;
-
+public class FigureController : IService {
     private const float SECOND = 1f;
     private readonly Vector3Int Down = new Vector3Int(0, -1, 0);
     private readonly Vector3Int Right = new Vector3Int(1, 0, 0);
@@ -20,10 +18,19 @@ public class FigureController : MonoBehaviour, IService {
     private InputGame _inputGame;
     private EventBus _eventBus;
     private Figure _figure;
+    private float _speed;
 
-    public void Initialize() {
+    public FigureController() {
+    }
+
+    public void Initialize(float speed) {
+        AssignValue(speed);
         GetComponents();
         Subscribe();
+    }
+
+    private void AssignValue(float speed) {
+        _speed = speed;
     }
 
     private void Update() {
@@ -55,7 +62,7 @@ public class FigureController : MonoBehaviour, IService {
         _eventBus.Unsubscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
     }
 
-    private void MoveDown() {
+    public void MoveDown() {
         if (IsDropTime) {
             if (!TryAttemptMove(Down))
                 InformPutFigure();
@@ -139,7 +146,7 @@ public class FigureController : MonoBehaviour, IService {
     }
 
     private void ResetTime() {
-        _currentTime =  SECOND / speed;
+        _currentTime =  SECOND / _speed;
     }
 
     private IEnumerable<Vector3Int> CalculatePositionCells(Vector3Int value, IEnumerable<Vector3Int> cells) {

@@ -29,7 +29,8 @@ public class Figure {
         _cell = figureConfig.Cell;
         Position = startPosition;
         _currentRotateFigure = 0;
-        _eventBus = ServiceLocator.Current.Get<EventBus>();
+        
+        GetComponents();
     }
 
     public void SetPosition(Vector3Int position) {
@@ -40,5 +41,9 @@ public class Figure {
     public void SetNextPositionRotate() {
         CurrentRotateFigure += 1;
         _eventBus.Invoke(new ChangedPropertyFigureSignal());
+    }
+
+    private void GetComponents() {
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
     }
 }
