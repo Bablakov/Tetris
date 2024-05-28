@@ -60,10 +60,10 @@ public class Bootstrap : MonoBehaviour {
     private void Update() {
         _figureController.MoveDown();
     }
-/*
-    private void OnDestroy() {
-        foreach (var disposable in _disposables) {
-            disposable.Dispose();
-        }
-    }*/
+    /*
+        private void OnDestroy() {
+            foreach (var disposable in _disposables) {
+                disposable.Dispose();
+            }
+        }*/
 }

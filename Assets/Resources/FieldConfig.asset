@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FieldConfig
   m_EditorClassIdentifier: 
   hieght: 20
-  wieght: 10
+  width: 10
   cell: {fileID: 1816408370631526072, guid: 545cdc6b68d96c44bbedb812322b2308, type: 3}

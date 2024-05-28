@@ -10,5 +10,6 @@ public class FigureConfig : ScriptableObject {
 
     public IReadOnlyList<FigureShape> RotateFigure => rotateFigure;
     public Material MaterialCell => materialCell;
+    public Sprite SpriteFigure => spriteFigure;
     public Cell Cell => cell;
 }

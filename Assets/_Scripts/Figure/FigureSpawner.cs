@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class FigureSpawner : IService {
     private const string WAY_CONFIG = "FigureConfigs";
+    private const int COUNT_FIGURE = 5;
 
-    private List<Figure> _figuresSpawnAdvance;
-    private FigureConfigs configFigures;
+    private Queue<Figure> _createdQueueFigures;
+    private FigureConfigs _configFigures;
     private Vector3Int _positionSpawn;
     private EventBus _eventBus;
 
@@ -17,7 +18,8 @@ public class FigureSpawner : IService {
         AssignValue(positionSpawn);
         GetComponents();
         Subscribe();
-        SpawnNewFigureAdvance();
+        CreateQueueFigures();
+        SendFigure();
     }
 
     private void Subscribe() {
@@ -30,35 +32,34 @@ public class FigureSpawner : IService {
 
     private void AssignValue(Vector3Int positionSpawn) {
         _positionSpawn = positionSpawn;
-        _figuresSpawnAdvance = new List<Figure>();
+        _createdQueueFigures = new();
     }
 
     private void GetComponents() {
-        configFigures = Resources.Load<FigureConfigs>(WAY_CONFIG);
+        _configFigures = Resources.Load<FigureConfigs>(WAY_CONFIG);
         _eventBus = ServiceLocator.Current.Get<EventBus>();
     }
 
-    private void SpawnNewFigureAdvance() {
-        for (int i = 0; i < 5; i++) {
-            var rnd = Random.Range(0, configFigures.Count);
-            var figure = new Figure(configFigures.Configs[rnd], _positionSpawn, _eventBus);
-            _figuresSpawnAdvance.Add(figure);
-            Debug.Log(figure.MaterialCells.name);
+    private void CreateQueueFigures() {
+        for (int i = 0; i < COUNT_FIGURE; i++) {
+            CreateFigure();
         }
-        _eventBus.Invoke(new SpawnedFigureSignal(_figuresSpawnAdvance.First()));
-        _figuresSpawnAdvance.RemoveAt(0);
     }
 
     private void SpawnNewFigure(PutFigureSignal putFigureSignal) {
-        var figures = _figuresSpawnAdvance.First();
-        _figuresSpawnAdvance.Remove(figures);
+        CreateFigure();
+        SendFigure();
+    }
 
-        var rnd = Random.Range(0, configFigures.Count);
-        
-        var figure = new Figure(configFigures.Configs[rnd], _positionSpawn, _eventBus);
+    private void CreateFigure() {
+        var rnd = Random.Range(0, _configFigures.Count);
+        var figure = new Figure(_configFigures.Configs[rnd], _positionSpawn, _eventBus);
+        _createdQueueFigures.Enqueue(figure);
+    }
 
-        _figuresSpawnAdvance.Add(figure);
-        Debug.Log(figure.MaterialCells.name);
+    private void SendFigure() {
+        var figures = _createdQueueFigures.Dequeue();
         _eventBus.Invoke(new SpawnedFigureSignal(figures));
+        _eventBus.Invoke(new ChangeQueueFigureSignal(_createdQueueFigures));
     }
 }

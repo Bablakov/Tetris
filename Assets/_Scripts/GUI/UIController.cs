@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 
 public class UIController : MonoBehaviour {
+    [SerializeField] private ViewQueueFigure _viewQueueFigure;
+    
     private ViewScore _viewScore;
     private EventBus _eventBus;
 
@@ -11,18 +13,14 @@ public class UIController : MonoBehaviour {
         InitializeComponents();
     }
 
-    private void InitializeComponents() {
-        _viewScore.Initialize(_eventBus);
-    }
-
     private void GetComponents() {
         _eventBus = ServiceLocator.Current.Get<EventBus>();
         _viewScore = GetComponentInChildren<ViewScore>();
+        //_viewQueueFigure = GetComponentInChildren<ViewQueueFigure>();
     }
 
-    private void Subscribe() {
-    }
-
-    private void Unsubscribe() {
+    private void InitializeComponents() {
+        _viewScore.Initialize(_eventBus);
+        _viewQueueFigure.Initialize(_eventBus);
     }
 }
