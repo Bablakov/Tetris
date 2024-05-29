@@ -29,6 +29,8 @@ public class Bootstrap : MonoBehaviour {
         AddAllIDisposableElementInCollection();
         RegisterServices();
         _eventBus.Subscribe<FinishedGameSignal>(OnFinishedGame);
+        _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
+        _eventBus.Subscribe<StartedGameSignal>(OnStartedGame);
         Initialize();
     }
 
@@ -79,6 +81,14 @@ public class Bootstrap : MonoBehaviour {
 
     private void OnFinishedGame(FinishedGameSignal siganl) {
         Time.timeScale = 0;
+    }
+
+    private void OnPausedGame(PausedGameSignal siganl) {
+        Time.timeScale = 0;
+    }
+
+    private void OnStartedGame(StartedGameSignal siganl) {
+        Time.timeScale = 1;
     }
 
     private void OnDestroy() {

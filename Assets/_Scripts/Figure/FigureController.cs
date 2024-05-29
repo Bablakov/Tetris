@@ -20,6 +20,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
     private EventBus _eventBus;
     private Figure _figureSwap;
     private Figure _figure;
+    private float _initialSpeed;
     private float _speed;
 
     public void Initialize(float speed) {
@@ -29,6 +30,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
     }
 
     private void AssignValue(float speed) {
+        _initialSpeed = speed;
         _speed = speed;
     }
 
@@ -51,6 +53,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
         _inputGame.InputedSwapFigure += OnInputedSwapFigure;
         _eventBus.Subscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
         _eventBus.Subscribe<CreatedFigureSwapSignal>(OnCreatedFigureSwap);
+        _eventBus.Subscribe<DeletedCountLineSignal>(OnDeletedCountLine);
     }
 
     private void Unsubscibe() {
@@ -62,6 +65,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
         _inputGame.InputedSwapFigure -= OnInputedSwapFigure;
         _eventBus.Unsubscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
         _eventBus.Unsubscribe<CreatedFigureSwapSignal>(OnCreatedFigureSwap);
+        _eventBus.Unsubscribe<DeletedCountLineSignal>(OnDeletedCountLine);
     }
 
     public void MoveDown() {
@@ -112,6 +116,11 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
     private void OnCreatedFigureSwap(CreatedFigureSwapSignal signal) {
         _figureSwap = signal.FigureSwap;
         _eventBus?.Invoke(new SwapedFigureVisualSignal(_figureSwap));
+    }
+
+    private void OnDeletedCountLine(DeletedCountLineSignal signal) {
+        _speed = _initialSpeed + signal.Score / 100f;
+        Debug.Log(_speed);
     }
 
     private bool TryAppear() {

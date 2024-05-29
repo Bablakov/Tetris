@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour, IDisposable {
     private ViewSwapFigure _viewSwapFigure;
     private ViewScoreLine _viewScoreLine;
     private ViewScorePoints _viewScore;
+    private ButtonPauseGame _buttonPauseGame;
+    private PanelPause _panelPause;
     private EventBus _eventBus;
 
     public void Initialize() {
@@ -20,6 +22,8 @@ public class UIController : MonoBehaviour, IDisposable {
         _viewScoreLine = GetComponentInChildren<ViewScoreLine>();
         _viewSwapFigure = GetComponentInChildren<ViewSwapFigure>();
         _viewQueueFigure = GetComponentInChildren<ViewQueueFigure>();
+        _buttonPauseGame = GetComponentInChildren<ButtonPauseGame>();
+        _panelPause = GetComponentInChildren<PanelPause>();
     }
 
     private void InitializeComponents() {
@@ -27,6 +31,8 @@ public class UIController : MonoBehaviour, IDisposable {
         _viewScoreLine.Initialize(_eventBus);
         _viewSwapFigure.Initialize(_eventBus);
         _viewQueueFigure.Initialize(_eventBus);
+        _buttonPauseGame.Initialize(_eventBus);
+        _panelPause.Initialize(_eventBus);
     }
 
     public void Dispose() {
@@ -34,5 +40,7 @@ public class UIController : MonoBehaviour, IDisposable {
         _viewSwapFigure.Dispose();
         _viewScoreLine.Dispose();
         _viewScore.Dispose();
+        _buttonPauseGame.Dispose();
+        _panelPause.Dispose();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public abstract class InputGame : MonoBehaviour, IService {
@@ -8,23 +9,21 @@ public abstract class InputGame : MonoBehaviour, IService {
     public abstract event Action InputedRight;
     public abstract event Action InputedDown;
     public abstract event Action InputedLeft;
-    protected bool _enabled = true;
     protected EventBus _eventBus;
 
     public virtual void Initialize() {
         _eventBus = ServiceLocator.Current.Get<EventBus>();
         _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
         _eventBus.Subscribe<FinishedGameSignal>(OnFinishedGame);
+        _eventBus.Subscribe<StartedGameSignal>(OnStartedGame);
     }
 
     protected virtual void OnPausedGame(PausedGameSignal signal) {
-        if (_enabled) {
-            _enabled = false;
-            enabled = false;
-        } else {
-            _enabled = true;
-            enabled = true;
-        }
+        enabled = false;
+    }
+
+    protected virtual void OnStartedGame(StartedGameSignal signal) { 
+        enabled = true; 
     }
 
     protected virtual void OnFinishedGame(FinishedGameSignal signal) {
