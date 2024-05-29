@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-public class ChangeQueueFigureSignal {
+public class ChangedQueueFigureSignal {
     public IEnumerable<Figure> Figures;
     
-    public ChangeQueueFigureSignal(IEnumerable<Figure> figures) {
+    public ChangedQueueFigureSignal(IEnumerable<Figure> figures) {
         Figures = figures;
     }
 }

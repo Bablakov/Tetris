@@ -2,14 +2,12 @@
 using UnityEngine;
 
 public class InputKeyboard : InputGame {
+    public override event Action InputedSwapFigure;
     public override event Action InputedRotate;
-    public override event Action InputedSpace;
+    public override event Action InputedHardDrope;
     public override event Action InputedRight;
     public override event Action InputedLeft;
     public override event Action InputedDown;
-
-    public override void Initialize() {
-    }
 
     private void Update() {
         ProcessInputData();
@@ -29,7 +27,10 @@ public class InputKeyboard : InputGame {
             InputedDown?.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
-            InputedSpace?.Invoke();
+            InputedHardDrope?.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl)) {
+            InputedSwapFigure?.Invoke();
         }
     }
 }

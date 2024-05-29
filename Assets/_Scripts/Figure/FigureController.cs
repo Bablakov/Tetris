@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FigureController : IService {
+public class FigureController : MonoBehaviour, IService, IDisposable {
     private const float SECOND = 1f;
     private readonly Vector3Int Down = new Vector3Int(0, -1, 0);
     private readonly Vector3Int Right = new Vector3Int(1, 0, 0);
     private readonly Vector3Int Left = new Vector3Int(-1, 0, 0);
+    private readonly Vector3Int Zero = new Vector3Int(0, 0, 0);
 
     private bool IsDropTime => _currentTime < 0;
     private Vector3Int Position => _figure.Position;
@@ -17,11 +18,9 @@ public class FigureController : IService {
     private FieldController _fieldController;
     private InputGame _inputGame;
     private EventBus _eventBus;
+    private Figure _figureSwap;
     private Figure _figure;
     private float _speed;
-
-    public FigureController() {
-    }
 
     public void Initialize(float speed) {
         AssignValue(speed);
@@ -48,18 +47,21 @@ public class FigureController : IService {
         _inputGame.InputedRight += OnInputedRight;
         _inputGame.InputedRotate += OnInputedRotate;
         _inputGame.InputedDown += OnInputedDown;
-        _inputGame.InputedSpace += OnInputedSpace;
+        _inputGame.InputedHardDrope += OnInputedHardDrope;
+        _inputGame.InputedSwapFigure += OnInputedSwapFigure;
         _eventBus.Subscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
+        _eventBus.Subscribe<CreatedFigureSwapSignal>(OnCreatedFigureSwap);
     }
-
 
     private void Unsubscibe() {
         _inputGame.InputedLeft -= OnInputedLeft;
         _inputGame.InputedRight -= OnInputedRight;
         _inputGame.InputedRotate -= OnInputedRotate;
         _inputGame.InputedDown -= OnInputedDown;
-        _inputGame.InputedSpace -= OnInputedSpace;
+        _inputGame.InputedHardDrope -= OnInputedHardDrope;
+        _inputGame.InputedSwapFigure -= OnInputedSwapFigure;
         _eventBus.Unsubscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
+        _eventBus.Unsubscribe<CreatedFigureSwapSignal>(OnCreatedFigureSwap);
     }
 
     public void MoveDown() {
@@ -89,15 +91,49 @@ public class FigureController : IService {
         TryAttemptMove(Down);
     }
 
-    private void OnInputedSpace() {
+    private void OnInputedHardDrope() {
         while (TryAttemptMove(Down)) {
         }
         InformPutFigure();
     }
 
-    private void OnSpawnedFigureSignal(SpawnedFigureSignal spawnedFigureSignal) {
-        _figure = spawnedFigureSignal.Figure;
+    private void OnInputedSwapFigure() {
+        TryAppearSwapFigure();
+    }
+
+    private void OnSpawnedFigureSignal(SpawnedFigureSignal signal) {
+        _figure = signal.Figure;
         CalculateCurrentPositionCells();
+        if (!TryAppear()) {
+            _eventBus.Invoke(new FinishedGameSignal());
+        }
+    }
+
+    private void OnCreatedFigureSwap(CreatedFigureSwapSignal signal) {
+        _figureSwap = signal.FigureSwap;
+        _eventBus?.Invoke(new SwapedFigureVisualSignal(_figureSwap));
+    }
+
+    private bool TryAppear() {
+        if (IsCanAppear()) {
+            Move(Zero);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void TryAppearSwapFigure() {
+        if (IsCanAppear(_figureSwap.PositionCells.Cells)) {
+            var figure = _figure;
+            _figure = _figureSwap;
+            _figure.SetPosition(figure.Position);
+            _figureSwap = figure;
+            Move(Zero);
+            CalculateCurrentPositionCells();
+            _eventBus?.Invoke(new SwapedFigureSignal(_figure));
+            _eventBus?.Invoke(new SwapedFigureVisualSignal(_figureSwap));
+        }
     }
 
     private bool TryAttemptMove(Vector3Int moveDirection) {
@@ -123,6 +159,14 @@ public class FigureController : IService {
         CalculateCurrentPositionCells();
     }
 
+    private bool IsCanAppear() {
+        return _fieldController.ICanMoveHere(CalculatePositionCells(Position, Cells));
+    }
+
+    private bool IsCanAppear(IEnumerable<Vector3Int> newCell) {
+        return _fieldController.ICanMoveHere(FindUniqueCellPosition(newCell));
+    }
+
     private bool IsCanMove(Vector3Int moveDirection) {
         return _fieldController.ICanMoveHere(FindUniqueCellPosition(Position + moveDirection));
     }
@@ -133,8 +177,10 @@ public class FigureController : IService {
     }
 
     private void UpdateDataMove(Vector3Int moveDirection) {
-        _figure.SetPosition(Position + moveDirection);
-        CalculateCurrentPositionCells();
+        if (Position != Position + moveDirection) {
+            _figure.SetPosition(Position + moveDirection);
+            CalculateCurrentPositionCells();
+        }
     }
 
     private void InformPutFigure() {
@@ -163,5 +209,10 @@ public class FigureController : IService {
 
     private void CalculateCurrentPositionCells() {
         _currentPositionCells = Mathematics.CalculatePositionCells(Position, Cells);
+    }
+
+    public void Dispose() {
+        Unsubscibe();
+        Destroy(gameObject);
     }
 }

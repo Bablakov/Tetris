@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Rendering;
 
 public static class Mathematics {
     public static IEnumerable<Vector3Int> CalculatePositionCells(Vector3Int value,
@@ -26,5 +27,9 @@ public static class Mathematics {
         var newPositionCell = CalculatePositionCells(position, newCellsPosition);
         var result = newPositionCell.Where(cell => !currentPositionCell.Contains(cell)).ToList();
         return result;
+    }
+
+    public static int Pow(int number) {
+        return number * number;
     }
 }

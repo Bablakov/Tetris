@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class FieldSpawner : MonoBehaviour, IService {
+public class FieldSpawner : MonoBehaviour, IService, IDisposable {
     private int _hieght => _fieldConfig.Hieght;
     private int _width => _fieldConfig.Width;
     private Cell _cell => _fieldConfig.Cell;
@@ -41,5 +42,8 @@ public class FieldSpawner : MonoBehaviour, IService {
 
     private void InitializeCell(int y, int x) {
         _field[y][x].Initialize();
+    }
+
+    public void Dispose() {
     }
 }

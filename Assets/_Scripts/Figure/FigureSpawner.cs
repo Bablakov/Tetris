@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class FigureSpawner : IService {
+public class FigureSpawner : IService, IDisposable {
     private const string WAY_CONFIG = "FigureConfigs";
     private const int COUNT_FIGURE = 5;
 
@@ -19,7 +20,7 @@ public class FigureSpawner : IService {
         GetComponents();
         Subscribe();
         CreateQueueFigures();
-        SendFigure();
+        SendStartFigure();
     }
 
     private void Subscribe() {
@@ -42,24 +43,35 @@ public class FigureSpawner : IService {
 
     private void CreateQueueFigures() {
         for (int i = 0; i < COUNT_FIGURE; i++) {
-            CreateFigure();
+            _createdQueueFigures.Enqueue(CreateFigure());
         }
     }
 
     private void SpawnNewFigure(PutFigureSignal putFigureSignal) {
-        CreateFigure();
+        _createdQueueFigures.Enqueue(CreateFigure());
         SendFigure();
     }
 
-    private void CreateFigure() {
-        var rnd = Random.Range(0, _configFigures.Count);
+    private Figure CreateFigure() {
+        var rnd = UnityEngine.Random.Range(0, _configFigures.Count);
         var figure = new Figure(_configFigures.Configs[rnd], _positionSpawn, _eventBus);
-        _createdQueueFigures.Enqueue(figure);
+        return figure;
+    }
+
+    private void SendStartFigure() {
+        var figures = _createdQueueFigures.Dequeue();
+        _eventBus.Invoke(new SpawnedFigureSignal(figures));
+        _eventBus.Invoke(new ChangedQueueFigureSignal(_createdQueueFigures));
+        _eventBus.Invoke(new CreatedFigureSwapSignal(CreateFigure()));
     }
 
     private void SendFigure() {
         var figures = _createdQueueFigures.Dequeue();
         _eventBus.Invoke(new SpawnedFigureSignal(figures));
-        _eventBus.Invoke(new ChangeQueueFigureSignal(_createdQueueFigures));
+        _eventBus.Invoke(new ChangedQueueFigureSignal(_createdQueueFigures));
+    }
+
+    public void Dispose() {
+        Unsubscribe();
     }
 }

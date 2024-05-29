@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public abstract class Field {
     protected Cell[][] Cells;
     protected EventBus _eventBus;
     protected int CountDeleteLine;
+    protected int Score;
 
     public Field(Cell[][] cells) {
         Cells = cells;
@@ -22,7 +21,8 @@ public abstract class Field {
 
     protected abstract void UpdateData();
 
-    protected void SendData() {
-        _eventBus.Invoke(new DeleteLineSignal(CountDeleteLine));
+    protected virtual void SendData() {
+        _eventBus.Invoke(new DeletedCountLineSignal(CountDeleteLine));
+        _eventBus.Invoke(new ChangedScoreSignal(Score));
     }
 }

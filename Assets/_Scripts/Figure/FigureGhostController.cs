@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class FigureGhostController: IService {
+public class FigureGhostController: IService, IDisposable {
     private readonly Vector3Int Down = new Vector3Int(0, -1, 0);
     
     private IEnumerable<Vector3Int> Cells => _figure.PositionCells.Cells;
@@ -28,15 +30,17 @@ public class FigureGhostController: IService {
     private void Subscribe() {
         _eventBus.Subscribe<SpawnedFigureSignal>(OnSpawnedFigure);
         _eventBus.Subscribe<ChangedPropertyFigureSignal>(OnChangedPropertyFigure);
+        _eventBus.Subscribe<SwapedFigureSignal>(OnSwapedFigure);
     }
 
     private void Unsubscribe() {
         _eventBus.Unsubscribe<SpawnedFigureSignal>(OnSpawnedFigure);
         _eventBus.Unsubscribe<ChangedPropertyFigureSignal>(OnChangedPropertyFigure);
+        _eventBus.Unsubscribe<SwapedFigureSignal>(OnSwapedFigure);
     }
 
-    private void OnSpawnedFigure(SpawnedFigureSignal spawnedFigureSignal) {
-        AssignValue(spawnedFigureSignal);
+    private void OnSpawnedFigure(SpawnedFigureSignal signal) {
+        AssignValue(signal.Figure);
         CalculateCurrentPositionCells();
         OnChangedPropertyFigure();
     }
@@ -49,6 +53,12 @@ public class FigureGhostController: IService {
         Move();
     }
 
+    private void OnSwapedFigure(SwapedFigureSignal signal) {
+        AssignValue(signal.FigureSwaped);
+        CalculateCurrentPositionCells();
+        OnChangedPropertyFigure();
+    }
+
     private void OnChangedPropertyFigure(ChangedPropertyFigureSignal changedPropertyFigureSignal) {
         position = Position;
         while (IsCanMove(Down)) {
@@ -57,8 +67,8 @@ public class FigureGhostController: IService {
         Move();
     }
 
-    private void AssignValue(SpawnedFigureSignal spawnedFigureSignal) {
-        _figure = spawnedFigureSignal.Figure;
+    private void AssignValue(Figure figure) {
+        _figure = figure;
         position = Position;
     }
 
@@ -84,5 +94,9 @@ public class FigureGhostController: IService {
 
     private IEnumerable<Vector3Int> CalculateCurrentPositionCells() {
         return Mathematics.CalculatePositionCells(Position, Cells);
+    }
+
+    public void Dispose() {
+        Unsubscribe();
     }
 }

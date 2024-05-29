@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class RectangularField : Field {
     private const int BEGIN_BOARDER_FIELD = -1;
+    private int countCurrentDeleteLine;
 
     private int _hieght;
     private int _width;
@@ -31,18 +33,23 @@ public class RectangularField : Field {
     }
 
     public override void CheckFillLines() {
+        countCurrentDeleteLine = 0;
         for (int i = 0; i < Cells.GetLength(0); i++) {
             if (Cells[i].All(cell => cell.IsVisible)) {
                 DeleteLine(i);
-                UpdateData();
+                countCurrentDeleteLine++;
                 i = -1; // нужно для того, чтобы заново проходили массив массивов и не оставили заполненых строк
             }
         }
-        SendData();
+        if (countCurrentDeleteLine > 0) {
+            UpdateData();
+            SendData();
+        }
     }
 
     protected override void UpdateData() {
-        CountDeleteLine++;
+        CountDeleteLine += countCurrentDeleteLine;
+        Score += Mathematics.Pow(countCurrentDeleteLine);
     }
 
     private void AssignValue(Cell[][] field) {

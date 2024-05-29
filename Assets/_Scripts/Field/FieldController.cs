@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;  
 
-public class FieldController : IService {
+public class FieldController : IService, IDisposable {
     private Field _field;
     private EventBus _eventBus;
 
@@ -42,5 +42,13 @@ public class FieldController : IService {
 
     private void Subscribe() {
         _eventBus.Subscribe<PutFigureSignal>(CheckFillLines);
+    }
+    
+    private void Unsubscribe() {
+        _eventBus.Subscribe<PutFigureSignal>(CheckFillLines);
+    }
+
+    public void Dispose() {
+        Unsubscribe();
     }
 }
