@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ButtonPauseGame : MonoBehaviour, IDisposable {
+public class ButtonPauseGame : MonoBehaviour {
     private Button _button;
     private UnityAction _buttonClickPause;
     private EventBus _eventBus;
@@ -25,9 +25,5 @@ public class ButtonPauseGame : MonoBehaviour, IDisposable {
 
     private void PauseGame() {
         _eventBus.Invoke(new PausedGameSignal());
-    }
-
-    public void Dispose() {
-        
     }
 }

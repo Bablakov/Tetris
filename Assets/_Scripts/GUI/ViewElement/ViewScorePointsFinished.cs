@@ -12,6 +12,15 @@ public class ViewScorePointsFinished : MonoBehaviour {
         GetComponents();
         Subscribe();
     }
+
+    public void Show() {
+        _textScore.enabled = true;
+    }
+
+    public void Hide() {
+        _textScore.enabled = false;
+    }
+
     private void GetComponents() {
         _textScore = GetComponent<TextMeshProUGUI>();
     }

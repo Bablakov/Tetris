@@ -14,6 +14,14 @@ public class ViewScoreLineFinished : MonoBehaviour {
         Subscribe();
     }
 
+    public void Show() {
+        _textScore.enabled = true;
+    }
+
+    public void Hide() {
+        _textScore.enabled = false;
+    }
+
     private void GetComponent() {
         _textScore = GetComponent<TextMeshProUGUI>();
     }

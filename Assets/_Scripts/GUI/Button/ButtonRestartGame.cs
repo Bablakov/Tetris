@@ -4,11 +4,11 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonGoMenu : MonoBehaviour{
+public class ButtonRestartGame : MonoBehaviour {
     private TextMeshProUGUI _text;
     private Button _button;
     private Image _image;
-    private UnityAction _buttonClickGoMenu;
+    private UnityAction _buttonClickRestartGame;
 
     public void Initialize() {
         GetComponents();
@@ -32,11 +32,11 @@ public class ButtonGoMenu : MonoBehaviour{
     }
 
     private void CreateButton() {
-        _buttonClickGoMenu += GoMenu;
-        _button.onClick.AddListener(_buttonClickGoMenu);
+        _buttonClickRestartGame += RestartGame;
+        _button.onClick.AddListener(_buttonClickRestartGame);
     }
 
-    private void GoMenu() {
-        SceneManager.LoadScene("Menu");
+    private void RestartGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
