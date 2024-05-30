@@ -1,14 +1,14 @@
-<mxfile host="Electron" modified="2024-05-29T11:06:42.250Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="4wAymu1sxhfOXLFOZZJO" version="24.4.0" type="device">
+<mxfile host="Electron" modified="2024-05-30T04:39:20.986Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="EaB8muTUj7QwnjS9EOZw" version="24.0.4" type="device">
   <diagram name="Page-1" id="9ERZN32lPl3h9mEKJxOg">
     <mxGraphModel dx="1434" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="PodBbFc40IM1UIUFSGZW-1" value="Что нужно реализовать" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-1100" width="240" height="50" as="geometry" />
+          <mxGeometry y="-1100" width="240" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="SwL0JmUD-nPdeFObm6SI-1" value="+ Отрефакторить код проекта" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="26" width="240" height="24" as="geometry" />
+        <mxCell id="SwL0JmUD-nPdeFObm6SI-1" value="+ Создать меню проигрыша:&lt;div&gt;-создать панель с двумя кнопками(рестарт и выход в меню)&lt;/div&gt;&lt;div&gt;- добавить 2 текстовых элемента для отображения кол-во уничтоженных линий и очков.&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="26" width="240" height="94" as="geometry" />
         </mxCell>
         <mxCell id="zjJiLorLlID6DXoC11au-1" value="Основные механики тетриса" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="640" y="-1100" width="210" height="310" as="geometry" />
@@ -32,16 +32,10 @@
           <mxGeometry y="260" width="210" height="50" as="geometry" />
         </mxCell>
         <mxCell id="zjJiLorLlID6DXoC11au-8" value="Основные проблемы" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="280" y="-1100" width="240" height="170" as="geometry" />
+          <mxGeometry x="280" y="-1100" width="240" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="zjJiLorLlID6DXoC11au-9" value="+ Пофиксить проблему с тем, что у меня фигура не двигается вниз, а просто стоит на месте, после того как заспавнилась" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
-          <mxGeometry y="26" width="240" height="64" as="geometry" />
-        </mxCell>
-        <mxCell id="zjJiLorLlID6DXoC11au-13" value="+ Пофиксить, то что у меня ячейки старой фигуры не все убираются&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
-          <mxGeometry y="90" width="240" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="CoE3__FQMbsw07bgxihD-1" value="+ Протестировать, чтобы всё работало как раньше" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
-          <mxGeometry y="130" width="240" height="40" as="geometry" />
+        <mxCell id="KYHv27J6igw3oV2Jnvwd-1" value="+ PanlePause дожна в начале пропадать, чего не просходит, по не понятным мне причинам" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zjJiLorLlID6DXoC11au-8">
+          <mxGeometry y="26" width="240" height="174" as="geometry" />
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-1" value="Какой класс за что отвечает" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry y="-670" width="240" height="480" as="geometry" />
@@ -63,27 +57,6 @@
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-7" value="+ PlayingField - отвечает за спавн поля, за контроль поля(удаление заполненых ячеек, покрас поля при смещении фигуры, проверки можел ли фигура смещаться в новое положение или нет), за спавн новой фигуры, при уничтожении старой" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="uNBo-7ra3uC1L5kDhG56-1" vertex="1">
           <mxGeometry y="360" width="240" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="uNBo-7ra3uC1L5kDhG56-8" value="Что нужно исправить и как должно быть" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="280" y="-880" width="260" height="480" as="geometry" />
-        </mxCell>
-        <mxCell id="uNBo-7ra3uC1L5kDhG56-9" value="+ FigureController - обработка данных ввода, должен быть один на всю игру, ему передают фигуры для их контроля, если фигура уничтожается, то ему просто дают новую" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="uNBo-7ra3uC1L5kDhG56-8" vertex="1">
-          <mxGeometry y="26" width="260" height="94" as="geometry" />
-        </mxCell>
-        <mxCell id="uNBo-7ra3uC1L5kDhG56-11" value="+ Figure - зранит своё местоположение, местоположение ячеек относительно её,&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="uNBo-7ra3uC1L5kDhG56-8" vertex="1">
-          <mxGeometry y="120" width="260" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="uNBo-7ra3uC1L5kDhG56-12" value="+ PlayingField - контролирует полу, то есть удаление заполненых строк, покрас ячеек и проверки может ли фигура встать на новое место" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="uNBo-7ra3uC1L5kDhG56-8" vertex="1">
-          <mxGeometry y="180" width="260" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="uNBo-7ra3uC1L5kDhG56-13" value="+ SpawnField - спавнит поле по определённым настройкам и это поле передаётся PlayingField" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="uNBo-7ra3uC1L5kDhG56-8" vertex="1">
-          <mxGeometry y="270" width="260" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="uNBo-7ra3uC1L5kDhG56-14" value="+ SpawnFigure - спавнит фигуру если её нет на игровом поле и передаёт Figure, для дальнейшего контроля" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="uNBo-7ra3uC1L5kDhG56-8" vertex="1">
-          <mxGeometry y="360" width="260" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="uNBo-7ra3uC1L5kDhG56-53" value="+ Field - Хранит данные в себе для дальнейшей инициализации и работы" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="uNBo-7ra3uC1L5kDhG56-8" vertex="1">
-          <mxGeometry y="420" width="260" height="60" as="geometry" />
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="uNBo-7ra3uC1L5kDhG56-16" target="uNBo-7ra3uC1L5kDhG56-23" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -253,14 +226,11 @@
         <mxCell id="5YNu1GTEXiOttsThYkZK-5" value="+ Патерн Observe" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YNu1GTEXiOttsThYkZK-1" vertex="1">
           <mxGeometry y="170" width="210" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="JhcEY_ElyQFAstPAuQOr-1" value="Свап фигуры" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="610" y="-510" width="240" height="150" as="geometry" />
+        <mxCell id="JhcEY_ElyQFAstPAuQOr-1" value="Меню проигрыша содержит" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry y="-870" width="240" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="JhcEY_ElyQFAstPAuQOr-2" value="+ В самом начале нам передают сразу две фигуры: 1-для свапа, 2-для обычной игры" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JhcEY_ElyQFAstPAuQOr-1" vertex="1">
-          <mxGeometry y="26" width="240" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="JhcEY_ElyQFAstPAuQOr-3" value="+ Когда нажимаем кнопку свапа, мы сначала проверяем то, что можем мы или нет поместить фигуру для свапа на поле, а потом только свапать" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JhcEY_ElyQFAstPAuQOr-1" vertex="1">
-          <mxGeometry y="80" width="240" height="70" as="geometry" />
+        <mxCell id="JhcEY_ElyQFAstPAuQOr-2" value="+ Кнопку рестарта&lt;div&gt;+ Кнопку продолжения/выхода в меню&lt;/div&gt;&lt;div&gt;+ Результаты игровой сессии(кол-во набранных очков, кол-во уничтоженных линий)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JhcEY_ElyQFAstPAuQOr-1" vertex="1">
+          <mxGeometry y="26" width="240" height="84" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
