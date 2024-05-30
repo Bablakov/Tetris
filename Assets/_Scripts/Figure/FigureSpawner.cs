@@ -59,13 +59,15 @@ public class FigureSpawner : IService, IDisposable {
     }
 
     private void SendStartFigure() {
-        var figures = _createdQueueFigures.Dequeue();
-        _eventBus.Invoke(new SpawnedFigureSignal(figures));
-        _eventBus.Invoke(new ChangedQueueFigureSignal(_createdQueueFigures));
+        SendDefaultFigure();
         _eventBus.Invoke(new CreatedFigureSwapSignal(CreateFigure()));
     }
 
     private void SendFigure() {
+        SendDefaultFigure();
+    }
+
+    private void SendDefaultFigure() {
         var figures = _createdQueueFigures.Dequeue();
         _eventBus.Invoke(new SpawnedFigureSignal(figures));
         _eventBus.Invoke(new ChangedQueueFigureSignal(_createdQueueFigures));

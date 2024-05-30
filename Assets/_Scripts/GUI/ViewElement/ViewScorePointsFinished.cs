@@ -1,10 +1,8 @@
 ﻿using TMPro;
-using System;
 using UnityEngine;
 
-public class ViewScorePoints : MonoBehaviour, IDisposable {
+public class ViewScorePointsFinished : MonoBehaviour {
     private const string DEFAULT_STRING = "Score: ";
-    private const int BEGINNING_VALUE = 0;
 
     private TextMeshProUGUI _textScore;
     private EventBus _eventBus;
@@ -12,7 +10,6 @@ public class ViewScorePoints : MonoBehaviour, IDisposable {
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
         GetComponents();
-        SetValue(BEGINNING_VALUE);
         Subscribe();
     }
     private void GetComponents() {
@@ -20,15 +17,15 @@ public class ViewScorePoints : MonoBehaviour, IDisposable {
     }
 
     private void Subscribe() {
-        _eventBus.Subscribe<ChangedScoreSignal>(OnChangegScore);
+        _eventBus.Subscribe<FinishedScoreSignal>(OnChangegScore);
     }
 
     private void Unsubscribe() {
-        _eventBus.Unsubscribe<ChangedScoreSignal>(OnChangegScore);
+        _eventBus.Unsubscribe<FinishedScoreSignal> (OnChangegScore);
     }
 
-    private void OnChangegScore(ChangedScoreSignal signal) {
-        SetValue(signal.Score);
+    private void OnChangegScore(FinishedScoreSignal signal) {
+        SetValue(signal.ScoreFinished);
     }
 
     private void SetValue(int value) {

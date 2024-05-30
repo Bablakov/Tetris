@@ -120,7 +120,6 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
 
     private void OnDeletedCountLine(DeletedCountLineSignal signal) {
         _speed = _initialSpeed + signal.Score / 100f;
-        Debug.Log(_speed);
     }
 
     private bool TryAppear() {

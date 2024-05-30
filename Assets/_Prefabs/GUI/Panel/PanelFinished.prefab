@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &354266395976257836
+--- !u!1001 &673532624322214356
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,22 @@ PrefabInstance:
     - target: {fileID: 640945829503732120, guid: 202e31c6d1ff04f4b9d60a3e414445af,
         type: 3}
       propertyPath: m_Name
-      value: PanelPause
+      value: PanelFinished
+      objectReference: {fileID: 0}
+    - target: {fileID: 640945829503732120, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408768980310242873, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2780038295704260401, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3208141510397844794, guid: 202e31c6d1ff04f4b9d60a3e414445af,
         type: 3}

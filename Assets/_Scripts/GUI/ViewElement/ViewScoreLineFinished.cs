@@ -1,10 +1,9 @@
-using System;
+﻿using System;
 using TMPro;
 using UnityEngine;
 
-public class ViewScoreLine : MonoBehaviour, IDisposable {
+public class ViewScoreLineFinished : MonoBehaviour {
     private const string DEFAULT_STRING = "Lines: ";
-    private const int BEGINNING_VALUE = 0;
 
     private TextMeshProUGUI _textScore;
     private EventBus _eventBus;
@@ -12,7 +11,6 @@ public class ViewScoreLine : MonoBehaviour, IDisposable {
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
         GetComponent();
-        SetValue(BEGINNING_VALUE);
         Subscribe();
     }
 
@@ -21,15 +19,15 @@ public class ViewScoreLine : MonoBehaviour, IDisposable {
     }
 
     private void Subscribe() {
-        _eventBus.Subscribe<DeletedCountLineSignal>(OnDeletedCountLine);
+        _eventBus.Subscribe<FinishedScoreLineSignal>(OnFinishedScoreLine);
     }
 
     private void Unsubscribe() {
-        _eventBus.Unsubscribe<DeletedCountLineSignal>(OnDeletedCountLine);
+        _eventBus.Unsubscribe<FinishedScoreLineSignal>(OnFinishedScoreLine);
     }
 
-    private void OnDeletedCountLine(DeletedCountLineSignal signal) {
-        SetValue(signal.Score);
+    private void OnFinishedScoreLine(FinishedScoreLineSignal signal) {
+        SetValue(signal.ScoreLineFinished);
     }
 
     private void SetValue(int value) {

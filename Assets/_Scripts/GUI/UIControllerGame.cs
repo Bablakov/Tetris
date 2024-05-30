@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class UIController : MonoBehaviour, IDisposable {    
+public class UIControllerGame : MonoBehaviour, IDisposable {    
     private ViewQueueFigure _viewQueueFigure;
     private ViewSwapFigure _viewSwapFigure;
     private ViewScoreLine _viewScoreLine;

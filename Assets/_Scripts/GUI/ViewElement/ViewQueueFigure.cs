@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class ViewQueueFigure : MonoBehaviour, IDisposable {
     [SerializeField] private Image imageFigureSprite;
-    
+
+    private bool IsExistCollectionImagesFigure => _imagesFigure != null;
+
     private EventBus _eventBus;
-    private List<Image> _queueFigure;
+    private List<Image> _imagesFigure;
 
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
@@ -24,15 +26,24 @@ public class ViewQueueFigure : MonoBehaviour, IDisposable {
     }
 
     private void OnChangedQueueFigure(ChangedQueueFigureSignal signal) {
-        if (_queueFigure == null) {
-            _queueFigure = new List<Image>();
-            for (int i = 0; i < signal.Figures.Count(); i++) {
-                var image = Instantiate(imageFigureSprite, transform);
-                _queueFigure.Add(image);
-            }
+        if (!IsExistCollectionImagesFigure) {
+            CreateCollectionImagesFigure(signal.Figures.Count());
         }
-        for (int i = 0; i < signal.Figures.Count(); i++) {
-            _queueFigure[i].sprite = signal.Figures.ElementAt(i).SpriteFigure;
+        RenderImagesFigure(signal.Figures);
+    }
+
+    private void CreateCollectionImagesFigure(int countImage) {
+        _imagesFigure = new List<Image>();
+
+        for (int i = 0; i < countImage; i++) {
+            var image = Instantiate(imageFigureSprite, transform);
+            _imagesFigure.Add(image);
+        }
+    }
+
+    private void RenderImagesFigure(IEnumerable<Figure> figures) {
+        for (int i = 0; i < figures.Count(); i++) {
+            _imagesFigure[i].sprite = figures.ElementAt(i).SpriteFigure;
         }
     }
 

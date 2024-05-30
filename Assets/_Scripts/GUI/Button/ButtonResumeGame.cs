@@ -1,43 +1,51 @@
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
+﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class PanelPause : MonoBehaviour {
+public class ButtonResumeGame : MonoBehaviour, IDisposable {
+    private UnityAction _buttonClickResume;
     private EventBus _eventBus;
     private Image _image;
-    private ButtonResumeGame _buttonResumeGame;
+    private Button _button;
 
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
         GetComponents();
+        CreateButton();
         Subscribe();
         Disable();
-        _buttonResumeGame.Initialize(eventBus);
-    }
-
-    private void GetComponents() {
-        _buttonResumeGame = GetComponentInChildren<ButtonResumeGame>();
-        _image = GetComponent<Image>();
     }
 
     private void Subscribe() {
         _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
     }
 
     private void Unsubscribe() {
         _eventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
+    }
+
+    private void CreateButton() {
+        _buttonClickResume += ResumeGame;
+        _buttonClickResume += OnResumedGame;
+        _button.onClick.AddListener(_buttonClickResume);
+    }
+
+    private void OnResumedGame() {
+        Disable();
     }
 
     private void OnPausedGame(PausedGameSignal signal) {
         Enable();
     }
 
-    private void OnStartedGame(ResumedGameSignal signal) {
-        Disable();
+    private void GetComponents() {
+        _image = GetComponent<Image>();
+        _button = GetComponent<Button>();
+    }
+
+    private void ResumeGame() {
+        _eventBus.Invoke(new ResumedGameSignal());
     }
 
     private void Enable() {
@@ -49,7 +57,6 @@ public class PanelPause : MonoBehaviour {
     }
 
     public void Dispose() {
-        _buttonResumeGame.Dispose();
         Unsubscribe();
     }
 }

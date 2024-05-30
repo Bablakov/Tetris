@@ -4,6 +4,10 @@ public class FilledCell : MonoBehaviour {
     private MeshRenderer _meshRenderer;
 
     public void Initialize() {
+        GetComponent();
+    }
+
+    private void GetComponent() {
         _meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
 

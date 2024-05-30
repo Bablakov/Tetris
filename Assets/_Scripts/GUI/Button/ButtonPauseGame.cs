@@ -11,12 +11,16 @@ public class ButtonPauseGame : MonoBehaviour, IDisposable {
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
         GetComponents();
-        _buttonClickPause += PauseGame;
-        _button.onClick.AddListener(_buttonClickPause);
+        CreateButton();
     }
 
     private void GetComponents() {
         _button = GetComponent<Button>();
+    }
+
+    private void CreateButton() {
+        _buttonClickPause += PauseGame;
+        _button.onClick.AddListener(_buttonClickPause);
     }
 
     private void PauseGame() {

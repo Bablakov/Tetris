@@ -4,15 +4,16 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Bootstrap : MonoBehaviour {
+public class BootstrapGame : MonoBehaviour {
     [SerializeField] private FieldSpawner spawnerField;
-    [SerializeField] private UIController UIController;
+    [SerializeField] private UIControllerGame UIControllerGame;
     [SerializeField] private InputGame inputGame;
 
     private const string WAY_FIELD_CONFIG = "FieldConfig";
     private const string WAY_GAME_CONFIG = "GameConfig";
 
     private FigureGhostController _figureGhostController;
+    private GameTimeController _gameTimeController;
     private FigureController _figureController;
     private FieldController _fieldController;
     private FigureSpawner _figureSpawner;
@@ -26,12 +27,9 @@ public class Bootstrap : MonoBehaviour {
     private void Awake() {
         CreateComponent();
         GetComponents();
-        AddAllIDisposableElementInCollection();
         RegisterServices();
-        _eventBus.Subscribe<FinishedGameSignal>(OnFinishedGame);
-        _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Subscribe<StartedGameSignal>(OnStartedGame);
         Initialize();
+        AddAllIDisposableElementInCollection();
     }
 
     private void CreateComponent() {
@@ -40,6 +38,7 @@ public class Bootstrap : MonoBehaviour {
         _fieldController = new FieldController();
         _figureSpawner = new FigureSpawner();
         _eventBus = new EventBus();
+        _gameTimeController = new GameTimeController(_eventBus);
 
         ServiceLocator.Initialize();
     }
@@ -60,35 +59,26 @@ public class Bootstrap : MonoBehaviour {
 
     private void AddAllIDisposableElementInCollection() {
         _disposables = new() {
+            inputGame,
             spawnerField,
-            UIController,
+            UIControllerGame,
             _figureGhostController,
+            _gameTimeController,
             _figureController,
             _fieldController,
-            _figureSpawner
+            _figureSpawner,
+            _field,
         };
     }
 
     private void Initialize() {
-        UIController.Initialize();
+        UIControllerGame.Initialize();
         inputGame.Initialize();
         _field = spawnerField.Spawn(_fieldConfig);
         _figureController.Initialize(_gameConfig.SpeedFigure);
         _fieldController.Initialize(_field);
         _figureGhostController.Initialize();
         _figureSpawner.Initialize(_fieldConfig.PositionSpawn);
-    }
-
-    private void OnFinishedGame(FinishedGameSignal siganl) {
-        Time.timeScale = 0;
-    }
-
-    private void OnPausedGame(PausedGameSignal siganl) {
-        Time.timeScale = 0;
-    }
-
-    private void OnStartedGame(StartedGameSignal siganl) {
-        Time.timeScale = 1;
     }
 
     private void OnDestroy() {
