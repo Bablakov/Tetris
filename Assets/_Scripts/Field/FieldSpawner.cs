@@ -4,7 +4,8 @@ using UnityEngine;
 public class FieldSpawner : MonoBehaviour, IService, IDisposable {
     private int _hieght => _fieldConfig.Hieght;
     private int _width => _fieldConfig.Width;
-    private Cell _cell => _fieldConfig.Cell;
+    private Cell _cellArea => _fieldConfig.CellArea;
+    private Transform _cellBoarder => _fieldConfig.CellBoarder;
     
     private FieldConfig _fieldConfig;
     private Cell[][] _field;
@@ -28,16 +29,20 @@ public class FieldSpawner : MonoBehaviour, IService, IDisposable {
     }
 
     private void CreateCells() {
-        for (int y = 0; y < _hieght; y++) {
-            for (int x = 0; x < _width; x++) {
-                SpawnAndSaveCell(y, x);
-                InitializeCell(y, x);
+        for (int y = 0; y <= _hieght + 1; y++) {
+            for (int x = 0; x <= _width + 1; x++) {
+                if (x == 0 || y ==0 || x == _width + 1 || y == _hieght + 1) {
+                    Instantiate(_cellBoarder, new Vector3Int(x, y, 0), Quaternion.identity, transform);
+                } else {
+                    SpawnAndSaveCell(y, x);
+                    InitializeCell(y, x);
+                }
             }
         }
     }
 
     private void SpawnAndSaveCell(int y, int x) {
-        _field[y][x] = Instantiate(_cell, new Vector3Int(x, y, 0), Quaternion.identity, transform);
+        _field[y][x] = Instantiate(_cellArea, new Vector3Int(x, y, 0), Quaternion.identity, transform);
     }
 
     private void InitializeCell(int y, int x) {

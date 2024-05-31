@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hieght: 20
   width: 10
-  cell: {fileID: 1816408370631526072, guid: 545cdc6b68d96c44bbedb812322b2308, type: 3}
+  cellBoarder: {fileID: 5118884877827757639, guid: c8fd4591b832ed84c8c46caab4584754,
+    type: 3}
+  cellArea: {fileID: 1816408370631526072, guid: 545cdc6b68d96c44bbedb812322b2308,
+    type: 3}
