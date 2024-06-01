@@ -1,14 +1,15 @@
 ﻿using System;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public abstract class InputGame : MonoBehaviour, IService, IDisposable {
     public abstract event Action InputedSwapFigure;
     public abstract event Action InputedHardDrope;
     public abstract event Action InputedRotate;
-    public abstract event Action InputedRight;
-    public abstract event Action InputedDown;
-    public abstract event Action InputedLeft;
+    public abstract event Action<Vector2> InputedMove;
+
+    protected InputPlayerSystem InputPlayerSystem;
     protected EventBus _eventBus;
 
     public virtual void Initialize() {
@@ -29,6 +30,10 @@ public abstract class InputGame : MonoBehaviour, IService, IDisposable {
     }
 
     private void GetComponent() {
+        if (InputPlayerSystem == null) {
+            InputPlayerSystem = new InputPlayerSystem();
+        }
+        InputPlayerSystem.Player.Enable();
         _eventBus = ServiceLocator.Current.Get<EventBus>();
     }
 

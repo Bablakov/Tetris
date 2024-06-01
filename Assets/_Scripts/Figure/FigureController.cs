@@ -45,10 +45,8 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
     }
 
     private void Subscribe() {
-        _inputGame.InputedLeft += OnInputedLeft;
-        _inputGame.InputedRight += OnInputedRight;
+        _inputGame.InputedMove += OnInputedMove;
         _inputGame.InputedRotate += OnInputedRotate;
-        _inputGame.InputedDown += OnInputedDown;
         _inputGame.InputedHardDrope += OnInputedHardDrope;
         _inputGame.InputedSwapFigure += OnInputedSwapFigure;
         _eventBus.Subscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
@@ -57,10 +55,8 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
     }
 
     private void Unsubscibe() {
-        _inputGame.InputedLeft -= OnInputedLeft;
-        _inputGame.InputedRight -= OnInputedRight;
+        _inputGame.InputedMove -= OnInputedMove;
         _inputGame.InputedRotate -= OnInputedRotate;
-        _inputGame.InputedDown -= OnInputedDown;
         _inputGame.InputedHardDrope -= OnInputedHardDrope;
         _inputGame.InputedSwapFigure -= OnInputedSwapFigure;
         _eventBus.Unsubscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
@@ -83,16 +79,8 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
         }
     }
 
-    private void OnInputedRight() {
-        TryAttemptMove(Right);
-    }
-
-    private void OnInputedLeft() {
-        TryAttemptMove(Left);
-    }
-
-    private void OnInputedDown() {
-        TryAttemptMove(Down);
+    private void OnInputedMove(Vector2 vectorMove) {
+        TryAttemptMove(new Vector3Int((int)vectorMove.x, (int)vectorMove.y));
     }
 
     private void OnInputedHardDrope() {

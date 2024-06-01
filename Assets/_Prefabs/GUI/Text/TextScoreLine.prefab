@@ -116,12 +116,12 @@ PrefabInstance:
     - target: {fileID: 7259665823193553844, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: m_HorizontalAlignment
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7386055715973148101, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: m_Name
-      value: TextScore
+      value: TextScoreLine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

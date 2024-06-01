@@ -42,11 +42,11 @@ public class FieldSpawner : MonoBehaviour, IService, IDisposable {
     }
 
     private void SpawnAndSaveCell(int y, int x) {
-        _field[y][x] = Instantiate(_cellArea, new Vector3Int(x, y, 0), Quaternion.identity, transform);
+        _field[y-1][x-1] = Instantiate(_cellArea, new Vector3Int(x, y, 0), Quaternion.identity, transform);
     }
 
     private void InitializeCell(int y, int x) {
-        _field[y][x].Initialize();
+        _field[y-1][x-1].Initialize();
     }
 
     public void Dispose() {

@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BootstrapGame : MonoBehaviour {
     [SerializeField] private FieldSpawner spawnerField;
     [SerializeField] private UIControllerGame UIControllerGame;
     [SerializeField] private InputGame inputGame;
-    [SerializeField] private CameraController _cameraController;
 
     private const string WAY_FIELD_CONFIG = "FieldConfig";
     private const string WAY_GAME_CONFIG = "GameConfig";
@@ -80,7 +77,6 @@ public class BootstrapGame : MonoBehaviour {
         _fieldController.Initialize(_field);
         _figureGhostController.Initialize();
         _figureSpawner.Initialize(_fieldConfig.PositionSpawn);
-        _cameraController.Initialize(_fieldConfig.Hieght, _fieldConfig.Width);
     }
 
     private void OnDestroy() {

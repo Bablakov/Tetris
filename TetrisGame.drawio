@@ -1,29 +1,32 @@
-<mxfile host="Electron" modified="2024-05-31T05:29:57.071Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="flPMHf7fKMO4GLgdo0PV" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-06-01T05:44:31.399Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="fiq-ufEHiaO3u65SgLxD" version="24.0.4" type="device">
   <diagram name="Page-1" id="9ERZN32lPl3h9mEKJxOg">
     <mxGraphModel dx="1418" dy="1928" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="PodBbFc40IM1UIUFSGZW-1" value="Что нужно реализовать" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-1100" width="240" height="278" as="geometry" />
+          <mxGeometry y="-1100" width="240" height="342" as="geometry" />
         </mxCell>
-        <mxCell id="SwL0JmUD-nPdeFObm6SI-1" value="+ Сделать адаптивный UI под смартфоны и ПК, в зависимости от того, какое у нас устройство будут немного отличаться UI" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+        <mxCell id="WhaFznrVhl9WeimCIsLW-1" value="+ Переписать скрипты у UI элементов, разбив элементы по группам в каких панелях они находятся" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
           <mxGeometry y="26" width="240" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-1" value="+ Сделать управления под ПК и телефоны" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PodBbFc40IM1UIUFSGZW-1">
-          <mxGeometry y="90" width="240" height="44" as="geometry" />
+        <mxCell id="SwL0JmUD-nPdeFObm6SI-1" value="+ Сделать адаптивный UI под смартфоны и ПК, в зависимости от того, какое у нас устройство будут немного отличаться UI" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="90" width="240" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-2" value="+ Сделать анимации уничтожения ячеек" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PodBbFc40IM1UIUFSGZW-1">
-          <mxGeometry y="134" width="240" height="44" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-1" value="+ Сделать управления под ПК и телефоны" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="154" width="240" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-3" value="+ Добавить сохранения и лидерборды для YG" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PodBbFc40IM1UIUFSGZW-1">
-          <mxGeometry y="178" width="240" height="44" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-2" value="+ Сделать анимации уничтожения ячеек" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="198" width="240" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-4" value="+ Добавить рекламу для YG" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PodBbFc40IM1UIUFSGZW-1">
-          <mxGeometry y="222" width="240" height="28" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-3" value="+ Добавить сохранения и лидерборды для YG" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="242" width="240" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-5" value="+ Добавить рекламу" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PodBbFc40IM1UIUFSGZW-1">
-          <mxGeometry y="250" width="240" height="28" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-4" value="+ Добавить рекламу для YG" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="286" width="240" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-5" value="+ Добавить рекламу" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="314" width="240" height="28" as="geometry" />
         </mxCell>
         <mxCell id="zjJiLorLlID6DXoC11au-1" value="Основные механики тетриса" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="560" y="-1100" width="210" height="310" as="geometry" />
@@ -48,6 +51,9 @@
         </mxCell>
         <mxCell id="zjJiLorLlID6DXoC11au-8" value="Основные проблемы" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="-1100" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-10" value="+ Для правильного и корректного отображения фигур в UI их спрайты должны быть не только прозрачными, но и иметь квадратную форму&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
+          <mxGeometry y="26" width="240" height="74" as="geometry" />
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-1" value="Какой класс за что отвечает" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="-800" width="240" height="480" as="geometry" />
@@ -239,19 +245,16 @@
           <mxGeometry y="170" width="210" height="40" as="geometry" />
         </mxCell>
         <mxCell id="JhcEY_ElyQFAstPAuQOr-1" value="Сделать адаптивный UI под разные устройства" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-760" width="240" height="234" as="geometry" />
+          <mxGeometry y="-728" width="240" height="194" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-7" value="+ Сделать обводку поля, то есть заспавнить кубики показывающие границу поля" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="JhcEY_ElyQFAstPAuQOr-1">
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-7" value="+ Сделать обводку поля, то есть заспавнить кубики показывающие границу поля" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JhcEY_ElyQFAstPAuQOr-1" vertex="1">
           <mxGeometry y="26" width="240" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-9" value="+ Поэкспириментрировать, с расположением UI и поля, как будет лучше выглядеть" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="JhcEY_ElyQFAstPAuQOr-1">
-          <mxGeometry y="90" width="240" height="64" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-8" value="+ Переделать математику расчёта местоположения камеры" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JhcEY_ElyQFAstPAuQOr-1" vertex="1">
+          <mxGeometry y="90" width="240" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-8" value="+ Переделать математику расчёта местоположения камеры" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="JhcEY_ElyQFAstPAuQOr-1">
-          <mxGeometry y="154" width="240" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-10" value="+&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="JhcEY_ElyQFAstPAuQOr-1">
-          <mxGeometry y="194" width="240" height="40" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-9" value="+ Поэкспириментрировать, с расположением UI и поля, как будет лучше выглядеть" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JhcEY_ElyQFAstPAuQOr-1" vertex="1">
+          <mxGeometry y="130" width="240" height="64" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

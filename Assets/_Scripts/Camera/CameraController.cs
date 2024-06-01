@@ -10,7 +10,12 @@ public class CameraController : MonoBehaviour {
 
 
     private void SetUpCamera(float hieght, float width) {
-        _camera.transform.position = new Vector3(width / 2f - 0.5f, hieght / 2f - 0.5f, -10);
-        _camera.orthographicSize = hieght / 2f + 3;
+        var size = hieght / 2f + 5;
+        var y = hieght / 2f - 3.5f;
+        var xWidth = (width / 2f) + 0.5f;
+        var x = xWidth;
+        Debug.Log(x);
+        _camera.transform.position = new Vector3(x, y, -10);
+        _camera.orthographicSize = hieght / 2f + 5;
     }
 }

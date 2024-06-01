@@ -1,16 +1,13 @@
 using System;
-using TMPro;
 using UnityEngine;
 
-public class UIControllerGame : MonoBehaviour, IDisposable {    
-    private ViewQueueFigure _viewQueueFigure;
-    private ViewSwapFigure _viewSwapFigure;
-    private ViewScoreLine _viewScoreLine;
-    private ViewScorePoints _viewScore;
-    private ButtonPauseGame _buttonPauseGame;
-    private PanelPause _panelPause;
-    private PanelFinished _panelFinished;
+public class UIControllerGame : MonoBehaviour, IDisposable {
     private EventBus _eventBus;
+    private PanelPause _panelPause;
+    private PanelControl _panelControl;
+    private PanelFinished _panelFinished;
+    private PanelWithNextFigure _panelWithNextFigure;
+    private PanelWithScoreAndButton _panelWithScoreAndButton;
 
     public void Initialize() {
         GetComponents();
@@ -19,31 +16,24 @@ public class UIControllerGame : MonoBehaviour, IDisposable {
 
     private void GetComponents() {
         _eventBus = ServiceLocator.Current.Get<EventBus>();
-        _viewScore = GetComponentInChildren<ViewScorePoints>();
-        _viewScoreLine = GetComponentInChildren<ViewScoreLine>();
-        _viewSwapFigure = GetComponentInChildren<ViewSwapFigure>();
-        _viewQueueFigure = GetComponentInChildren<ViewQueueFigure>();
-        _buttonPauseGame = GetComponentInChildren<ButtonPauseGame>();
         _panelPause = GetComponentInChildren<PanelPause>();
+        _panelControl = GetComponentInChildren<PanelControl>();
         _panelFinished = GetComponentInChildren<PanelFinished>();
+        _panelWithNextFigure = GetComponentInChildren<PanelWithNextFigure>();
+        _panelWithScoreAndButton = GetComponentInChildren<PanelWithScoreAndButton>();
     }
 
     private void InitializeComponents() {
-        _viewScore.Initialize(_eventBus);
-        _viewScoreLine.Initialize(_eventBus);
-        _viewSwapFigure.Initialize(_eventBus);
-        _viewQueueFigure.Initialize(_eventBus);
-        _buttonPauseGame.Initialize(_eventBus);
         _panelPause.Initialize(_eventBus);
         _panelFinished.Initialize(_eventBus);
+        _panelWithNextFigure.Initialize(_eventBus);
+        _panelWithScoreAndButton.Initialize(_eventBus);
     }
 
     public void Dispose() {
-        _viewQueueFigure.Dispose();
-        _viewSwapFigure.Dispose();
-        _viewScoreLine.Dispose();
-        _viewScore.Dispose();
         _panelPause.Dispose();
         _panelFinished.Dispose();
+        _panelWithNextFigure.Dispose();
+        _panelWithScoreAndButton.Dispose();
     }
 }
