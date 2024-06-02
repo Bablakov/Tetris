@@ -381,6 +381,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filledCell: {fileID: 1545738336339183527}
   ghostCell: {fileID: 408036138641585580}
+  explosionObject: {fileID: 5001375877503501396, guid: fe1eee690e5842149846fdf07f597c80,
+    type: 3}
 --- !u!1 &8586198882038318708
 GameObject:
   m_ObjectHideFlags: 0

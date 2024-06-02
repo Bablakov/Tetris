@@ -3,14 +3,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ButtonResumeGame : MonoBehaviour, IDisposable {
-    private UnityAction _buttonClickResume;
-    private EventBus _eventBus;
+public class ButtonResumeGame : BaseButton, IDisposable {
     private Image _image;
-    private Button _button;
 
-    public void Initialize(EventBus eventBus) {
-        _eventBus = eventBus;
+    public override void Initialize(EventBus eventBus) {
+        base.Initialize(eventBus);
         GetComponents();
         CreateButton();
         Subscribe();
@@ -18,17 +15,17 @@ public class ButtonResumeGame : MonoBehaviour, IDisposable {
     }
 
     private void Subscribe() {
-        _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
+        EventBusMe.Subscribe<PausedGameSignal>(OnPausedGame);
     }
 
     private void Unsubscribe() {
-        _eventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
+        EventBusMe.Unsubscribe<PausedGameSignal>(OnPausedGame);
     }
 
     private void CreateButton() {
-        _buttonClickResume += ResumeGame;
-        _buttonClickResume += OnResumedGame;
-        _button.onClick.AddListener(_buttonClickResume);
+        AddMethodInEventClick(ResumeGame);
+        AddMethodInEventClick(OnResumedGame);
+        AddEventOnButton();
     }
 
     private void OnResumedGame() {
@@ -41,11 +38,10 @@ public class ButtonResumeGame : MonoBehaviour, IDisposable {
 
     private void GetComponents() {
         _image = GetComponent<Image>();
-        _button = GetComponent<Button>();
     }
 
     private void ResumeGame() {
-        _eventBus.Invoke(new ResumedGameSignal());
+        EventBusMe.Invoke(new ResumedGameSignal());
     }
 
     private void Enable() {

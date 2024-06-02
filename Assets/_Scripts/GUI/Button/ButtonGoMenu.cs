@@ -4,13 +4,12 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonGoMenu : MonoBehaviour{
+public class ButtonGoMenu : BaseButton {
     private TextMeshProUGUI _text;
-    private Button _button;
     private Image _image;
-    private UnityAction _buttonClickGoMenu;
 
-    public void Initialize() {
+    public override void Initialize(EventBus eventBus) {
+        base.Initialize(eventBus);        
         GetComponents();
         CreateButton();
     }
@@ -27,13 +26,12 @@ public class ButtonGoMenu : MonoBehaviour{
 
     private void GetComponents() {
         _text = GetComponentInChildren<TextMeshProUGUI>();
-        _button = GetComponent<Button>();
         _image = GetComponent<Image>();
     }
 
     private void CreateButton() {
-        _buttonClickGoMenu += GoMenu;
-        _button.onClick.AddListener(_buttonClickGoMenu);
+        AddMethodInEventClick(GoMenu);
+        AddEventOnButton();
     }
 
     private void GoMenu() {

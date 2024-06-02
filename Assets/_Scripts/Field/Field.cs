@@ -32,7 +32,7 @@ public abstract class Field : IDisposable{
     }
 
     protected virtual void SendData() {
-        _eventBus.Invoke(new DeletedCountLineSignal(CountDeleteLine));
+        _eventBus.Invoke(new ChangedCountDeleteLineSignal(CountDeleteLine));
         _eventBus.Invoke(new ChangedScoreSignal(Score));
     }
 

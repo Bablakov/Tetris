@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379223b1c98dffe44a9825ff65f29d9a, type: 3}
+  m_Name: SoundConfig
+  m_EditorClassIdentifier: 
+  clickButton: {fileID: 8300000, guid: 33aeaa74fb3c20d4489b33b477b5f261, type: 3}
+  deleteLine: {fileID: 8300000, guid: d83615f6bb61874459e6b34d426be38a, type: 3}
+  moveFigure: {fileID: 8300000, guid: 7fad556540c15c045ab8d5718792c3f4, type: 3}
+  rotateFigure: {fileID: 8300000, guid: f59a80b232b2eb048826849c5e5f5e93, type: 3}
+  softDropFigure: {fileID: 8300000, guid: 6ffc2e27abe95cc4785dd580bf9411f7, type: 3}
+  hardDropFigure: {fileID: 8300000, guid: 51fb61f75dd0c724a9e158662347a844, type: 3}
+  swapFigure: {fileID: 8300000, guid: f210486847b3a0349b4c08031746772e, type: 3}
+  background: {fileID: 8300000, guid: d726901a17725984eae36ceb617e724d, type: 3}

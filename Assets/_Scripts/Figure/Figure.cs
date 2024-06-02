@@ -37,12 +37,14 @@ public class Figure {
     }
 
     public void SetPosition(Vector3Int position) {
+        var oldPosition = Position;
         Position = position;
-        _eventBus.Invoke(new ChangedPropertyFigureSignal());
+        if (oldPosition.x != Position.x)
+            _eventBus.Invoke(new ChangedPropertyFigureSignal());
     }
 
     public void SetNextPositionRotate() {
         CurrentRotateFigure += 1;
-        _eventBus.Invoke(new ChangedPropertyFigureSignal());
+        _eventBus.Invoke(new ChangedPropertyFigureSignal(true));
     }
 }

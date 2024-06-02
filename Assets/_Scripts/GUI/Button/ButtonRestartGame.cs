@@ -4,13 +4,12 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonRestartGame : MonoBehaviour {
+public class ButtonRestartGame : BaseButton {
     private TextMeshProUGUI _text;
-    private Button _button;
     private Image _image;
-    private UnityAction _buttonClickRestartGame;
 
-    public void Initialize() {
+    public override void Initialize(EventBus eventBus) {
+        base.Initialize(eventBus);
         GetComponents();
         CreateButton();
     }
@@ -27,13 +26,12 @@ public class ButtonRestartGame : MonoBehaviour {
 
     private void GetComponents() {
         _text = GetComponentInChildren<TextMeshProUGUI>();
-        _button = GetComponent<Button>();
         _image = GetComponent<Image>();
     }
 
     private void CreateButton() {
-        _buttonClickRestartGame += RestartGame;
-        _button.onClick.AddListener(_buttonClickRestartGame);
+        AddMethodInEventClick(RestartGame);
+        AddEventOnButton();;
     }
 
     private void RestartGame() {

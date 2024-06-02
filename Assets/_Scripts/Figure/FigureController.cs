@@ -51,7 +51,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
         _inputGame.InputedSwapFigure += OnInputedSwapFigure;
         _eventBus.Subscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
         _eventBus.Subscribe<CreatedFigureSwapSignal>(OnCreatedFigureSwap);
-        _eventBus.Subscribe<DeletedCountLineSignal>(OnDeletedCountLine);
+        _eventBus.Subscribe<ChangedCountDeleteLineSignal>(OnDeletedCountLine);
     }
 
     private void Unsubscibe() {
@@ -61,7 +61,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
         _inputGame.InputedSwapFigure -= OnInputedSwapFigure;
         _eventBus.Unsubscribe<SpawnedFigureSignal>(OnSpawnedFigureSignal);
         _eventBus.Unsubscribe<CreatedFigureSwapSignal>(OnCreatedFigureSwap);
-        _eventBus.Unsubscribe<DeletedCountLineSignal>(OnDeletedCountLine);
+        _eventBus.Unsubscribe<ChangedCountDeleteLineSignal>(OnDeletedCountLine);
     }
 
     public void MoveDown() {
@@ -86,7 +86,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
     private void OnInputedHardDrope() {
         while (TryAttemptMove(Down)) {
         }
-        InformPutFigure();
+        InformPutFigure(true);
     }
 
     private void OnInputedSwapFigure() {
@@ -106,7 +106,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
         _eventBus?.Invoke(new SwapedFigureVisualSignal(_figureSwap));
     }
 
-    private void OnDeletedCountLine(DeletedCountLineSignal signal) {
+    private void OnDeletedCountLine(ChangedCountDeleteLineSignal signal) {
         _speed = _initialSpeed + signal.Score / 100f;
     }
 
@@ -179,8 +179,8 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
         }
     }
 
-    private void InformPutFigure() {
-        _eventBus.Invoke(new PutFigureSignal());
+    private void InformPutFigure(bool isHardDrop = false) {
+        _eventBus.Invoke(new PutFigureSignal(isHardDrop));
     }
 
     private void UpdatingTime() {

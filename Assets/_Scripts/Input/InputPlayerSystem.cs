@@ -33,7 +33,7 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
                     ""id"": ""b7f2d690-fd08-4c06-bfe4-fdb45bbe70fe"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -42,7 +42,7 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
                     ""id"": ""dfe7e36f-3815-4c66-bc47-b3a451254332"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -51,17 +51,35 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
                     ""id"": ""a36485ed-40b9-40ea-9ce2-d48807f91845"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlowDropeFigure"",
+                    ""type"": ""Button"",
+                    ""id"": ""dc4a2590-8bb6-4508-9b8f-5cc953fe1de7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a282256-7d4a-45f7-b248-4cc10a303b53"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""b79df8af-7e5e-4a7b-aaef-d90aabf678ad"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""MoveLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c22eb2f-5827-407e-a561-c3032e925527"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -110,92 +128,37 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""b3583e4a-5690-4d99-bc31-4cc78350a12e"",
-                    ""path"": ""2DVector(mode=2)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""6dbf6843-17e4-409e-a8eb-3051f28bb126"",
+                    ""name"": """",
+                    ""id"": ""f9007345-ff87-4fce-9ce3-f45e11f35e6e"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""SlowDropeFigure"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""9664696b-c075-4e91-b20b-1a2905a7ef47"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""76fb0b5d-e89b-44b7-86e7-de03a64582b7"",
+                    ""name"": """",
+                    ""id"": ""06526824-327c-4947-af50-32e12b348779"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveRight"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Arrows"",
-                    ""id"": ""650d826a-7961-4326-a92b-1ca23fa5e92e"",
-                    ""path"": ""2DVector(mode=2)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""8cf36ded-edff-4897-b975-d754374c5aea"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""name"": """",
+                    ""id"": ""b1c31ddf-d6a3-4ab4-8494-2c8a5cf11079"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveLeft"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""e57b9f67-d42d-428d-a7b8-7d24cf4df240"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""0b03a3f4-56ea-4fcc-9934-a0a74f3c273b"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -207,7 +170,9 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
         m_Player_HardDropeFigure = m_Player.FindAction("HardDropeFigure", throwIfNotFound: true);
         m_Player_SwapFigure = m_Player.FindAction("SwapFigure", throwIfNotFound: true);
         m_Player_RotateFigure = m_Player.FindAction("RotateFigure", throwIfNotFound: true);
-        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_SlowDropeFigure = m_Player.FindAction("SlowDropeFigure", throwIfNotFound: true);
+        m_Player_MoveRight = m_Player.FindAction("MoveRight", throwIfNotFound: true);
+        m_Player_MoveLeft = m_Player.FindAction("MoveLeft", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -272,7 +237,9 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_HardDropeFigure;
     private readonly InputAction m_Player_SwapFigure;
     private readonly InputAction m_Player_RotateFigure;
-    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_SlowDropeFigure;
+    private readonly InputAction m_Player_MoveRight;
+    private readonly InputAction m_Player_MoveLeft;
     public struct PlayerActions
     {
         private @InputPlayerSystem m_Wrapper;
@@ -280,7 +247,9 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
         public InputAction @HardDropeFigure => m_Wrapper.m_Player_HardDropeFigure;
         public InputAction @SwapFigure => m_Wrapper.m_Player_SwapFigure;
         public InputAction @RotateFigure => m_Wrapper.m_Player_RotateFigure;
-        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @SlowDropeFigure => m_Wrapper.m_Player_SlowDropeFigure;
+        public InputAction @MoveRight => m_Wrapper.m_Player_MoveRight;
+        public InputAction @MoveLeft => m_Wrapper.m_Player_MoveLeft;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -299,9 +268,15 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
             @RotateFigure.started += instance.OnRotateFigure;
             @RotateFigure.performed += instance.OnRotateFigure;
             @RotateFigure.canceled += instance.OnRotateFigure;
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
+            @SlowDropeFigure.started += instance.OnSlowDropeFigure;
+            @SlowDropeFigure.performed += instance.OnSlowDropeFigure;
+            @SlowDropeFigure.canceled += instance.OnSlowDropeFigure;
+            @MoveRight.started += instance.OnMoveRight;
+            @MoveRight.performed += instance.OnMoveRight;
+            @MoveRight.canceled += instance.OnMoveRight;
+            @MoveLeft.started += instance.OnMoveLeft;
+            @MoveLeft.performed += instance.OnMoveLeft;
+            @MoveLeft.canceled += instance.OnMoveLeft;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -315,9 +290,15 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
             @RotateFigure.started -= instance.OnRotateFigure;
             @RotateFigure.performed -= instance.OnRotateFigure;
             @RotateFigure.canceled -= instance.OnRotateFigure;
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
+            @SlowDropeFigure.started -= instance.OnSlowDropeFigure;
+            @SlowDropeFigure.performed -= instance.OnSlowDropeFigure;
+            @SlowDropeFigure.canceled -= instance.OnSlowDropeFigure;
+            @MoveRight.started -= instance.OnMoveRight;
+            @MoveRight.performed -= instance.OnMoveRight;
+            @MoveRight.canceled -= instance.OnMoveRight;
+            @MoveLeft.started -= instance.OnMoveLeft;
+            @MoveLeft.performed -= instance.OnMoveLeft;
+            @MoveLeft.canceled -= instance.OnMoveLeft;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -340,6 +321,8 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
         void OnHardDropeFigure(InputAction.CallbackContext context);
         void OnSwapFigure(InputAction.CallbackContext context);
         void OnRotateFigure(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
+        void OnSlowDropeFigure(InputAction.CallbackContext context);
+        void OnMoveRight(InputAction.CallbackContext context);
+        void OnMoveLeft(InputAction.CallbackContext context);
     }
 }

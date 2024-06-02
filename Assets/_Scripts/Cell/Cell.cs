@@ -4,7 +4,8 @@ using UnityEngine;
 public class Cell : MonoBehaviour {
     [SerializeField] private FilledCell filledCell;
     [SerializeField] private GhostCell ghostCell;
-
+    [SerializeField] private ExplosionObject explosionObject;
+     
     public bool IsVisible { get; private set; }
     public Material Material { get; private set; }
 
@@ -18,7 +19,11 @@ public class Cell : MonoBehaviour {
         IsVisible = true;
     }
 
-    public void Hide() {
+    public void Hide(bool delete = false) {
+        if (delete) {
+            var explosion = Instantiate(explosionObject, transform.position + new Vector3Int(0, 0, -1), transform.rotation);
+            explosion.Initialize(Material.color);
+        }
         filledCell.Disable();
         IsVisible = false;
     }

@@ -36,8 +36,8 @@ public class PanelFinished : MonoBehaviour, IDisposable {
     }
 
     private void InitializeComponents() {
-        _buttonGoMenu.Initialize();
-        _buttonRestartGame.Initialize();
+        _buttonGoMenu.Initialize(_eventBus);
+        _buttonRestartGame.Initialize(_eventBus);
         _viewScoreLineFinished.Initialize(_eventBus);
         _viewScorePointsFinished.Initialize(_eventBus);
     }

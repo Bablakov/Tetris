@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BootstrapGame : MonoBehaviour {
-    [SerializeField] private FieldSpawner spawnerField;
     [SerializeField] private UIControllerGame UIControllerGame;
+    [SerializeField] private FieldSpawner spawnerField;
     [SerializeField] private InputGame inputGame;
+    [SerializeField] private SoundGame soundGame;
 
     private const string WAY_FIELD_CONFIG = "FieldConfig";
     private const string WAY_GAME_CONFIG = "GameConfig";
@@ -66,12 +67,14 @@ public class BootstrapGame : MonoBehaviour {
             _fieldController,
             _figureSpawner,
             _field,
+            soundGame,
         };
     }
 
     private void Initialize() {
         UIControllerGame.Initialize();
         inputGame.Initialize();
+        soundGame.Initialize();
         _field = spawnerField.Spawn(_fieldConfig);
         _figureController.Initialize(_gameConfig.SpeedFigure);
         _fieldController.Initialize(_field);

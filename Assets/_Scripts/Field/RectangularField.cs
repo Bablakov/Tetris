@@ -34,11 +34,10 @@ public class RectangularField : Field {
 
     public override void CheckFillLines() {
         countCurrentDeleteLine = 0;
-        for (int i = 0; i < Cells.GetLength(0); i++) {
+        for (int i = Cells.GetLength(0) - 1; i >= 0 ; i--) {
             if (Cells[i].All(cell => cell.IsVisible)) {
                 DeleteLine(i);
                 countCurrentDeleteLine++;
-                i = -1; // нужно для того, чтобы заново проходили массив массивов и не оставили заполненых строк
             }
         }
         if (countCurrentDeleteLine > 0) {
@@ -97,7 +96,7 @@ public class RectangularField : Field {
 
     private void HideLine(int idLine) {
         for (int x = 0; x < _width; x++) {
-            HideCell(new Vector3Int(x,idLine));
+            Cells[idLine][x].Hide(true);
         }
     }
 

@@ -21,14 +21,14 @@ public class ViewScoreLine : MonoBehaviour, IDisposable {
     }
 
     private void Subscribe() {
-        _eventBus.Subscribe<DeletedCountLineSignal>(OnDeletedCountLine);
+        _eventBus.Subscribe<ChangedCountDeleteLineSignal>(OnDeletedCountLine);
     }
 
     private void Unsubscribe() {
-        _eventBus.Unsubscribe<DeletedCountLineSignal>(OnDeletedCountLine);
+        _eventBus.Unsubscribe<ChangedCountDeleteLineSignal>(OnDeletedCountLine);
     }
 
-    private void OnDeletedCountLine(DeletedCountLineSignal signal) {
+    private void OnDeletedCountLine(ChangedCountDeleteLineSignal signal) {
         SetValue(signal.Score);
     }
 
