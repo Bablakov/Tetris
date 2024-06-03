@@ -7,6 +7,7 @@ public class PanelWithScoreAndButton : MonoBehaviour, IDisposable {
     private ViewScoreLine _viewScoreLine;
     private ViewSwapFigure _viewSwapFigure;
     private ButtonPauseGame _buttonPauseGame;
+    private ButtonSoundControl _buttonSoundControl;
 
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
@@ -19,6 +20,7 @@ public class PanelWithScoreAndButton : MonoBehaviour, IDisposable {
         _viewScoreLine = GetComponentInChildren<ViewScoreLine>();
         _viewSwapFigure = GetComponentInChildren<ViewSwapFigure>();
         _buttonPauseGame = GetComponentInChildren<ButtonPauseGame>();
+        _buttonSoundControl = GetComponentInChildren<ButtonSoundControl>();
     }
 
     private void InitializeComponents() {
@@ -26,6 +28,7 @@ public class PanelWithScoreAndButton : MonoBehaviour, IDisposable {
         _viewScoreLine.Initialize(_eventBus);
         _viewSwapFigure.Initialize(_eventBus);
         _buttonPauseGame.Initialize(_eventBus);
+        _buttonSoundControl.Initialize(_eventBus);
     }
 
     public void Dispose() {

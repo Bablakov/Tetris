@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PanelFinished : MonoBehaviour, IDisposable {
     private ButtonGoMenu _buttonGoMenu;
+    private ButtonExitGame _buttonExitGame;
     private ButtonRestartGame _buttonRestartGame;
     private ViewScoreLineFinished _viewScoreLineFinished;
     private ViewScorePointsFinished _viewScorePointsFinished;
@@ -30,6 +31,7 @@ public class PanelFinished : MonoBehaviour, IDisposable {
     private void GetComponents() {
         _image = GetComponent<Image>();
         _buttonGoMenu = GetComponentInChildren<ButtonGoMenu>();
+        _buttonExitGame = GetComponentInChildren<ButtonExitGame>();
         _buttonRestartGame = GetComponentInChildren<ButtonRestartGame>();
         _viewScoreLineFinished = GetComponentInChildren<ViewScoreLineFinished>();
         _viewScorePointsFinished = GetComponentInChildren<ViewScorePointsFinished>();
@@ -37,6 +39,7 @@ public class PanelFinished : MonoBehaviour, IDisposable {
 
     private void InitializeComponents() {
         _buttonGoMenu.Initialize(_eventBus);
+        _buttonExitGame.Initialize(_eventBus);
         _buttonRestartGame.Initialize(_eventBus);
         _viewScoreLineFinished.Initialize(_eventBus);
         _viewScorePointsFinished.Initialize(_eventBus);
@@ -46,6 +49,7 @@ public class PanelFinished : MonoBehaviour, IDisposable {
         Show();
 
         _buttonGoMenu.Show();
+        _buttonExitGame.Show();
         _buttonRestartGame.Show();
         _viewScoreLineFinished.Show();
         _viewScorePointsFinished.Show();
@@ -55,6 +59,7 @@ public class PanelFinished : MonoBehaviour, IDisposable {
         Hide();
 
         _buttonGoMenu.Hide();
+        _buttonExitGame.Hide();
         _buttonRestartGame.Hide();
         _viewScoreLineFinished.Hide();
         _viewScorePointsFinished.Hide();

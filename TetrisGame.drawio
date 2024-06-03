@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-06-03T03:49:43.612Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="gTNpw9pAdi83iIAPcUmf" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-06-03T12:18:14.714Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="4dJl1C8znR_UBLMNgl0s" version="24.0.4" type="device">
   <diagram name="Page-1" id="9ERZN32lPl3h9mEKJxOg">
     <mxGraphModel dx="1418" dy="1928" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -7,17 +7,17 @@
         <mxCell id="PodBbFc40IM1UIUFSGZW-1" value="Что нужно реализовать" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry y="-1100" width="240" height="198" as="geometry" />
         </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-10" value="+ Настройки игры(звук)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="26" width="240" height="36" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-3" value="+ Сделать адаптивный UI" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="26" width="240" height="24" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-3" value="+ Добавить сохранения и лидерборды для YG" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="62" width="240" height="44" as="geometry" />
+        <mxCell id="Y2EHFbW52lyREjFwW4vY-3" value="+ Добавить сохранения и лидерборды для YG" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PodBbFc40IM1UIUFSGZW-1">
+          <mxGeometry y="50" width="240" height="44" as="geometry" />
         </mxCell>
         <mxCell id="Ns2q30x9cskyd2zY5GTb-4" value="+ Добавить рекламу для YG" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="106" width="240" height="28" as="geometry" />
+          <mxGeometry y="94" width="240" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="Ns2q30x9cskyd2zY5GTb-5" value="+ Добавить рекламу" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="134" width="240" height="28" as="geometry" />
+        <mxCell id="Ns2q30x9cskyd2zY5GTb-5" value="+ Проверить адаптивность UI и сделать его, если он не является таковым" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="122" width="240" height="40" as="geometry" />
         </mxCell>
         <mxCell id="PShEVwUEWleKnrsKiFgV-2" value="+ Добавить сохранение в кеше устройства на мобилки" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
           <mxGeometry y="162" width="240" height="36" as="geometry" />
@@ -49,7 +49,7 @@
         <mxCell id="Ns2q30x9cskyd2zY5GTb-10" value="+ Для правильного и корректного отображения фигур в UI их спрайты должны быть не только прозрачными, но и иметь квадратную форму&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
           <mxGeometry y="26" width="240" height="74" as="geometry" />
         </mxCell>
-        <mxCell id="CZtF8Er_EaT1auPsIFDG-1" value="&lt;div&gt;+ Следующие фигуры идут не слево на право, а с право на лево&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zjJiLorLlID6DXoC11au-8">
+        <mxCell id="CZtF8Er_EaT1auPsIFDG-1" value="&lt;div&gt;+ Следующие фигуры идут не слево на право, а с право на лево&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
           <mxGeometry y="100" width="240" height="40" as="geometry" />
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-1" value="Какой класс за что отвечает" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -241,35 +241,14 @@
         <mxCell id="5YNu1GTEXiOttsThYkZK-5" value="+ Патерн Observe" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YNu1GTEXiOttsThYkZK-1" vertex="1">
           <mxGeometry y="170" width="210" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-1" value="&lt;span style=&quot;text-align: left;&quot;&gt;+ Настройки игры(звук)&lt;/span&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-880" width="240" height="212" as="geometry" />
+        <mxCell id="jhqYmVA9L_Ns_93SPDkG-1" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Чтобы сделать адаптивный UI&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry y="-670" width="240" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-9" value="+ сделать панель настройки звука в главном меню" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="26" width="240" height="34" as="geometry" />
+        <mxCell id="jhqYmVA9L_Ns_93SPDkG-9" value="+ Нужно переработать логику ячеек, чтобы они были не кубами, а UI элементами" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
         </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-2" value="&lt;div&gt;+ Сделать панель настроийки звука в самой игре&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="60" width="240" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-6" value="+ Добавить звук при любом удачном действии ввода с клавиатуры&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="96" width="240" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-7" value="&lt;div&gt;+ Добавить звук уничтожения линии&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="132" width="240" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-8" value="&lt;div&gt;+ Добавить звук постановки фигуры, на место&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="172" width="240" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-11" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Панель настроек&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-625" width="240" height="132" as="geometry" />
-        </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-12" value="+ содержит настройки(три слайдера для установки значения)&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-11" vertex="1">
-          <mxGeometry y="26" width="240" height="34" as="geometry" />
-        </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-13" value="&lt;div&gt;+ кнопку сохранения настроек&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-11" vertex="1">
-          <mxGeometry y="60" width="240" height="36" as="geometry" />
-        </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-14" value="&lt;div&gt;+ кнопка выхода из настроек&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-11" vertex="1">
-          <mxGeometry y="96" width="240" height="36" as="geometry" />
+        <mxCell id="jhqYmVA9L_Ns_93SPDkG-2" value="&lt;div&gt;+ Переделать систему спавна ячеек, чтобы они создавались не в сцене, а на полотне с LayoutGridGroup&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
+          <mxGeometry y="80" width="240" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

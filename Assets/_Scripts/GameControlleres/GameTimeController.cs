@@ -21,15 +21,15 @@ public class GameTimeController : IDisposable {
         _eventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
     }
 
-    private void OnFinishedGame(FinishedGameSignal siganl) {
+    private void OnFinishedGame(FinishedGameSignal signal) {
         Time.timeScale = 0;
     }
 
-    private void OnPausedGame(PausedGameSignal siganl) {
+    private void OnPausedGame(PausedGameSignal signal) {
         Time.timeScale = 0;
     }
 
-    private void OnStartedGame(ResumedGameSignal siganl) {
+    private void OnStartedGame(ResumedGameSignal signal) {
         Time.timeScale = 1;
     }
 

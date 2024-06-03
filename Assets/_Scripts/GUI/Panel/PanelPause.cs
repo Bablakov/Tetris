@@ -10,24 +10,30 @@ public class PanelPause : MonoBehaviour {
     private Image _image;
     private ButtonResumeGame _buttonResumeGame;
     private ButtonWithExternalAction _buttonWithExternalAction;
+    private ButtonExitGame _buttonExitGame;
     private PanelSettings _panelSettings;
 
     public void Initialize(EventBus eventBus, PanelSettings panelSettings) {
         _eventBus = eventBus;
         _panelSettings = panelSettings;
         GetComponents();
+        InitializeComponents(eventBus);
         Subscribe();
-        _buttonResumeGame.Initialize(eventBus);
-        _buttonWithExternalAction.Initialize(eventBus, ShowSettingsPanel, "Settings");
         Disable();
     }
 
     private void GetComponents() {
         _buttonResumeGame = GetComponentInChildren<ButtonResumeGame>();
         _buttonWithExternalAction = GetComponentInChildren<ButtonWithExternalAction>();
+        _buttonExitGame = GetComponentInChildren<ButtonExitGame>();
         _image = GetComponent<Image>();
     }
 
+    private void InitializeComponents(EventBus eventBus) {
+        _buttonResumeGame.Initialize(eventBus);
+        _buttonWithExternalAction.Initialize(eventBus, ShowSettingsPanel, "Settings");
+        _buttonExitGame.Initialize(eventBus);
+    }
     private void Subscribe() {
         _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
         _eventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
@@ -49,11 +55,13 @@ public class PanelPause : MonoBehaviour {
     private void Enable() {
         _image.enabled = true;
         _buttonWithExternalAction.Show();
+        _buttonExitGame.Show();
     }
 
     private void Disable() {
         _image.enabled = false;
         _buttonWithExternalAction.Hide();
+        _buttonExitGame.Hide();
     }
 
     private void ShowSettingsPanel() {

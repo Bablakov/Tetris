@@ -11,8 +11,12 @@ public class StandartButton : BaseButton {
 
     public override void Initialize(EventBus eventBus) {
         EventBusMe = eventBus;
-        _button = GetComponent<Button>();
+        GetComponent();
         AddMethodInEventClick(ClickOnButton);
+    }
+
+    protected virtual void GetComponent() {
+        _button = GetComponent<Button>();
     }
 
     protected override void AddMethodInEventClick(UnityAction action) {

@@ -7,6 +7,7 @@ using System;
 public class PanelWithNextFigure : MonoBehaviour {
     private EventBus _eventBus;
     private Image[] _imagesFigure;
+    private GridLayoutGroup GridLayoutGroup;
 
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
