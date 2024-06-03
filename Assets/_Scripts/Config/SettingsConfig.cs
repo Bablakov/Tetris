@@ -18,6 +18,5 @@ public class SettingsConfig : ScriptableObject {
         this.uiVolume = uiVolume;
         this.musicVolume = musicVolume;
         ChangedSettings?.Invoke();
-        Debug.Log("ChangedSettings");
     }
 }

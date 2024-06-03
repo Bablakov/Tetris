@@ -10,7 +10,7 @@ public class PanelWithNextFigure : MonoBehaviour {
 
     public void Initialize(EventBus eventBus) {
         _eventBus = eventBus;
-        _imagesFigure = GetComponentsInChildren<Image>();
+        _imagesFigure = GetComponentsInChildren<Image>().Reverse().ToArray();
         Subscribe();
     }
 

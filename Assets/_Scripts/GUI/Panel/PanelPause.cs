@@ -2,23 +2,29 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PanelPause : MonoBehaviour {
     private EventBus _eventBus;
     private Image _image;
     private ButtonResumeGame _buttonResumeGame;
+    private ButtonWithExternalAction _buttonWithExternalAction;
+    private PanelSettings _panelSettings;
 
-    public void Initialize(EventBus eventBus) {
+    public void Initialize(EventBus eventBus, PanelSettings panelSettings) {
         _eventBus = eventBus;
+        _panelSettings = panelSettings;
         GetComponents();
         Subscribe();
-        Disable();
         _buttonResumeGame.Initialize(eventBus);
+        _buttonWithExternalAction.Initialize(eventBus, ShowSettingsPanel, "Settings");
+        Disable();
     }
 
     private void GetComponents() {
         _buttonResumeGame = GetComponentInChildren<ButtonResumeGame>();
+        _buttonWithExternalAction = GetComponentInChildren<ButtonWithExternalAction>();
         _image = GetComponent<Image>();
     }
 
@@ -42,10 +48,16 @@ public class PanelPause : MonoBehaviour {
 
     private void Enable() {
         _image.enabled = true;
+        _buttonWithExternalAction.Show();
     }
 
     private void Disable() {
         _image.enabled = false;
+        _buttonWithExternalAction.Hide();
+    }
+
+    private void ShowSettingsPanel() {
+        _panelSettings.Show();
     }
 
     public void Dispose() {

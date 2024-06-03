@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class BootstrapMenu : MonoBehaviour {
-    [SerializeField] UIControllerMenu UIControllerMenu;
+    [SerializeField] private UIControllerMenu UIControllerMenu;
 
     private void Awake() {
         UIControllerMenu.Initialize();
