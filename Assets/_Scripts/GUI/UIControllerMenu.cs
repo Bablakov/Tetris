@@ -13,6 +13,6 @@ public class UIControllerMenu : MonoBehaviour {
     }
 
     private void InitializeComponent() {
-        _buttonStartGame.Initialize();
+        //_buttonStartGame.Initialize();
     }
 }

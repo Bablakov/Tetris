@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ButtonPauseGame : BaseButton {
+public class ButtonPauseGame : StandartButton {
     public override void Initialize(EventBus eventBus) {
         base.Initialize(eventBus);
         CreateButton();

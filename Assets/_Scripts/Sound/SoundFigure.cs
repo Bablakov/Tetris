@@ -21,6 +21,10 @@ public class SoundFigure : MonoBehaviour, IDisposable {
         Subscribe();
     }
 
+    public void SetVolume(float value) {
+        _audioSource.volume = value;
+    }
+
     private void GetComponent() {
         _audioSource = GetComponent<AudioSource>();
     }

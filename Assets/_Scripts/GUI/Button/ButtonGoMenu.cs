@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonGoMenu : BaseButton {
+public class ButtonGoMenu : StandartButton {
     private TextMeshProUGUI _text;
     private Image _image;
 

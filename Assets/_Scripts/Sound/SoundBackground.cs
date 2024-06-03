@@ -11,6 +11,10 @@ public class SoundBackground : MonoBehaviour {
         StartPlay();
     }
 
+    public void SetVolume(float value) {
+        _audioSource.volume = value;
+    }
+
     private void GetComponent() {
         _audioSource = GetComponent<AudioSource>();
     }

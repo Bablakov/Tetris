@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ButtonResumeGame : BaseButton, IDisposable {
+public class ButtonResumeGame : StandartButton, IDisposable {
     private Image _image;
 
     public override void Initialize(EventBus eventBus) {

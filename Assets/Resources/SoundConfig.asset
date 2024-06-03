@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379223b1c98dffe44a9825ff65f29d9a, type: 3}
   m_Name: SoundConfig
   m_EditorClassIdentifier: 
+  GameVolume: 0.3
+  UIVolume: 0.3
+  MusicVolume: 0.1
   clickButton: {fileID: 8300000, guid: 33aeaa74fb3c20d4489b33b477b5f261, type: 3}
   deleteLine: {fileID: 8300000, guid: d83615f6bb61874459e6b34d426be38a, type: 3}
   moveFigure: {fileID: 8300000, guid: 7fad556540c15c045ab8d5718792c3f4, type: 3}

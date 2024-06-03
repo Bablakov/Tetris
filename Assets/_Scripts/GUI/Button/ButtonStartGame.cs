@@ -3,9 +3,9 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonStartGame : BaseButton {
-    public override void Initialize() {
-        base.Initialize();
+public class ButtonStartGame : StandartButton {
+    public override void Initialize(EventBus eventBus) {
+        base.Initialize(eventBus);
         AddMethodInEventClick(LoadGameScene);
         AddEventOnButton();
     }
