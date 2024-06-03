@@ -7,6 +7,7 @@ public class BootstrapGame : MonoBehaviour {
     [SerializeField] private FieldSpawner spawnerField;
     [SerializeField] private InputGame inputGame;
     [SerializeField] private SoundGame soundGame;
+    [SerializeField] private CameraConstantWidth cameraConstantWidth;
 
     private const string WAY_FIELD_CONFIG = "FieldConfig";
     private const string WAY_GAME_CONFIG = "GameConfig";
@@ -75,6 +76,7 @@ public class BootstrapGame : MonoBehaviour {
         UIControllerGame.Initialize();
         inputGame.Initialize();
         soundGame.Initialize();
+        cameraConstantWidth.Initialize();
         _field = spawnerField.Spawn(_fieldConfig);
         _figureController.Initialize(_gameConfig.SpeedFigure);
         _fieldController.Initialize(_field);

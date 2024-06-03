@@ -1,46 +1,46 @@
+using System.Drawing;
 using UnityEngine;
 
-/// <summary>
-/// Keeps constant camera width instead of height, works for both Orthographic & Perspective cameras
-/// Made for tutorial https://youtu.be/0cmxFjP375Y
-/// </summary>
 public class CameraConstantWidth : MonoBehaviour {
-    public Vector2 DefaultResolution = new Vector2(720, 1280);
-    [Range(0f, 1f)] public float WidthOrHeight = 0;
+    [SerializeField, Range(0f, 1f)] private float widthOrHeight = 0;
+    [SerializeField] public Vector2 DefaultResolution = new Vector2(720, 1280);
+    
+    private Camera _camera;
+    private float _initialSize;
+    private float _targetAspect;
+    private Vector2 _currentSize;
 
-    private Camera componentCamera;
-
-    private float initialSize;
-    private float targetAspect;
-
-    private float initialFov;
-    private float horizontalFov = 120f;
-
-    private void Start() {
-        componentCamera = GetComponent<Camera>();
-        initialSize = componentCamera.orthographicSize;
-
-        targetAspect = DefaultResolution.x / DefaultResolution.y;
-
-        initialFov = componentCamera.fieldOfView;
-        horizontalFov = CalcVerticalFov(initialFov, 1 / targetAspect);
+    public void Initialize() {
+        GetComponent();
+        InitialValue();
     }
 
     private void Update() {
-        if (componentCamera.orthographic) {
-            float constantWidthSize = initialSize * (targetAspect / componentCamera.aspect);
-            componentCamera.orthographicSize = Mathf.Lerp(constantWidthSize, initialSize, WidthOrHeight);
-        } else {
-            float constantWidthFov = CalcVerticalFov(horizontalFov, componentCamera.aspect);
-            componentCamera.fieldOfView = Mathf.Lerp(constantWidthFov, initialFov, WidthOrHeight);
+        if (IsChangedScreenSize()) {
+            RecalculateCameraSize();
+            AssignNewValueVariable();
         }
     }
 
-    private float CalcVerticalFov(float hFovInDeg, float aspectRatio) {
-        float hFovInRads = hFovInDeg * Mathf.Deg2Rad;
+    private void GetComponent() {
+        _camera = GetComponent<Camera>();
+    }
 
-        float vFovInRads = 2 * Mathf.Atan(Mathf.Tan(hFovInRads / 2) / aspectRatio);
+    private void InitialValue() {
+        _initialSize = _camera.orthographicSize;
+        _targetAspect = DefaultResolution.x / DefaultResolution.y;
+    }
 
-        return vFovInRads * Mathf.Rad2Deg;
+    private bool IsChangedScreenSize() {
+        return _currentSize.x != Screen.width || _currentSize.y != Screen.height;
+    }
+
+    private void RecalculateCameraSize() {
+        float constantWidthSize = _initialSize * (_targetAspect / _camera.aspect);
+        _camera.orthographicSize = Mathf.Lerp(constantWidthSize, _initialSize, widthOrHeight);
+    }
+
+    private void AssignNewValueVariable() {
+        _currentSize = new Vector2(Screen.width, Screen.height);
     }
 }

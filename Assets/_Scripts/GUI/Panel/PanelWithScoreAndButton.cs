@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class PanelWithScoreAndButton : MonoBehaviour, IDisposable {
     private EventBus _eventBus;
