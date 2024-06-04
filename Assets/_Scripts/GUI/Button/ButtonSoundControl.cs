@@ -1,8 +1,4 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class ButtonSoundControl : StandartButton {
     [SerializeField] private Sprite _soundOn;

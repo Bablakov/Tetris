@@ -1,8 +1,5 @@
 ﻿using TMPro;
-using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ButtonRestartGame : HidingButton {
     private TextMeshProUGUI _text;
@@ -30,6 +27,6 @@ public class ButtonRestartGame : HidingButton {
     }
 
     private void RestartGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameSceneController.RestartScene();
     }
 }

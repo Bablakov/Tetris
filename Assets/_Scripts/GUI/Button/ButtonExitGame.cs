@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ButtonExitGame : HidingButton {
     private TextMeshProUGUI _text;
@@ -34,6 +33,6 @@ public class ButtonExitGame : HidingButton {
     }
 
     private void ExitGame() {
-        Application.Quit();
+        GameSceneController.ExitGame();
     }
 }

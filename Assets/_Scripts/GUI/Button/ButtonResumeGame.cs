@@ -1,9 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
-
-public class ButtonResumeGame : HidingButton {
+﻿public class ButtonResumeGame : HidingButton {
     public override void Initialize(EventBus eventBus) {
         base.Initialize(eventBus);
 

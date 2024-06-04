@@ -1,7 +1,5 @@
 ﻿using System;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public abstract class InputGame : MonoBehaviour, IService, IDisposable {
     public abstract event Action InputedSwapFigure;

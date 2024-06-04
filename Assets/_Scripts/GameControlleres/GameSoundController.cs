@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GameSoundController {
+public static class GameSoundController {
     public static void TurnOnSound() {
         AudioListener.volume = 1f;
     }

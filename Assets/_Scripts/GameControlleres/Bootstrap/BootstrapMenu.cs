@@ -1,7 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class BootstrapMenu : Bootstrap {
+﻿public class BootstrapMenu : Bootstrap {
 
 }

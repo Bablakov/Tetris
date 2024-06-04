@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "GameConfig", menuName = "Tetris/GameConfig")]
 public class GameConfig : ScriptableObject {

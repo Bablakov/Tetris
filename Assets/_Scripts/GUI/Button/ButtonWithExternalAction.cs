@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class ButtonWithExternalAction : HidingButton {
     private TextMeshProUGUI _text;

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.Rendering;
 
 public static class Mathematics {
     public static IEnumerable<Vector3Int> CalculatePositionCells(Vector3Int value,

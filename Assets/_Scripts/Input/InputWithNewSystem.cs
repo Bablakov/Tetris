@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InputWithNewSystem : InputGame {
     public override event Action InputedSwapFigure;

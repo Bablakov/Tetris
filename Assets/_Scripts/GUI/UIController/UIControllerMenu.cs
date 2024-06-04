@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-public class UIControllerMenu : UIController {
+﻿public class UIControllerMenu : UIController {
     private const string TEXT_BUTTON_OPEN_SETTINGS = "Settings";
 
     private ButtonStartGame _buttonStartGame;

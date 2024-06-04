@@ -1,10 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
-
 public class PanelPause : HidingPanel {
     private const string TEXT_BUTTON_OPEN_SETTINGS = "Settings";
 

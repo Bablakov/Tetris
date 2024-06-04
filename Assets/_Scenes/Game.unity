@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -800,6 +800,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3427730056402274436, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 58.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3629420330712735352, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -888,12 +893,12 @@ PrefabInstance:
     - target: {fileID: 4299726736440271047, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
         type: 3}
       propertyPath: m_CellSize.x
-      value: 200
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 4299726736440271047, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
         type: 3}
       propertyPath: m_CellSize.y
-      value: 200
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 4299726736440271047, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
         type: 3}
@@ -1015,6 +1020,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5273875474217920762, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5367861265952811089, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1069,6 +1079,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452585046327554533, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 66.1
       objectReference: {fileID: 0}
     - target: {fileID: 5594263096013474307, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
         type: 3}
@@ -1469,6 +1484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076515496164989454, guid: f1c3027af99ff5c4297ada2cba4ae8c2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 61.85
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4328713024910253628, guid: f1c3027af99ff5c4297ada2cba4ae8c2, type: 3}

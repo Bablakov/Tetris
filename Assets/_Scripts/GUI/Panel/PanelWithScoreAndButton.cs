@@ -1,7 +1,4 @@
 using System;
-using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
 
 public class PanelWithScoreAndButton : BasePanel, IDisposable {
     private ViewScorePoints _viewScore;

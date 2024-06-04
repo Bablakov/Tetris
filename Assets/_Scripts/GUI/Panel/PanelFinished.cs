@@ -1,7 +1,4 @@
 using System;
-using System.Linq.Expressions;
-using UnityEngine;
-using UnityEngine.UI;
 
 public class PanelFinished : HidingPanel, IDisposable {
     private ButtonGoMenu _buttonGoMenu;
@@ -9,7 +6,6 @@ public class PanelFinished : HidingPanel, IDisposable {
     private ButtonRestartGame _buttonRestartGame;
     private ViewScoreLineFinished _viewScoreLineFinished;
     private ViewScorePointsFinished _viewScorePointsFinished;
-    private Image _image;
 
     public override void Initialize(EventBus eventBus) {
         base.Initialize(eventBus);
