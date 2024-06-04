@@ -44,10 +44,10 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1080
+  defaultScreenHeightWeb: 1920
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 1
+  m_ActiveColorSpace: 0
   unsupportedMSAAFallback: 0
   m_SpriteBatchVertexThreshold: 300
   m_MTRendering: 1
@@ -523,13 +523,37 @@ PlayerSettings:
   - m_BuildTarget: AndroidPlayer
     m_APIs: 150000000b000000
     m_Automatic: 0
+  - m_BuildTarget: WebGLSupport
+    m_APIs: 0b000000
+    m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
   m_DefaultShaderChunkCount: 0
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  m_TemplateCustomTags: {}
+  m_TemplateCustomTags:
+    CHOOSE_LOADING_TYPE: 2
+    CONFIGURE_SHADOWS_AROUND_CANVAS: 1
+    CONNECT_PLUGIN: YG1.6.2
+    CUSTOMIZE_BARS_BACKGROUND: ' backgroundColor = "#000080"'
+    CUSTOMIZE_LOADING_SCREEN_BACKGROUND: 1
+    CUSTOMIZE_LOGO: display = "none"
+    CUSTOM_EVENT_IN_CSS: 1
+    CUSTOM_EVENT_IN_HTML: 
+    CUSTOM_EVENT_IN_JS: YaGames.init().then(ysdk=>{console.log("Yandex SDK initialized");window.ysdk=ysdk});
+    DISABLE_CONSOLE_MESSAGES: 1
+    GP_GAMEREADY_AUTOCALL_DELAY: 1
+    GP_PROJECT_ID: 1
+    GP_SHOW_PRELOADER_AD: 1
+    GP_TOKEN: 1
+    IGB_GAME_DISTRIBUTION_GAME_ID: 1
+    IGB_VK_PLAY_GAME_ID: 1
+    LOCK_ASPECT_RATIO: all
+    YG_BANNER_DYNAMIC_1: 1
+    YG_BANNER_DYNAMIC_2: 1
+    YG_BANNER_STATIC_1: 1
+    YG_BANNER_STATIC_2: 1
   mobileMTRendering:
     Android: 1
     iPhone: 1
@@ -778,7 +802,8 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 0}
+  splashScreenBackgroundSourceLandscape: {fileID: 10907, guid: 0000000000000000f000000000000000,
+    type: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
@@ -787,25 +812,26 @@ PlayerSettings:
   webGLNameFilesAsHashes: 0
   webGLShowDiagnostics: 0
   webGLDataCaching: 1
-  webGLDebugSymbols: 0
+  webGLDebugSymbols: 2
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: APPLICATION:Default
+  webGLTemplate: PROJECT:AT2.1.0
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  webGLDecompressionFallback: 0
+  webGLDecompressionFallback: 1
   webGLInitialMemorySize: 32
   webGLMaximumMemorySize: 2048
-  webGLMemoryGrowthMode: 2
+  webGLMemoryGrowthMode: 0
   webGLMemoryLinearGrowthStep: 16
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    WebGL: YG_PLUGIN_YANDEX_GAME
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -821,7 +847,7 @@ PlayerSettings:
     QNX: 1
     Stadia: 1
     VisionOS: 1
-    WebGL: 1
+    WebGL: 4
     Windows Store Apps: 1
     XboxOne: 1
     iPhone: 1

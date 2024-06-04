@@ -6,15 +6,12 @@ using UnityEngine.UI;
 public class ButtonPauseGame : StandartButton {
     public override void Initialize(EventBus eventBus) {
         base.Initialize(eventBus);
-        CreateButton();
-    }
 
-    private void CreateButton() {
         AddMethodInEventClick(PauseGame);
         AddEventOnButton();
     }
 
     private void PauseGame() {
-        EventBusMe.Invoke(new PausedGameSignal());
+        EventBus.Invoke(new PausedGameSignal());
     }
 }

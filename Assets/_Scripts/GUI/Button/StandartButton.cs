@@ -4,19 +4,22 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class StandartButton : BaseButton {
-    protected EventBus EventBusMe;
+    protected EventBus EventBus;
+    protected Image Image;
     
     private Button _button;
     private UnityAction _buttonClickEvent;
 
     public override void Initialize(EventBus eventBus) {
-        EventBusMe = eventBus;
-        GetComponent();
+        EventBus = eventBus;
+
+        GetComponents();
         AddMethodInEventClick(ClickOnButton);
     }
 
-    protected virtual void GetComponent() {
+    protected virtual void GetComponents() {
         _button = GetComponent<Button>();
+        Image = GetComponent<Image>();
     }
 
     protected override void AddMethodInEventClick(UnityAction action) {
@@ -28,6 +31,6 @@ public class StandartButton : BaseButton {
     }
 
     protected override void ClickOnButton() {
-        EventBusMe.Invoke(new ClickedButtonSignal());
+        EventBus.Invoke(new ClickedButtonSignal());
     }
 }

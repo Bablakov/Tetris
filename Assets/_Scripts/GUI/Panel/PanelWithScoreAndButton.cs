@@ -3,21 +3,14 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class PanelWithScoreAndButton : MonoBehaviour, IDisposable {
-    private EventBus _eventBus;
+public class PanelWithScoreAndButton : BasePanel, IDisposable {
     private ViewScorePoints _viewScore;
     private ViewScoreLine _viewScoreLine;
     private ViewSwapFigure _viewSwapFigure;
     private ButtonPauseGame _buttonPauseGame;
     private ButtonSoundControl _buttonSoundControl;
 
-    public void Initialize(EventBus eventBus) {
-        _eventBus = eventBus;
-        GetComponents();
-        InitializeComponents();
-    }
-
-    private void GetComponents() {
+    protected override void GetComponents() {
         _viewScore = GetComponentInChildren<ViewScorePoints>();
         _viewScoreLine = GetComponentInChildren<ViewScoreLine>();
         _viewSwapFigure = GetComponentInChildren<ViewSwapFigure>();
@@ -25,12 +18,12 @@ public class PanelWithScoreAndButton : MonoBehaviour, IDisposable {
         _buttonSoundControl = GetComponentInChildren<ButtonSoundControl>();
     }
 
-    private void InitializeComponents() {
-        _viewScore.Initialize(_eventBus);
-        _viewScoreLine.Initialize(_eventBus);
-        _viewSwapFigure.Initialize(_eventBus);
-        _buttonPauseGame.Initialize(_eventBus);
-        _buttonSoundControl.Initialize(_eventBus);
+    protected override void InitializeComponents() {
+        _viewScore.Initialize(EventBus);
+        _viewScoreLine.Initialize(EventBus);
+        _viewSwapFigure.Initialize(EventBus);
+        _buttonPauseGame.Initialize(EventBus);
+        _buttonSoundControl.Initialize(EventBus);
     }
 
     public void Dispose() {

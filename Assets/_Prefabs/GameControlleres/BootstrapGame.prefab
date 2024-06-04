@@ -41,7 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2693967257132737589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0428ddad16d13b41955f9b2282d95bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 91248bded057f34468b5b4635bae83fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playingField: {fileID: 0}
+  UIControllerGame: {fileID: 0}
+  spawnerField: {fileID: 0}
+  inputGame: {fileID: 0}
+  soundGame: {fileID: 0}
+  cameraConstantWidth: {fileID: 0}

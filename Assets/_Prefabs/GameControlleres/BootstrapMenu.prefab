@@ -41,7 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2693967257132737589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1af847dcb4e562840944e65607cbbe2e, type: 3}
+  m_Script: {fileID: 11500000, guid: ebf240d770330474ab76b9b035b6320f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UIControllerMenu: {fileID: 0}
+  soundGame: {fileID: 0}

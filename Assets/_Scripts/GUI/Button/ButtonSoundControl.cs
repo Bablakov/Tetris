@@ -9,23 +9,19 @@ public class ButtonSoundControl : StandartButton {
     [SerializeField] private Sprite _soundOff;
 
     private bool _isSoundOn = true;
-    private Image _image;
 
     public override void Initialize(EventBus eventBus) {
         base.Initialize(eventBus);
+
         SetInitialValue();
+
         AddMethodInEventClick(TurnSound);
         AddEventOnButton();
     }
 
-    protected override void GetComponent() {
-        base.GetComponent();
-        _image = GetComponent<Image>();
-    }
-
     private void SetInitialValue() {
         _isSoundOn = true;
-        _image.sprite = _soundOn;
+        Image.sprite = _soundOn;
     }
 
     private void TurnSound() {
@@ -35,16 +31,24 @@ public class ButtonSoundControl : StandartButton {
 
     private void SetSoundInGameOpposite() {
         if (_isSoundOn) {
-            GameSoundController.TurnOffSound();
-            _image.sprite = _soundOff;
+            TurnOff();
 
         } else {
-            GameSoundController.TurnOnSound();
-            _image.sprite = _soundOn;
+            TurnOn();
         }
     }
 
     private void SetSoundValueOpposite() {
         _isSoundOn = !_isSoundOn;
+    }
+
+    private void TurnOff() {
+        GameSoundController.TurnOffSound();
+        Image.sprite = _soundOff;
+    }
+
+    private void TurnOn() {
+        GameSoundController.TurnOnSound();
+        Image.sprite = _soundOn;
     }
 }

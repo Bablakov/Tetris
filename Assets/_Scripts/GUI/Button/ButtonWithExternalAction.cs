@@ -2,26 +2,34 @@
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ButtonWithExternalAction : StandartButton {
+public class ButtonWithExternalAction : HidingButton {
     private TextMeshProUGUI _text;
-    private Image _image;
 
     public void Initialize(EventBus eventBus, UnityAction actionExitPanel, string textButton) {
         base.Initialize(eventBus);
-        _text = GetComponentInChildren<TextMeshProUGUI>();
-        _image = GetComponent<Image>();
-        _text.text = textButton;
+
+        SetValue(textButton);
+
         AddMethodInEventClick(actionExitPanel);
         AddEventOnButton();
     }
 
-    public void Show() {
-        _image.enabled = true;
+    public override void Show() {
+        base.Show();
         _text.enabled = true;
     }
 
-    public void Hide() {
-        _image.enabled = false;
+    public override void Hide() {
+        base.Hide();
         _text.enabled = false;
+    }
+
+    protected override void GetComponents() {
+        base.GetComponents();
+        _text = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void SetValue(string textButton) {
+        _text.text = textButton;
     }
 }

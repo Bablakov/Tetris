@@ -5,71 +5,80 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class PanelPause : MonoBehaviour {
-    private EventBus _eventBus;
-    private Image _image;
-    private ButtonResumeGame _buttonResumeGame;
+public class PanelPause : HidingPanel {
+    private const string TEXT_BUTTON_OPEN_SETTINGS = "Settings";
+
     private ButtonWithExternalAction _buttonWithExternalAction;
+    private ButtonResumeGame _buttonResumeGame;
     private ButtonExitGame _buttonExitGame;
     private PanelSettings _panelSettings;
 
-    public void Initialize(EventBus eventBus, PanelSettings panelSettings) {
-        _eventBus = eventBus;
-        _panelSettings = panelSettings;
-        GetComponents();
-        InitializeComponents(eventBus);
+    public override void Initialize(EventBus eventBus) {
+        base.Initialize(eventBus);
         Subscribe();
-        Disable();
     }
 
-    private void GetComponents() {
+    public void SetValue(PanelSettings panelSettings) {
+        _panelSettings = panelSettings;
+    }
+
+    protected override void GetComponents() {
+        base.GetComponents();
         _buttonResumeGame = GetComponentInChildren<ButtonResumeGame>();
         _buttonWithExternalAction = GetComponentInChildren<ButtonWithExternalAction>();
         _buttonExitGame = GetComponentInChildren<ButtonExitGame>();
-        _image = GetComponent<Image>();
     }
 
-    private void InitializeComponents(EventBus eventBus) {
-        _buttonResumeGame.Initialize(eventBus);
-        _buttonWithExternalAction.Initialize(eventBus, ShowSettingsPanel, "Settings");
-        _buttonExitGame.Initialize(eventBus);
+    protected override void InitializeComponents() {
+        _buttonResumeGame.Initialize(EventBus);
+        _buttonWithExternalAction.Initialize(EventBus, ShowSettingsPanel, TEXT_BUTTON_OPEN_SETTINGS);
+        _buttonExitGame.Initialize(EventBus);
     }
     private void Subscribe() {
-        _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
+        EventBus.Subscribe<PausedGameSignal>(OnPausedGame);
+        EventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
     }
 
     private void Unsubscribe() {
-        _eventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
+        EventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
+        EventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
     }
 
     private void OnPausedGame(PausedGameSignal signal) {
-        Enable();
+        Show();
     }
 
     private void OnStartedGame(ResumedGameSignal signal) {
-        Disable();
+        Hide();
     }
 
-    private void Enable() {
-        _image.enabled = true;
-        _buttonWithExternalAction.Show();
-        _buttonExitGame.Show();
+    public override void Show() {
+        base.Show();
+        ShowChildren();
     }
 
-    private void Disable() {
-        _image.enabled = false;
-        _buttonWithExternalAction.Hide();
-        _buttonExitGame.Hide();
+    public override void Hide() {
+        base.Hide();
+        HideChildren();
     }
 
     private void ShowSettingsPanel() {
         _panelSettings.Show();
     }
 
+    private void ShowChildren() {
+        _buttonWithExternalAction.Show();
+        _buttonExitGame.Show();
+        _buttonResumeGame.Show();
+    }
+
+    private void HideChildren() {
+        _buttonWithExternalAction.Hide();
+        _buttonExitGame.Hide();
+        _buttonResumeGame.Hide();
+    }
+
     public void Dispose() {
-        _buttonResumeGame.Dispose();
         Unsubscribe();
     }
 }

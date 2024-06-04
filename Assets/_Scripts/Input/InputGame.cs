@@ -29,24 +29,24 @@ public abstract class InputGame : MonoBehaviour, IService, IDisposable {
         Disable();
     }
 
+    protected virtual void Subscribe() {
+        _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
+        _eventBus.Subscribe<FinishedGameSignal>(OnFinishedGame);
+        _eventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
+    }
+
+    protected virtual void Unsubscribe() {
+        _eventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
+        _eventBus.Unsubscribe<FinishedGameSignal>(OnFinishedGame);
+        _eventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
+    }
+
     private void GetComponent() {
         if (InputPlayerSystem == null) {
             InputPlayerSystem = new InputPlayerSystem();
         }
         InputPlayerSystem.Player.Enable();
         _eventBus = ServiceLocator.Current.Get<EventBus>();
-    }
-
-    private void Subscribe() {
-        _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Subscribe<FinishedGameSignal>(OnFinishedGame);
-        _eventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
-    }
-
-    private void Unsubscribe() {
-        _eventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Unsubscribe<FinishedGameSignal>(OnFinishedGame);
-        _eventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
     }
 
     private void Enable() {

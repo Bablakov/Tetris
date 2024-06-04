@@ -2,34 +2,38 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonExitGame : StandartButton {
+public class ButtonExitGame : HidingButton {
     private TextMeshProUGUI _text;
-    private Image _image;
 
     public override void Initialize(EventBus eventBus) {
         base.Initialize(eventBus);
+        
         AddMethodInEventClick(ExitGame);
         AddEventOnButton();
+        
+        SetValue();
     }
 
-    protected override void GetComponent() {
-        base.GetComponent();
+    public override void Show() {
+        base.Show();
+        _text.enabled = true;
+    }
+
+    public override void Hide() {
+        base.Hide();
+        _text.enabled = false;
+    }
+
+    protected override void GetComponents() {
+        base.GetComponents();
         _text = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void SetValue() {
         _text.text = "Exit";
-        _image = GetComponent<Image>();
     }
 
     private void ExitGame() {
         Application.Quit();
-    }
-
-    public void Show() {
-        _image.enabled = true;
-        _text.enabled = true;
-    }
-
-    public void Hide() {
-        _image.enabled = false;
-        _text.enabled = false;
     }
 }

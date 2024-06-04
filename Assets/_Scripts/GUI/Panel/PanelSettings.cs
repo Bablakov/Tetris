@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class PanelSettings : MonoBehaviour {
-    [SerializeField] private VolumeSound valueMusic;
-    [SerializeField] private VolumeSound valueGame;
-    [SerializeField] private VolumeSound valueUI;
+public class PanelSettings : HidingPanel {
+    [SerializeField] private SetingValue valueMusic;
+    [SerializeField] private SetingValue valueGame;
+    [SerializeField] private SetingValue valueUI;
     [SerializeField] private ButtonWithExternalAction exitPanel;
     [SerializeField] private ButtonWithExternalAction saveSettings;
 
@@ -14,24 +14,25 @@ public class PanelSettings : MonoBehaviour {
     private const string EXIT_SETTINGS_TEXT = "Exit";
     private const string SAVE_SETTINGS_TEXT = "Save";
 
-    private EventBus _eventBus;
     private SettingsConfig _settingsConfig;
 
-    public void Initialize(EventBus eventBus) {
-        _eventBus = eventBus;
+    protected override void GetComponents() {
         _settingsConfig = Resources.Load<SettingsConfig>(WAY_SETTINGS_CONFIG);
+    }
+
+    protected override void InitializeComponents() {
         valueMusic.Initialize(MUSIC_TEXT, _settingsConfig.MusicVolume);
         valueGame.Initialize(GAME_TEXT, _settingsConfig.GameVolume);
         valueUI.Initialize(UI_TEXT, _settingsConfig.UIVolume);
-        exitPanel.Initialize(_eventBus, Hide, EXIT_SETTINGS_TEXT);
-        saveSettings.Initialize(_eventBus, Save, SAVE_SETTINGS_TEXT);
+        exitPanel.Initialize(EventBus, Hide, EXIT_SETTINGS_TEXT);
+        saveSettings.Initialize(EventBus, Save, SAVE_SETTINGS_TEXT);
     }
 
-    public void Show() {
+    public override void Show() {
         gameObject.SetActive(true);
     }
 
-    public void Hide() {
+    public override void Hide() {
         gameObject.SetActive(false);
     }
 

@@ -1,27 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-public class SoundBackground : MonoBehaviour {
-    private AudioSource _audioSource;
+public class SoundBackground : Sound {
     private AudioClip _soundBackground;
 
-    public void Initialize(SoundConfig config) {
-        _soundBackground = config.Background;
-        GetComponent();
+    public override void Initialize(SoundConfig config) {
+        base.Initialize(config);
         StartPlay();
     }
 
-    public void SetVolume(float value) {
-        _audioSource.volume = value;
-    }
-
-    private void GetComponent() {
-        _audioSource = GetComponent<AudioSource>();
+    protected override void SetValue(SoundConfig config) {
+        _soundBackground = config.Background;
     }
 
     private void StartPlay() {
-        _audioSource.clip = _soundBackground;
-        _audioSource.loop = true;
-        _audioSource.Play();
+        AudioSource.clip = _soundBackground;
+        AudioSource.loop = true;
+        AudioSource.Play();
     }
 }

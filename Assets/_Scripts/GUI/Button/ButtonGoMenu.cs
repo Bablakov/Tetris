@@ -4,34 +4,29 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ButtonGoMenu : StandartButton {
+public class ButtonGoMenu : HidingButton {
     private TextMeshProUGUI _text;
-    private Image _image;
 
     public override void Initialize(EventBus eventBus) {
-        base.Initialize(eventBus);        
-        GetComponents();
-        CreateButton();
+        base.Initialize(eventBus);
+
+        AddMethodInEventClick(GoMenu);
+        AddEventOnButton();
     }
 
-    public void Show() {
-        _image.enabled = true;
+    public override void Show() {
+        base.Show();
         _text.enabled = true;
     }
 
-    public void Hide() {
-        _image.enabled = false;
+    public override void Hide() {
+        base.Hide();
         _text.enabled = false;
     }
 
-    private void GetComponents() {
+    protected override void GetComponents() {
+        base.GetComponents();
         _text = GetComponentInChildren<TextMeshProUGUI>();
-        _image = GetComponent<Image>();
-    }
-
-    private void CreateButton() {
-        AddMethodInEventClick(GoMenu);
-        AddEventOnButton();
     }
 
     private void GoMenu() {
