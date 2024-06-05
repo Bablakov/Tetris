@@ -13,7 +13,7 @@ public class PanelWithNextFigure : BasePanel {
     }
 
     protected override void GetComponents() {
-        _imagesFigure = GetComponentsInChildren<Image>().Reverse().ToArray();
+        _imagesFigure = GetComponentsInChildren<Image>();//.Reverse().ToArray();
     }
 
     private void Subscribe() {

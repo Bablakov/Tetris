@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 
 public class BootstrapGame : Bootstrap {
     [SerializeField] private FieldSpawner spawnerField;
     [SerializeField] private InputGame inputGame;
-    [SerializeField] private CameraConstantWidth cameraConstantWidth;
 
     private const string WAY_FIELD_CONFIG = "FieldConfig";
     private const string WAY_GAME_CONFIG = "GameConfig";
@@ -16,6 +16,8 @@ public class BootstrapGame : Bootstrap {
     private FieldConfig _fieldConfig;
     private GameConfig _gameConfig;
     private Field _field;
+
+    private CinemachineTargetGroup CinemachineTargetGroup;
 
     protected override void GetComponents() {
         _fieldConfig = Resources.Load<FieldConfig>(WAY_FIELD_CONFIG);
@@ -53,7 +55,6 @@ public class BootstrapGame : Bootstrap {
     protected override void Initialize() {
         base.Initialize();
         inputGame.Initialize();
-        cameraConstantWidth.Initialize();
         _field = spawnerField.Spawn(_fieldConfig);
         _figureController.Initialize(_gameConfig.SpeedFigure);
         _fieldController.Initialize(_field);
