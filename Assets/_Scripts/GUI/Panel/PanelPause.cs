@@ -1,6 +1,4 @@
 public class PanelPause : HidingPanel {
-    private const string TEXT_BUTTON_OPEN_SETTINGS = "Settings";
-
     private ButtonWithExternalAction _buttonWithExternalAction;
     private ButtonResumeGame _buttonResumeGame;
     private ButtonExitGame _buttonExitGame;
@@ -24,7 +22,7 @@ public class PanelPause : HidingPanel {
 
     protected override void InitializeComponents() {
         _buttonResumeGame.Initialize(EventBus);
-        _buttonWithExternalAction.Initialize(EventBus, ShowSettingsPanel, TEXT_BUTTON_OPEN_SETTINGS);
+        _buttonWithExternalAction.Initialize(EventBus, ShowSettingsPanel);
         _buttonExitGame.Initialize(EventBus);
     }
     private void Subscribe() {

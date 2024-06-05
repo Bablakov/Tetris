@@ -1,6 +1,4 @@
 ﻿public class UIControllerMenu : UIController {
-    private const string TEXT_BUTTON_OPEN_SETTINGS = "Settings";
-
     private ButtonStartGame _buttonStartGame;
     private ButtonExitGame _buttonExitGame;
     private ButtonWithExternalAction _buttonOpenSettings;
@@ -21,7 +19,7 @@
         base.InitializeComponents();
         _buttonStartGame.Initialize(EventBus);
         _buttonExitGame.Initialize(EventBus);
-        _buttonOpenSettings.Initialize(EventBus, OpenPanelSettings, TEXT_BUTTON_OPEN_SETTINGS);
+        _buttonOpenSettings.Initialize(EventBus, OpenPanelSettings);
     }
 
     private void OpenPanelSettings() {

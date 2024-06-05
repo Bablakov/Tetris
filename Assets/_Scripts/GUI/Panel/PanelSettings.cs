@@ -11,8 +11,6 @@ public class PanelSettings : HidingPanel {
     private const string MUSIC_TEXT = "Music";
     private const string GAME_TEXT = "Game";
     private const string UI_TEXT = "UI";
-    private const string EXIT_SETTINGS_TEXT = "Exit";
-    private const string SAVE_SETTINGS_TEXT = "Save";
 
     private SettingsConfig _settingsConfig;
 
@@ -24,8 +22,8 @@ public class PanelSettings : HidingPanel {
         valueMusic.Initialize(MUSIC_TEXT, _settingsConfig.MusicVolume);
         valueGame.Initialize(GAME_TEXT, _settingsConfig.GameVolume);
         valueUI.Initialize(UI_TEXT, _settingsConfig.UIVolume);
-        exitPanel.Initialize(EventBus, Hide, EXIT_SETTINGS_TEXT);
-        saveSettings.Initialize(EventBus, Save, SAVE_SETTINGS_TEXT);
+        exitPanel.Initialize(EventBus, Hide);
+        saveSettings.Initialize(EventBus, Save);
     }
 
     public override void Show() {
