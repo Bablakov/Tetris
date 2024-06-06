@@ -445,6 +445,13 @@
             }
         }
 
+        function GetTypeDevicePlayer()
+        {
+            var data = ysdk.deviceInfo;
+            console.log("---------------------------------------------------------" + data + "--------------------------------------------------------------------------------------------");
+            myGameInstance.SendMessage("YandexGameMe", "SetDevice", data);
+        }
+
         // Additional script modules:
 
         document.body.appendChild(script);

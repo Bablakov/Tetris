@@ -1,6 +1,8 @@
 using System;
+using TMPro;
 
 public class PanelFinished : HidingPanel, IDisposable {
+    private TextMeshProUGUI _text;
     private ButtonGoMenu _buttonGoMenu;
     private ButtonExitGame _buttonExitGame;
     private ButtonRestartGame _buttonRestartGame;
@@ -14,6 +16,7 @@ public class PanelFinished : HidingPanel, IDisposable {
 
     protected override void GetComponents() {
         base.GetComponents();
+        _text = GetComponentInChildren<TextMeshProUGUI>();
         _buttonGoMenu = GetComponentInChildren<ButtonGoMenu>();
         _buttonExitGame = GetComponentInChildren<ButtonExitGame>();
         _buttonRestartGame = GetComponentInChildren<ButtonRestartGame>();
@@ -46,7 +49,13 @@ public class PanelFinished : HidingPanel, IDisposable {
         ShowChildren();
     }
 
+    public override void Hide() {
+        base.Hide();
+        HideChildren();
+    }
+
     private void ShowChildren() {
+        _text.enabled = true;
         _buttonGoMenu.Show();
         _buttonExitGame.Show();
         _buttonRestartGame.Show();
@@ -54,12 +63,8 @@ public class PanelFinished : HidingPanel, IDisposable {
         _viewScorePointsFinished.Show();
     }
 
-    public override void Hide() {
-        base.Hide();
-        HideChildren();
-    }
-
     private void HideChildren() {
+        _text.enabled = false;
         _buttonGoMenu.Hide();
         _buttonExitGame.Hide();
         _buttonRestartGame.Hide();

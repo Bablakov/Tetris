@@ -216,10 +216,47 @@ MonoBehaviour:
     de: 0
     hi: 0
   fonts:
-    defaultFont: []
-    ru: []
-    en: []
-    tr: []
+    defaultFont:
+    - {fileID: 12800000, guid: b822e116d42a00b4e9834e4dcab90029, type: 3}
+    ru:
+    - {fileID: 12800000, guid: b822e116d42a00b4e9834e4dcab90029, type: 3}
+    en:
+    - {fileID: 12800000, guid: b822e116d42a00b4e9834e4dcab90029, type: 3}
+    tr:
+    - {fileID: 12800000, guid: b822e116d42a00b4e9834e4dcab90029, type: 3}
+    az: []
+    be: []
+    he: []
+    hy: []
+    ka: []
+    et: []
+    fr: []
+    kk: []
+    ky: []
+    lt: []
+    lv: []
+    ro: []
+    tg: []
+    tk: []
+    uk: []
+    uz: []
+    es: []
+    pt: []
+    ar: []
+    id: []
+    ja: []
+    it: []
+    de: []
+    hi: []
+  fontsTMP:
+    defaultFont:
+    - {fileID: 11400000, guid: 715d37a127577ac4ea80fa2789e76e48, type: 2}
+    ru:
+    - {fileID: 11400000, guid: 715d37a127577ac4ea80fa2789e76e48, type: 2}
+    en:
+    - {fileID: 11400000, guid: 715d37a127577ac4ea80fa2789e76e48, type: 2}
+    tr:
+    - {fileID: 11400000, guid: 715d37a127577ac4ea80fa2789e76e48, type: 2}
     az: []
     be: []
     he: []

@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using UnityEngine;
+using YG;
 
 public class BootstrapGame : Bootstrap {
     [SerializeField] private FieldSpawner spawnerField;
@@ -17,7 +18,12 @@ public class BootstrapGame : Bootstrap {
     private GameConfig _gameConfig;
     private Field _field;
 
-    private CinemachineTargetGroup CinemachineTargetGroup;
+    protected override void Awake() {
+        YandexGameMe.GetDevice();
+
+
+        base.Awake();
+    }
 
     protected override void GetComponents() {
         _fieldConfig = Resources.Load<FieldConfig>(WAY_FIELD_CONFIG);
@@ -60,5 +66,6 @@ public class BootstrapGame : Bootstrap {
         _fieldController.Initialize(_field);
         _figureGhostController.Initialize();
         _figureSpawner.Initialize(_fieldConfig.PositionSpawn);
+        Time.timeScale = 1;
     }
 }
