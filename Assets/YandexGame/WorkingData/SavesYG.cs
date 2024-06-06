@@ -18,7 +18,8 @@ namespace YG
 
         // Ваши сохранения
 
-        // ...
+        public int bestScorePoints;
+        public int bestScoreLine;
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 
@@ -27,7 +28,8 @@ namespace YG
         public SavesYG()
         {
             // Допустим, задать значения по умолчанию для отдельных элементов массива
-
+            bestScorePoints = 0;
+            bestScoreLine = 0;
             openLevels[1] = true;
         }
     }

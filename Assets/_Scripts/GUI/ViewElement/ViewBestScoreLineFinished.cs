@@ -1,8 +1,10 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 using YG;
 
-public class ViewScoreLineFinished : MonoBehaviour {
+public class ViewBestScoreLineFinished : MonoBehaviour {
+    private const string NAME_LIDERBOARD_WITH_LINE = "LBLine";
+
     private TextMeshProUGUI _textScore;
     private string _textStarted;
     private EventBus _eventBus;
@@ -35,7 +37,15 @@ public class ViewScoreLineFinished : MonoBehaviour {
     }
 
     private void OnFinishedScoreLine(FinishedScoreLineSignal signal) {
-        SetValue(signal.ScoreLineFinished);
+        if (YandexGame.savesData.bestScoreLine < signal.ScoreLineFinished) {
+            SetValue(signal.ScoreLineFinished);
+            YandexGame.savesData.bestScoreLine = signal.ScoreLineFinished;
+            YandexGame.SaveProgress();
+            YandexGame.NewLeaderboardScores(NAME_LIDERBOARD_WITH_LINE, signal.ScoreLineFinished);
+        }
+        else {
+            SetValue(YandexGame.savesData.bestScoreLine);
+        }
     }
 
     private void SetValue(int value) {

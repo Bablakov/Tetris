@@ -8,6 +8,8 @@ public class PanelFinished : HidingPanel, IDisposable {
     private ButtonRestartGame _buttonRestartGame;
     private ViewScoreLineFinished _viewScoreLineFinished;
     private ViewScorePointsFinished _viewScorePointsFinished;
+    private ViewBestScoreLineFinished _viewBestScoreLineFinished;
+    private ViewBestScorePointsFinished _viewBestScorePointsFinished;
 
     public override void Initialize(EventBus eventBus) {
         base.Initialize(eventBus);
@@ -22,6 +24,8 @@ public class PanelFinished : HidingPanel, IDisposable {
         _buttonRestartGame = GetComponentInChildren<ButtonRestartGame>();
         _viewScoreLineFinished = GetComponentInChildren<ViewScoreLineFinished>();
         _viewScorePointsFinished = GetComponentInChildren<ViewScorePointsFinished>();
+        _viewBestScoreLineFinished = GetComponentInChildren<ViewBestScoreLineFinished>();
+        _viewBestScorePointsFinished = GetComponentInChildren<ViewBestScorePointsFinished>();
     }
 
     protected override void InitializeComponents() {
@@ -30,6 +34,8 @@ public class PanelFinished : HidingPanel, IDisposable {
         _buttonRestartGame.Initialize(EventBus);
         _viewScoreLineFinished.Initialize(EventBus);
         _viewScorePointsFinished.Initialize(EventBus);
+        _viewBestScoreLineFinished.Initialize(EventBus);
+        _viewBestScorePointsFinished.Initialize(EventBus);
     }
 
     private void Subscribe() {
@@ -61,6 +67,8 @@ public class PanelFinished : HidingPanel, IDisposable {
         _buttonRestartGame.Show();
         _viewScoreLineFinished.Show();
         _viewScorePointsFinished.Show();
+        _viewBestScoreLineFinished.Show();
+        _viewBestScorePointsFinished.Show();
     }
 
     private void HideChildren() {
@@ -70,6 +78,8 @@ public class PanelFinished : HidingPanel, IDisposable {
         _buttonRestartGame.Hide();
         _viewScoreLineFinished.Hide();
         _viewScorePointsFinished.Hide();
+        _viewBestScoreLineFinished.Hide();
+        _viewBestScorePointsFinished.Hide();
     }
 
     public void Dispose() {
