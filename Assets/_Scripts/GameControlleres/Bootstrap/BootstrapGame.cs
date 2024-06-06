@@ -19,7 +19,7 @@ public class BootstrapGame : Bootstrap {
     private Field _field;
 
     protected override void Awake() {
-        YandexGameMe.GetDevice();
+        //YandexGameMe.GetDevice();
 
 
         base.Awake();

@@ -3,10 +3,10 @@ using System;
 using UnityEngine;
 
 public class ViewScorePoints : MonoBehaviour, IDisposable {
-    private const string DEFAULT_STRING = "Score: ";
     private const int BEGINNING_VALUE = 0;
 
     private TextMeshProUGUI _textScore;
+    private string _startedText;
     private EventBus _eventBus;
 
     public void Initialize(EventBus eventBus) {
@@ -17,6 +17,7 @@ public class ViewScorePoints : MonoBehaviour, IDisposable {
     }
     private void GetComponents() {
         _textScore = GetComponent<TextMeshProUGUI>();
+        _startedText = _textScore.text;
     }
 
     private void Subscribe() {
@@ -32,7 +33,7 @@ public class ViewScorePoints : MonoBehaviour, IDisposable {
     }
 
     private void SetValue(int value) {
-        _textScore.text = DEFAULT_STRING + value;
+        _textScore.text = _startedText + value;
     }
 
     public void Dispose() {

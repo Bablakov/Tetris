@@ -8,9 +8,6 @@ public class PanelSettings : HidingPanel {
     [SerializeField] private ButtonWithExternalAction saveSettings;
 
     private const string WAY_SETTINGS_CONFIG = "SettingsConfig";
-    private const string MUSIC_TEXT = "Music";
-    private const string GAME_TEXT = "Game";
-    private const string UI_TEXT = "UI";
 
     private SettingsConfig _settingsConfig;
 
@@ -19,9 +16,9 @@ public class PanelSettings : HidingPanel {
     }
 
     protected override void InitializeComponents() {
-        valueMusic.Initialize(MUSIC_TEXT, _settingsConfig.MusicVolume);
-        valueGame.Initialize(GAME_TEXT, _settingsConfig.GameVolume);
-        valueUI.Initialize(UI_TEXT, _settingsConfig.UIVolume);
+        valueMusic.Initialize(_settingsConfig.MusicVolume);
+        valueGame.Initialize(_settingsConfig.GameVolume);
+        valueUI.Initialize(_settingsConfig.UIVolume);
         exitPanel.Initialize(EventBus, Hide);
         saveSettings.Initialize(EventBus, Save);
     }

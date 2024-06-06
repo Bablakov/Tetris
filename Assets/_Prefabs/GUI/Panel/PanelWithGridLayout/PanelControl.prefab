@@ -414,7 +414,6 @@ GameObject:
   - component: {fileID: 1297483156013165219}
   - component: {fileID: 4257711873845625240}
   - component: {fileID: 7443803027827194586}
-  - component: {fileID: 228874430234462432}
   m_Layer: 5
   m_Name: PanelControl
   m_TagString: Untagged
@@ -479,18 +478,6 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &228874430234462432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605593299145974087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff8a9957ac76f6f41b304429cfde7fb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5707028428716875560
 GameObject:
   m_ObjectHideFlags: 0

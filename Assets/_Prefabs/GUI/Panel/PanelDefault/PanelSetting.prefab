@@ -16,7 +16,27 @@ PrefabInstance:
     - target: {fileID: 1376284966578182360, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
       propertyPath: m_Name
-      value: SetValueSlider (2)
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817506300761032702, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_text
+      value: UI Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817506300761032702, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 31.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817506300761032702, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_overflowMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490439703941473873, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4490439703941473873, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
@@ -27,6 +47,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: en
+      value: UI Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: ru
+      value: "\u0417\u0432\u0443\u043A \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0433\u043E
+        \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: tr
+      value: "Kullan\u0131c\u0131 Aray\xFCz\xFC Sesi"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: countLang
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: processTranslateLabel
+      value: 0/3 completed
       objectReference: {fileID: 0}
     - target: {fileID: 5320684926735104767, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
@@ -356,7 +402,17 @@ PrefabInstance:
     - target: {fileID: 1376284966578182360, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
       propertyPath: m_Name
-      value: SetValueSlider
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817506300761032702, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_text
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817506300761032702, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 31.55
       objectReference: {fileID: 0}
     - target: {fileID: 4490439703941473873, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
@@ -367,6 +423,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: en
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: ru
+      value: "\u041C\u0443\u0437\u044B\u043A\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: tr
+      value: "M\xFCzik"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: processTranslateLabel
+      value: 3/3 completed
       objectReference: {fileID: 0}
     - target: {fileID: 5320684926735104767, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
@@ -654,7 +730,17 @@ PrefabInstance:
     - target: {fileID: 1376284966578182360, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
       propertyPath: m_Name
-      value: SetValueSlider (1)
+      value: Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817506300761032702, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_text
+      value: Game sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817506300761032702, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 21.4
       objectReference: {fileID: 0}
     - target: {fileID: 4490439703941473873, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
@@ -665,6 +751,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: en
+      value: Game sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: ru
+      value: "\u0417\u0432\u0443\u043A \u0438\u0433\u0440\u044B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: tr
+      value: Oyun sesi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: countLang
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
+        type: 3}
+      propertyPath: processTranslateLabel
+      value: 0/3 completed
       objectReference: {fileID: 0}
     - target: {fileID: 5320684926735104767, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
@@ -944,6 +1055,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 662194650623607581}
     m_Modifications:
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: en
+      value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: ru
+      value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: tr
+      value: Ayarlar
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: processTranslateLabel
+      value: 3/3 completed
+      objectReference: {fileID: 0}
     - target: {fileID: 4031545547585800815, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: en

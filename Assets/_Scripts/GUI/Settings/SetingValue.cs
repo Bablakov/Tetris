@@ -7,8 +7,7 @@ public class SetingValue : MonoBehaviour {
     private TextMeshProUGUI _textMeshPro;
     private string _text;
 
-    public void Initialize(string text, float initialValue) {
-        _text = text + "\n";
+    public void Initialize(float initialValue) {
         GetComponents();
         SetValue(initialValue);
         Subscribe();
@@ -26,6 +25,7 @@ public class SetingValue : MonoBehaviour {
     private void GetComponents() {
         _slider = GetComponentInChildren<Slider>();
         _textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
+        _text = _textMeshPro.text + "\n";
     }
 
     private void Subscribe() {

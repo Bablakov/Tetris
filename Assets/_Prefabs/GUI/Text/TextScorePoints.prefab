@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: en
+      value: 'Score:'
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: ru
+      value: "\u0421\u0447\u0435\u0442:"
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: tr
+      value: 'Gol:'
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: processTranslateLabel
+      value: 3/3 completed
+      objectReference: {fileID: 0}
     - target: {fileID: 4888561587744832027, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -107,6 +127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259665823193553844, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: m_text
+      value: 'Score:'
       objectReference: {fileID: 0}
     - target: {fileID: 7386055715973148101, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}

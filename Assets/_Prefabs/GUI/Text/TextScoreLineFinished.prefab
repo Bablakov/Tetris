@@ -8,6 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: en
+      value: 'Line:'
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: ru
+      value: "\u041B\u0438\u043D\u0438\u044F:"
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: tr
+      value: 'Astar:'
+      objectReference: {fileID: 0}
     - target: {fileID: 4888561587744832027, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: m_Pivot.x

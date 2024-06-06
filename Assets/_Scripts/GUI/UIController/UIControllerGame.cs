@@ -1,8 +1,11 @@
 using System;
+using UnityEngine;
 
 public class UIControllerGame : UIController, IDisposable {
+    [SerializeField] private Transform panelControl;
+    [SerializeField] private Transform panelDescription;
+
     private PanelPause _panelPause;
-    private PanelControl _panelControl;
     private PanelFinished _panelFinished;
     private PanelWithNextFigure _panelWithNextFigure;
     private PanelWithScoreAndButton _panelWithScoreAndButton;
@@ -15,7 +18,6 @@ public class UIControllerGame : UIController, IDisposable {
     protected override void GetComponents() {
         base.GetComponents();
         _panelPause = GetComponentInChildren<PanelPause>();
-        _panelControl = GetComponentInChildren<PanelControl>();
         _panelFinished = GetComponentInChildren<PanelFinished>();
         _panelWithNextFigure = GetComponentInChildren<PanelWithNextFigure>();
         _panelWithScoreAndButton = GetComponentInChildren<PanelWithScoreAndButton>();

@@ -8,7 +8,7 @@ public abstract class Sound : MonoBehaviour {
         SetValue(config);
     }
 
-    public void SetVolume(float value) {
+    public virtual void SetVolume(float value) {
         AudioSource.volume = value;
     }
 

@@ -3,10 +3,10 @@ using TMPro;
 using UnityEngine;
 
 public class ViewScoreLine : MonoBehaviour, IDisposable {
-    private const string DEFAULT_STRING = "Lines: ";
     private const int BEGINNING_VALUE = 0;
 
     private TextMeshProUGUI _textScore;
+    private string _startedText;
     private EventBus _eventBus;
 
     public void Initialize(EventBus eventBus) {
@@ -18,6 +18,7 @@ public class ViewScoreLine : MonoBehaviour, IDisposable {
 
     private void GetComponent() {
         _textScore = GetComponent<TextMeshProUGUI>();
+        _startedText = _textScore.text;
     }
 
     private void Subscribe() {
@@ -33,7 +34,7 @@ public class ViewScoreLine : MonoBehaviour, IDisposable {
     }
 
     private void SetValue(int value) {
-        _textScore.text = DEFAULT_STRING + value;
+        _textScore.text = _startedText + value;
     }
 
     public void Dispose() {

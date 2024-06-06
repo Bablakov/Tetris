@@ -1,68 +1,38 @@
 using System;
 using UnityEngine;
 
-public class SoundFigure : Sound, IDisposable {
-    private AudioClip _soundMove;
-    private AudioClip _soundRotate;
-    private AudioClip _soundSoftDrop;
-    private AudioClip _soundHardDrop;
-    private AudioClip _soundSwapFigure;
-    private EventBus _eventBus;
+public class SoundFigure : MonoBehaviour, IDisposable {
+    private SoundChangedPropertyFigure _soundChangedPropertyFigure;
+    private SoundPutFigure _soundPutFigure;
+    private SoundSwapedFigure _soundSwapedFigure;
 
     public void Initialize(EventBus eventBus, SoundConfig config) {
-        base.Initialize(config);
-        _eventBus = eventBus;
-        GetComponent();
-        Subscribe();
+        GetComponents();
+        InitializeComponents(eventBus, config);
     }
 
-    protected override void SetValue(SoundConfig config) {
-        _soundMove = config.MoveFigure;
-        _soundRotate = config.RotateFigure;
-        _soundSoftDrop = config.SoftDropFigure;
-        _soundHardDrop = config.HardDropFigure;
-        _soundSwapFigure = config.SwapFigure;
+    private void InitializeComponents(EventBus eventBus, SoundConfig config) {
+        _soundChangedPropertyFigure.Initialize(eventBus, config);
+        _soundPutFigure.Initialize(eventBus, config);
+        _soundSwapedFigure.Initialize(eventBus, config);
     }
 
-
-    private void Subscribe() {
-        _eventBus.Subscribe<ChangedPropertyFigureSignal>(OnChangedPropertyFigure);
-        _eventBus.Subscribe<SwapedFigureSignal>(OnSwapedFigure);
-        _eventBus.Subscribe<PutFigureSignal>(OnPutFigure);
+    public void SetVolume(float value) {
+        _soundChangedPropertyFigure.SetVolume(value);
+        _soundPutFigure.SetVolume(value);
+        _soundSwapedFigure.SetVolume(value);
     }
 
-    private void Unsubscribe() {
-        _eventBus.Unsubscribe<ChangedPropertyFigureSignal>(OnChangedPropertyFigure);
-        _eventBus.Unsubscribe<SwapedFigureSignal>(OnSwapedFigure);
-        _eventBus.Unsubscribe<PutFigureSignal>(OnPutFigure);
+    private void GetComponents() {
+        _soundChangedPropertyFigure = GetComponentInChildren<SoundChangedPropertyFigure>();
+        _soundPutFigure = GetComponentInChildren<SoundPutFigure>();
+        _soundSwapedFigure = GetComponentInChildren<SoundSwapedFigure>();
     }
 
-    private void OnChangedPropertyFigure(ChangedPropertyFigureSignal signal) { 
-        if (signal.IsRotateChanged) {
-            AudioSource.clip = _soundRotate;
-        }
-        else {
-            AudioSource.clip = _soundMove;
-        }
-        AudioSource.Play();
-    }
-
-    private void OnPutFigure(PutFigureSignal signal) {
-        if (signal.IsHardDrop) {
-            AudioSource.clip = _soundHardDrop;
-        }
-        else {
-            AudioSource.clip = _soundSoftDrop;
-        }
-        AudioSource.Play();
-    }
-
-    private void OnSwapedFigure(SwapedFigureSignal signal) {
-        AudioSource.clip = _soundSwapFigure;
-        AudioSource.Play();
-    }
 
     public void Dispose() {
-        Unsubscribe();
+        _soundChangedPropertyFigure.Dispose();
+        _soundPutFigure.Dispose();
+        _soundSwapedFigure.Dispose();
     }
 }

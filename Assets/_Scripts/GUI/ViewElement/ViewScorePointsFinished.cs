@@ -2,9 +2,8 @@
 using UnityEngine;
 
 public class ViewScorePointsFinished : MonoBehaviour {
-    private const string DEFAULT_STRING = "Score: ";
-
     private TextMeshProUGUI _textScore;
+    private string _startedText;
     private EventBus _eventBus;
 
     public void Initialize(EventBus eventBus) {
@@ -23,6 +22,7 @@ public class ViewScorePointsFinished : MonoBehaviour {
 
     private void GetComponents() {
         _textScore = GetComponent<TextMeshProUGUI>();
+        _startedText = _textScore.text;
     }
 
     private void Subscribe() {
@@ -38,7 +38,7 @@ public class ViewScorePointsFinished : MonoBehaviour {
     }
 
     private void SetValue(int value) {
-        _textScore.text = DEFAULT_STRING + value;
+        _textScore.text = _startedText + value;
     }
 
     public void Dispose() {
