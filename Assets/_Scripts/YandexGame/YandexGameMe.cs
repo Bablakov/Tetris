@@ -1,7 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using UnityEngine;
-
-public static class YandexGameMe {
+﻿public static class YandexGameMe {
     /*[DllImport("__Internal")] 
     private static extern void GetTypeDevicePlayer();
 
