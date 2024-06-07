@@ -37,15 +37,15 @@ public class ViewBestScorePointsFinished : MonoBehaviour {
     }
 
     private void OnChangegScore(FinishedScoreSignal signal) {
-        //if (YandexGame.savesData.bestScorePoints < signal.ScoreFinished) {
+        if (YandexGame.savesData.bestScorePoints < signal.ScoreFinished) {
             SetValue(signal.ScoreFinished);
-        /*    YandexGame.savesData.bestScorePoints = signal.ScoreFinished;
+            YandexGame.savesData.bestScorePoints = signal.ScoreFinished;
             YandexGame.SaveProgress();
             YandexGame.NewLeaderboardScores(NAME_LIDERBOARD_WITH_SCORE, signal.ScoreFinished);
         } 
         else {
             SetValue(YandexGame.savesData.bestScorePoints);
-        }*/
+        }
     }
 
     private void SetValue(int value) {
