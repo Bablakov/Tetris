@@ -18,11 +18,6 @@ public class BootstrapGame : Bootstrap {
     private GameConfig _gameConfig;
     private Field _field;
 
-    protected override void Awake() {
-        YandexGame.LoadProgress();
-        base.Awake();
-    }
-
     protected override void GetComponents() {
         _fieldConfig = Resources.Load<FieldConfig>(WAY_FIELD_CONFIG);
         _gameConfig = Resources.Load<GameConfig>(WAY_GAME_CONFIG);

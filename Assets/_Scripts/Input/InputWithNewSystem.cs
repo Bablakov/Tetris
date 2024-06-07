@@ -45,7 +45,7 @@ public class InputWithNewSystem : InputGame {
 
     private void ProcessInput() {
         if (isCanGetData) {
-            if (isPressedKeyDown) {
+            if (isPressedKeyDown && !Finished) {
                 SendInputData();
                 ResetTime();
             }
@@ -55,25 +55,31 @@ public class InputWithNewSystem : InputGame {
     }
 
     private void OnHardDropeFigureInputed() {
-        InputedHardDrope?.Invoke();
+        if (!Finished)
+            InputedHardDrope?.Invoke();
     }
 
     private void OnSwapFigureInputed() {
-        InputedSwapFigure?.Invoke();
+        if (!Finished)
+            InputedSwapFigure?.Invoke();
     }
 
     private void OnRotateFigure() {
-        InputedRotate?.Invoke();
+        if (!Finished)
+            InputedRotate?.Invoke();
     }
     private void OnMoveRight() {
-        InputedMove?.Invoke(Right);
+        if (!Finished)
+            InputedMove?.Invoke(Right);
     }
 
     private void OnMoveLeft() {
-        InputedMove?.Invoke(Left);
+        if (!Finished)
+            InputedMove?.Invoke(Left);
     }
     private void SendInputData() {
-        InputedMove?.Invoke(Down);
+        if (!Finished)
+            InputedMove?.Invoke(Down);
     }
 
     private void ResetTime() {

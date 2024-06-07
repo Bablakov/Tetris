@@ -25,6 +25,9 @@ public class PanelSettings : HidingPanel {
 
     public override void Show() {
         gameObject.SetActive(true);
+        valueMusic.SetValue(_settingsConfig.MusicVolume);
+        valueGame.SetValue(_settingsConfig.GameVolume);
+        valueUI.SetValue(_settingsConfig.UIVolume);
     }
 
     public override void Hide() {

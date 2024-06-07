@@ -8,7 +8,8 @@ public abstract class InputGame : MonoBehaviour, IService, IDisposable {
     public abstract event Action<Vector2> InputedMove;
 
     protected InputPlayerSystem InputPlayerSystem;
-    protected EventBus _eventBus;
+    protected EventBus EventBus;
+    protected bool Finished = false;
 
     public virtual void Initialize() {
         GetComponent();
@@ -24,19 +25,19 @@ public abstract class InputGame : MonoBehaviour, IService, IDisposable {
     }
 
     protected virtual void OnFinishedGame(FinishedGameSignal signal) {
-        Disable();
+        Finish();
     }
 
     protected virtual void Subscribe() {
-        _eventBus.Subscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Subscribe<FinishedGameSignal>(OnFinishedGame);
-        _eventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
+        EventBus.Subscribe<PausedGameSignal>(OnPausedGame);
+        EventBus.Subscribe<FinishedGameSignal>(OnFinishedGame);
+        EventBus.Subscribe<ResumedGameSignal>(OnStartedGame);
     }
 
     protected virtual void Unsubscribe() {
-        _eventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
-        _eventBus.Unsubscribe<FinishedGameSignal>(OnFinishedGame);
-        _eventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
+        EventBus.Unsubscribe<PausedGameSignal>(OnPausedGame);
+        EventBus.Unsubscribe<FinishedGameSignal>(OnFinishedGame);
+        EventBus.Unsubscribe<ResumedGameSignal>(OnStartedGame);
     }
 
     private void GetComponent() {
@@ -44,7 +45,7 @@ public abstract class InputGame : MonoBehaviour, IService, IDisposable {
             InputPlayerSystem = new InputPlayerSystem();
         }
         InputPlayerSystem.Player.Enable();
-        _eventBus = ServiceLocator.Current.Get<EventBus>();
+        EventBus = ServiceLocator.Current.Get<EventBus>();
     }
 
     private void Enable() {
@@ -52,7 +53,12 @@ public abstract class InputGame : MonoBehaviour, IService, IDisposable {
     }
 
     private void Disable() {
-        enabled &= false;
+        enabled = false;
+    }
+
+    private void Finish() {
+        Finished = true;
+        Disable();
     }
 
     public void Dispose() {

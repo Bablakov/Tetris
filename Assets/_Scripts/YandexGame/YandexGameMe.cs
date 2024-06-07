@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public static class YandexGameMe {
-    [DllImport("__Internal")] 
+    /*[DllImport("__Internal")] 
     private static extern void GetTypeDevicePlayer();
 
     public static string Device { get; private set; }
@@ -14,5 +14,5 @@ public static class YandexGameMe {
     public static void SetDevice(string device) {
         var result = JsonUtility.FromJson<string>(device);
         Device = result;
-    }
+    }*/
 }

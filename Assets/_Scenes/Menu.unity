@@ -427,6 +427,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1805282476}
     m_Modifications:
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: en
+      value: Menu Game
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: ru
+      value: "\u041C\u0435\u043D\u044E \u0438\u0433\u0440\u044B"
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: tr
+      value: "Men\xFC Oyunu"
+      objectReference: {fileID: 0}
+    - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: processTranslateLabel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4031545547585800815, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: en
@@ -850,6 +870,11 @@ PrefabInstance:
     - target: {fileID: 8556116610908887014, guid: d27ca20d0f3e7c94e93f98487a95e0b5,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8707439983001254647, guid: d27ca20d0f3e7c94e93f98487a95e0b5,
+        type: 3}
+      propertyPath: componentTextField
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8799444818689750599, guid: d27ca20d0f3e7c94e93f98487a95e0b5,
