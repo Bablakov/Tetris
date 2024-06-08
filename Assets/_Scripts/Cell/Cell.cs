@@ -20,7 +20,7 @@ public class Cell : MonoBehaviour {
     }
 
     public void Hide(bool delete = false) {
-        if (delete) {
+        if (delete && !Application.isMobilePlatform) {
             var explosion = Instantiate(explosionObject, transform.position + new Vector3Int(0, 0, -1), transform.rotation);
             explosion.Initialize(Material.color);
         }

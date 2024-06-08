@@ -444,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 6231374634095479576, guid: 99dd3940adc3f2048832bae375fa79c1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 170
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6231374634095479576, guid: 99dd3940adc3f2048832bae375fa79c1,
         type: 3}
@@ -596,6 +596,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonExitGame
       objectReference: {fileID: 0}
+    - target: {fileID: 4117455847773132427, guid: af66c877ec199eb4f9befdc00ce5fab1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6829772833768005282, guid: af66c877ec199eb4f9befdc00ce5fab1,
         type: 3}
       propertyPath: m_text
@@ -708,7 +713,7 @@ PrefabInstance:
     - target: {fileID: 5054745694288047298, guid: a424ab5239e8e424fa9ea168c4109b2f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 5054745694288047298, guid: a424ab5239e8e424fa9ea168c4109b2f,
         type: 3}

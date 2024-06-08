@@ -35,7 +35,7 @@ public class ViewScoreLineFinished : MonoBehaviour {
     }
 
     private void OnFinishedScoreLine(FinishedScoreLineSignal signal) {
-        SetValue(signal.ScoreLineFinished);
+        SetValue(signal.Score);
     }
 
     private void SetValue(int value) {

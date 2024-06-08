@@ -320,6 +320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonExitGame
       objectReference: {fileID: 0}
+    - target: {fileID: 4117455847773132427, guid: af66c877ec199eb4f9befdc00ce5fab1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 828319818027432069, guid: af66c877ec199eb4f9befdc00ce5fab1, type: 3}
@@ -439,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 8178364846275056756, guid: 947debb9b84f64043b1714507446766d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8178364846275056756, guid: 947debb9b84f64043b1714507446766d,
         type: 3}
@@ -559,7 +564,7 @@ PrefabInstance:
     - target: {fileID: 8982194929001461438, guid: 017dcb19e58717b4092f839d3414cc93,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -200
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 8982194929001461438, guid: 017dcb19e58717b4092f839d3414cc93,
         type: 3}

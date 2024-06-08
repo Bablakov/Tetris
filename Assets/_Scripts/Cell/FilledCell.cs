@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 
 public class FilledCell : MonoBehaviour {
-    private MeshRenderer _meshRenderer;
+    private SpriteRenderer _sprite;
 
     public void Initialize() {
         GetComponent();
     }
 
     private void GetComponent() {
-        _meshRenderer = GetComponentInChildren<MeshRenderer>();
+        _sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void Enable(Material material) {
-        _meshRenderer.material = material;
+        _sprite.color = material.color;
         gameObject.SetActive(true);
     }
 

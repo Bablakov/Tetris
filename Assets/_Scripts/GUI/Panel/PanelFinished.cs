@@ -4,7 +4,7 @@ using TMPro;
 public class PanelFinished : HidingPanel, IDisposable {
     private TextMeshProUGUI _text;
     private ButtonGoMenu _buttonGoMenu;
-    private ButtonExitGame _buttonExitGame;
+    //private ButtonExitGame _buttonExitGame;
     private ButtonRestartGame _buttonRestartGame;
     private ViewScoreLineFinished _viewScoreLineFinished;
     private ViewScorePointsFinished _viewScorePointsFinished;
@@ -20,7 +20,7 @@ public class PanelFinished : HidingPanel, IDisposable {
         base.GetComponents();
         _text = GetComponentInChildren<TextMeshProUGUI>();
         _buttonGoMenu = GetComponentInChildren<ButtonGoMenu>();
-        _buttonExitGame = GetComponentInChildren<ButtonExitGame>();
+        //_buttonExitGame = GetComponentInChildren<ButtonExitGame>();
         _buttonRestartGame = GetComponentInChildren<ButtonRestartGame>();
         _viewScoreLineFinished = GetComponentInChildren<ViewScoreLineFinished>();
         _viewScorePointsFinished = GetComponentInChildren<ViewScorePointsFinished>();
@@ -30,7 +30,7 @@ public class PanelFinished : HidingPanel, IDisposable {
 
     protected override void InitializeComponents() {
         _buttonGoMenu.Initialize(EventBus);
-        _buttonExitGame.Initialize(EventBus);
+        //_buttonExitGame.Initialize(EventBus);
         _buttonRestartGame.Initialize(EventBus);
         _viewScoreLineFinished.Initialize(EventBus);
         _viewScorePointsFinished.Initialize(EventBus);
@@ -63,7 +63,7 @@ public class PanelFinished : HidingPanel, IDisposable {
     private void ShowChildren() {
         _text.enabled = true;
         _buttonGoMenu.Show();
-        _buttonExitGame.Show();
+        //_buttonExitGame.Show();
         _buttonRestartGame.Show();
         _viewScoreLineFinished.Show();
         _viewScorePointsFinished.Show();
@@ -74,7 +74,7 @@ public class PanelFinished : HidingPanel, IDisposable {
     private void HideChildren() {
         _text.enabled = false;
         _buttonGoMenu.Hide();
-        _buttonExitGame.Hide();
+        //_buttonExitGame.Hide();
         _buttonRestartGame.Hide();
         _viewScoreLineFinished.Hide();
         _viewScorePointsFinished.Hide();

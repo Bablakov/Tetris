@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIControllerGame : UIController, IDisposable {
@@ -13,6 +14,14 @@ public class UIControllerGame : UIController, IDisposable {
     public override void Initialize() {
         base.Initialize();
         PanelSettings.Hide();
+        if (Application.isMobilePlatform) {
+            panelControl.gameObject.SetActive(true);
+            panelDescription.gameObject.SetActive(false);
+        }
+        else {
+            panelControl.gameObject.SetActive(false);
+            panelDescription.gameObject.SetActive(true);
+        }
     }
 
     protected override void GetComponents() {

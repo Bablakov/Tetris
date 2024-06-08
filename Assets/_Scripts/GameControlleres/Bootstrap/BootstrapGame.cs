@@ -11,6 +11,7 @@ public class BootstrapGame : Bootstrap {
 
     private FigureGhostController _figureGhostController;
     private GameTimeController _gameTimeController;
+    private GameDataController _gameDataController;
     private FigureController _figureController;
     private FieldController _fieldController;
     private FigureSpawner _figureSpawner;
@@ -26,10 +27,11 @@ public class BootstrapGame : Bootstrap {
     protected override void CreateComponent() {
         base.CreateComponent();
         _figureController = gameObject.AddComponent<FigureController>();
+        _gameTimeController = new GameTimeController(BusEvent);
+        _gameDataController = new GameDataController(BusEvent);
         _figureGhostController = new FigureGhostController();
         _fieldController = new FieldController();
         _figureSpawner = new FigureSpawner();
-        _gameTimeController = new GameTimeController(BusEvent);
     }
 
     protected override void RegisterServices() {
@@ -44,11 +46,11 @@ public class BootstrapGame : Bootstrap {
         AddIDisposable(inputGame);
         AddIDisposable(spawnerField);
         AddIDisposable(_figureGhostController);
+        AddIDisposable(_gameDataController);
         AddIDisposable(_gameTimeController);
         AddIDisposable(_figureController);
         AddIDisposable(_fieldController);
         AddIDisposable(_figureSpawner);
-        AddIDisposable(_field);
     }
 
     protected override void Initialize() {
@@ -59,6 +61,6 @@ public class BootstrapGame : Bootstrap {
         _fieldController.Initialize(_field);
         _figureGhostController.Initialize();
         _figureSpawner.Initialize(_fieldConfig.PositionSpawn);
-        Time.timeScale = 1;
+        GameTimeController.StartTime();
     }
 }

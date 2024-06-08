@@ -50,6 +50,11 @@ public class RectangularField : Field {
         Score += Mathematics.Pow(countCurrentDeleteLine);
     }
 
+    protected override void SendData() {
+        _eventBus.Invoke(new ChangedCountDeleteLineSignal(CountDeleteLine));
+        _eventBus.Invoke(new ChangedScoreSignal(Score));
+    }
+
     private void AssignValue(Cell[][] field) {
         _hieght = field.Length;
         _width = field[0].Length;

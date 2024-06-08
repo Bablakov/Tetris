@@ -18,8 +18,8 @@ namespace YG
 
         // Ваши сохранения
 
-        public int bestScorePoints = 0;
-        public int bestScoreLine = 0;
+        public int bestScorePoints;
+        public int bestScoreLine;
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 

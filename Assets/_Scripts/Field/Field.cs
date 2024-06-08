@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Field : IDisposable{
+public abstract class Field {
     protected Cell[][] Cells;
     protected EventBus _eventBus;
     protected int CountDeleteLine;
@@ -11,7 +11,6 @@ public abstract class Field : IDisposable{
     public Field(Cell[][] cells) {
         Cells = cells;
         _eventBus = ServiceLocator.Current.Get<EventBus>();
-        Subscribe();
     }
 
     public abstract bool ICanMoveHere(IEnumerable<Vector3Int> positionCellsFigure);
@@ -23,25 +22,5 @@ public abstract class Field : IDisposable{
 
     protected abstract void UpdateData();
 
-    protected virtual void Subscribe() {
-        _eventBus.Subscribe<FinishedGameSignal>(SendDataFinished);
-    }
-
-    protected virtual void Unsubscribe() {
-        _eventBus.Unsubscribe<FinishedGameSignal>(SendDataFinished);
-    }
-
-    protected virtual void SendData() {
-        _eventBus.Invoke(new ChangedCountDeleteLineSignal(CountDeleteLine));
-        _eventBus.Invoke(new ChangedScoreSignal(Score));
-    }
-
-    protected virtual void SendDataFinished(FinishedGameSignal signal) {
-        _eventBus.Invoke<FinishedScoreLineSignal>(new(CountDeleteLine));
-        _eventBus.Invoke<FinishedScoreSignal>(new(Score));
-    }
-
-    public virtual void Dispose() {
-        Unsubscribe();
-    }
+    protected abstract void SendData();
 }

@@ -34,7 +34,7 @@ public class ViewScorePointsFinished : MonoBehaviour {
     }
 
     private void OnChangegScore(FinishedScoreSignal signal) {
-        SetValue(signal.ScoreFinished);
+        SetValue(signal.Score);
     }
 
     private void SetValue(int value) {

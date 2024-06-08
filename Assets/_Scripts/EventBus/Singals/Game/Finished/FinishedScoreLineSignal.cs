@@ -1,7 +1,9 @@
 ﻿public class FinishedScoreLineSignal {
-    public readonly int ScoreLineFinished;
+    public readonly int ScoreBest;
+    public readonly int Score;
 
-    public FinishedScoreLineSignal(int scoreLineFinished) {
-        ScoreLineFinished = scoreLineFinished;
+    public FinishedScoreLineSignal(int scoreBest, int score) {
+        ScoreBest = scoreBest;
+        Score = score;
     }
 }

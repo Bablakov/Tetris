@@ -56,8 +56,7 @@ PrefabInstance:
     - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
         type: 3}
       propertyPath: ru
-      value: "\u0417\u0432\u0443\u043A \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0433\u043E
-        \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430"
+      value: "\u0417\u0432\u0443\u043A \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430"
       objectReference: {fileID: 0}
     - target: {fileID: 5235539151230934500, guid: 87522ec7366a237428d52efff3102882,
         type: 3}

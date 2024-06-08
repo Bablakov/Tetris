@@ -86,7 +86,7 @@ public partial class @InputPlayerSystem: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a8b6399f-1b2d-463c-b94c-09ff248ab178"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

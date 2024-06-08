@@ -17,7 +17,7 @@ public class ViewScorePoints : MonoBehaviour, IDisposable {
     }
     private void GetComponents() {
         _textScore = GetComponent<TextMeshProUGUI>();
-        _startedText = _textScore.text;
+        _startedText = _textScore.text + "\n";
     }
 
     private void Subscribe() {

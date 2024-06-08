@@ -3,7 +3,7 @@ using TMPro;
 public class PanelPause : HidingPanel {
     private ButtonWithExternalAction _buttonWithExternalAction;
     private ButtonResumeGame _buttonResumeGame;
-    private ButtonExitGame _buttonExitGame;
+    //private ButtonExitGame _buttonExitGame;
     private PanelSettings _panelSettings;
     private TextMeshProUGUI _text;
 
@@ -21,13 +21,13 @@ public class PanelPause : HidingPanel {
         _text = GetComponentInChildren<TextMeshProUGUI>();
         _buttonResumeGame = GetComponentInChildren<ButtonResumeGame>();
         _buttonWithExternalAction = GetComponentInChildren<ButtonWithExternalAction>();
-        _buttonExitGame = GetComponentInChildren<ButtonExitGame>();
+        //_buttonExitGame = GetComponentInChildren<ButtonExitGame>();
     }
 
     protected override void InitializeComponents() {
         _buttonResumeGame.Initialize(EventBus);
         _buttonWithExternalAction.Initialize(EventBus, ShowSettingsPanel);
-        _buttonExitGame.Initialize(EventBus);
+        //_buttonExitGame.Initialize(EventBus);
     }
     private void Subscribe() {
         EventBus.Subscribe<PausedGameSignal>(OnPausedGame);
@@ -64,14 +64,14 @@ public class PanelPause : HidingPanel {
     private void ShowChildren() {
         _text.enabled = true;
         _buttonWithExternalAction.Show();
-        _buttonExitGame.Show();
+        //_buttonExitGame.Show();
         _buttonResumeGame.Show();
     }
 
     private void HideChildren() {
         _text.enabled = false;
         _buttonWithExternalAction.Hide();
-        _buttonExitGame.Hide();
+        //_buttonExitGame.Hide();
         _buttonResumeGame.Hide();
     }
 

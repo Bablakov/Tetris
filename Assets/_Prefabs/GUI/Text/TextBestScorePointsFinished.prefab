@@ -16,7 +16,8 @@ PrefabInstance:
     - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: ru
-      value: "\u041B\u0443\u0447\u0448\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:"
+      value: "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E
+        \u043E\u0447\u043A\u043E\u0432:"
       objectReference: {fileID: 0}
     - target: {fileID: -5391150848134970962, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
@@ -132,6 +133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 'Best score: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259665823193553844, guid: 85171726d06fec0408ced93da7e23bd4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 28.55
       objectReference: {fileID: 0}
     - target: {fileID: 7386055715973148101, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}

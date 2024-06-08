@@ -18,7 +18,7 @@ public class ViewScoreLine : MonoBehaviour, IDisposable {
 
     private void GetComponent() {
         _textScore = GetComponent<TextMeshProUGUI>();
-        _startedText = _textScore.text;
+        _startedText = _textScore.text + "\n";
     }
 
     private void Subscribe() {

@@ -22,14 +22,22 @@ public class GameTimeController : IDisposable {
     }
 
     private void OnFinishedGame(FinishedGameSignal signal) {
-        Time.timeScale = 0;
+        StopTime();
     }
 
     private void OnPausedGame(PausedGameSignal signal) {
-        Time.timeScale = 0;
+        StopTime();
     }
 
     private void OnStartedGame(ResumedGameSignal signal) {
+        StartTime();
+    }
+
+    public static void StopTime() {
+        Time.timeScale = 0;
+    }
+
+    public static void StartTime() {
         Time.timeScale = 1;
     }
 

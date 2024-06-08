@@ -37,15 +37,7 @@ public class ViewBestScoreLineFinished : MonoBehaviour {
     }
 
     private void OnFinishedScoreLine(FinishedScoreLineSignal signal) {
-        if (YandexGame.savesData.bestScoreLine < signal.ScoreLineFinished) {
-            SetValue(signal.ScoreLineFinished);
-            YandexGame.savesData.bestScoreLine = signal.ScoreLineFinished;
-            YandexGame.SaveProgress();
-            YandexGame.NewLeaderboardScores(NAME_LIDERBOARD_WITH_LINE, signal.ScoreLineFinished);
-        }
-        else {
-            SetValue(YandexGame.savesData.bestScoreLine);
-        }
+        SetValue(signal.ScoreBest);
     }
 
     private void SetValue(int value) {

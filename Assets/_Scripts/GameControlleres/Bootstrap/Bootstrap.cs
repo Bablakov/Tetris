@@ -10,7 +10,7 @@ public abstract class Bootstrap : MonoBehaviour {
 
     private List<IDisposable> _disposables;
 
-    protected virtual void Start() {
+    protected virtual void Awake() {
         GetComponents();
         CreateComponent();
         RegisterServices();
