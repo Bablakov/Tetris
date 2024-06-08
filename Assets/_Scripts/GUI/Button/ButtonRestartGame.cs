@@ -9,6 +9,7 @@ public class ButtonRestartGame : HidingButton {
         AddEventOnButton();
     }
     private void RestartGame() {
+        EventBus.Invoke(new RestartedGameSignal());
         GameSceneController.RestartScene();
     }
 }

@@ -128,6 +128,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6881757454154163254, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881757454154163254, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881757454154163254, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2970238083970559322, guid: 202e31c6d1ff04f4b9d60a3e414445af, type: 3}

@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1177497483277509706
 Transform:
@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf240d770330474ab76b9b035b6320f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIControllerMenu: {fileID: 0}
+  controllerUI: {fileID: 0}
   soundGame: {fileID: 0}

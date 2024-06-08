@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using DreamTeamMobile;
 using UnityEngine;
 using YG;
 
@@ -9,6 +10,7 @@ public class BootstrapGame : Bootstrap {
     private const string WAY_FIELD_CONFIG = "FieldConfig";
     private const string WAY_GAME_CONFIG = "GameConfig";
 
+    private GameAnalyticsController _gameAnalyticsController;
     private FigureGhostController _figureGhostController;
     private GameTimeController _gameTimeController;
     private GameDataController _gameDataController;
@@ -19,6 +21,10 @@ public class BootstrapGame : Bootstrap {
     private GameConfig _gameConfig;
     private Field _field;
 
+    protected override void Awake() {
+        base.Awake();
+    }
+
     protected override void GetComponents() {
         _fieldConfig = Resources.Load<FieldConfig>(WAY_FIELD_CONFIG);
         _gameConfig = Resources.Load<GameConfig>(WAY_GAME_CONFIG);
@@ -26,6 +32,8 @@ public class BootstrapGame : Bootstrap {
 
     protected override void CreateComponent() {
         base.CreateComponent();
+
+        _gameAnalyticsController = new GameAnalyticsController(BusEvent);
         _figureController = gameObject.AddComponent<FigureController>();
         _gameTimeController = new GameTimeController(BusEvent);
         _gameDataController = new GameDataController(BusEvent);
@@ -36,6 +44,7 @@ public class BootstrapGame : Bootstrap {
 
     protected override void RegisterServices() {
         base.RegisterServices();
+
         ServiceLocator.Current.Register(spawnerField);
         ServiceLocator.Current.Register(_fieldController);
         ServiceLocator.Current.Register(inputGame);
@@ -43,8 +52,10 @@ public class BootstrapGame : Bootstrap {
 
     protected override void AddAllIDisposableElementInCollection() {
         base.AddAllIDisposableElementInCollection();
+
         AddIDisposable(inputGame);
         AddIDisposable(spawnerField);
+        AddIDisposable(_gameAnalyticsController);
         AddIDisposable(_figureGhostController);
         AddIDisposable(_gameDataController);
         AddIDisposable(_gameTimeController);
@@ -55,12 +66,14 @@ public class BootstrapGame : Bootstrap {
 
     protected override void Initialize() {
         base.Initialize();
+        
         inputGame.Initialize();
         _field = spawnerField.Spawn(_fieldConfig);
         _figureController.Initialize(_gameConfig.SpeedFigure);
         _fieldController.Initialize(_field);
         _figureGhostController.Initialize();
         _figureSpawner.Initialize(_fieldConfig.PositionSpawn);
+        
         GameTimeController.StartTime();
     }
 }

@@ -319,6 +319,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6881757454154163254, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881757454154163254, guid: 202e31c6d1ff04f4b9d60a3e414445af,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3680891302109902379, guid: 202e31c6d1ff04f4b9d60a3e414445af, type: 3}
     m_RemovedGameObjects:

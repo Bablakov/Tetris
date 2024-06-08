@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379223b1c98dffe44a9825ff65f29d9a, type: 3}
   m_Name: SoundConfig
   m_EditorClassIdentifier: 
-  GameVolume: 0.3
-  UIVolume: 0.3
-  MusicVolume: 0.1
-  clickButton: {fileID: 8300000, guid: 33aeaa74fb3c20d4489b33b477b5f261, type: 3}
-  deleteLine: {fileID: 8300000, guid: d83615f6bb61874459e6b34d426be38a, type: 3}
-  moveFigure: {fileID: 8300000, guid: 7fad556540c15c045ab8d5718792c3f4, type: 3}
-  rotateFigure: {fileID: 8300000, guid: f59a80b232b2eb048826849c5e5f5e93, type: 3}
-  softDropFigure: {fileID: 8300000, guid: 6ffc2e27abe95cc4785dd580bf9411f7, type: 3}
-  hardDropFigure: {fileID: 8300000, guid: 51fb61f75dd0c724a9e158662347a844, type: 3}
-  swapFigure: {fileID: 8300000, guid: f210486847b3a0349b4c08031746772e, type: 3}
-  background: {fileID: 8300000, guid: d726901a17725984eae36ceb617e724d, type: 3}
+  clickButton: {fileID: 8300000, guid: 36c7efdba2a530b40a5f3fb8ee96485b, type: 3}
+  deleteLine: {fileID: 8300000, guid: c6b62f80a05549c4286caa76adabff8b, type: 3}
+  moveFigure: {fileID: 8300000, guid: a6e2e79c61b98ed41986bf15d20a531b, type: 3}
+  rotateFigure: {fileID: 8300000, guid: cce99c439b0d50b40bd9505e95161644, type: 3}
+  softDropFigure: {fileID: 8300000, guid: 869a29612ff5fbb4fbd24c96c388a594, type: 3}
+  hardDropFigure: {fileID: 8300000, guid: cbed9b8a47b89d647bcfd8337490950c, type: 3}
+  swapFigure: {fileID: 8300000, guid: a088deeb331cc0f41a5031016775a727, type: 3}
+  background: {fileID: 8300000, guid: efa6b85b7e5f702408b74f41af855b5a, type: 3}
