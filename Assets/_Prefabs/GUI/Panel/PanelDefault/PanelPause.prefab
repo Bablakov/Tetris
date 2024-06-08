@@ -308,7 +308,7 @@ PrefabInstance:
     - target: {fileID: 4888561587744832027, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4888561587744832027, guid: 85171726d06fec0408ced93da7e23bd4,
         type: 3}
@@ -394,12 +394,12 @@ PrefabInstance:
     - target: {fileID: 6231374634095479576, guid: 99dd3940adc3f2048832bae375fa79c1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6231374634095479576, guid: 99dd3940adc3f2048832bae375fa79c1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6231374634095479576, guid: 99dd3940adc3f2048832bae375fa79c1,
         type: 3}
@@ -663,12 +663,12 @@ PrefabInstance:
     - target: {fileID: 5054745694288047298, guid: a424ab5239e8e424fa9ea168c4109b2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5054745694288047298, guid: a424ab5239e8e424fa9ea168c4109b2f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5054745694288047298, guid: a424ab5239e8e424fa9ea168c4109b2f,
         type: 3}
@@ -735,6 +735,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonWithExternalAction
       objectReference: {fileID: 0}
+    - target: {fileID: 8249186148723661183, guid: a424ab5239e8e424fa9ea168c4109b2f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1885845528, guid: 21edf43d83c5bd84895befa1e4633deb,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -15,6 +15,6 @@ public abstract class UIController : MonoBehaviour {
     }
 
     protected virtual void InitializeComponents() {
-        PanelSettings.Initialize(EventBus);
+        PanelSettings.Initialize(EventBus); 
     }
 }
