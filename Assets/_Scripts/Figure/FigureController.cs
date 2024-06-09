@@ -149,7 +149,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
 
     private void Rotate() {
         _fieldController.ShowNewCells(CalculatePositionCells(Position, _figure.NextPositionRotateCells.Cells),
-            _currentPositionCells, _figure.MaterialCells);
+            _currentPositionCells, _figure.colorCells);
 
         _figure.SetNextPositionRotate();
         CalculateCurrentPositionCells();
@@ -169,7 +169,7 @@ public class FigureController : MonoBehaviour, IService, IDisposable {
 
     private void Move(Vector3Int moveDirection) {
         _fieldController.ShowNewCells(CalculatePositionCells(Position + moveDirection, Cells),
-                _currentPositionCells, _figure.MaterialCells);
+                _currentPositionCells, _figure.colorCells);
     }
 
     private void UpdateDataMove(Vector3Int moveDirection) {

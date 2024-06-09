@@ -25,6 +25,7 @@ public class SoundSwapedFigure : Sound {
 
     private void OnSwapedFigure(SwapedFigureSignal signal) {
         AudioSource.clip = _soundSwapFigure;
+        AudioSource.pitch = Random.Range(0.85f, 1.15f);
         AudioSource.Play();
     }
 

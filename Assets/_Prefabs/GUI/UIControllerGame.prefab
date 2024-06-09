@@ -30,9 +30,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5686328617953733471}
-  - {fileID: 5261934336644439213}
   - {fileID: 9093431752995371650}
+  - {fileID: 5261934336644439213}
+  - {fileID: 5686328617953733471}
   - {fileID: 5499215560524034156}
   - {fileID: 5159401809380981339}
   - {fileID: 5310937204004398080}
@@ -1774,6 +1774,21 @@ PrefabInstance:
     - target: {fileID: 38343472086506395, guid: a2a29c1a33652cf4e8e4ad347dfc701b,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38343472086506395, guid: a2a29c1a33652cf4e8e4ad347dfc701b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38343472086506395, guid: a2a29c1a33652cf4e8e4ad347dfc701b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38343472086506395, guid: a2a29c1a33652cf4e8e4ad347dfc701b,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 38343472086506395, guid: a2a29c1a33652cf4e8e4ad347dfc701b,

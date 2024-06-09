@@ -11,8 +11,8 @@ public class FilledCell : MonoBehaviour {
         _sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
-    public void Enable(Material material) {
-        _sprite.color = material.color;
+    public void Enable(Color color) {
+        _sprite.color = color;
         gameObject.SetActive(true);
     }
 

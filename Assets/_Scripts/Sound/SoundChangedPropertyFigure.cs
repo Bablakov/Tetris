@@ -31,6 +31,7 @@ public class SoundChangedPropertyFigure : Sound {
         } else {
             AudioSource.clip = _soundMove;
         }
+        AudioSource.pitch = Random.Range(0.85f, 1.15f);
         AudioSource.Play();
     }
 

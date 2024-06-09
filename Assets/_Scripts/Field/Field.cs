@@ -14,7 +14,7 @@ public abstract class Field {
     }
 
     public abstract bool ICanMoveHere(IEnumerable<Vector3Int> positionCellsFigure);
-    public abstract void ShowNewCells(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Material materialeCell);
+    public abstract void ShowNewCells(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Color colorCell);
 
     public abstract void ShowNewCellsGhost(IEnumerable<Vector3Int> newPositionCells);
 

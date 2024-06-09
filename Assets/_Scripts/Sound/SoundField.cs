@@ -25,6 +25,7 @@ public class SoundField : Sound, IDisposable {
 
     private void OnChangedPropertyFigure(ChangedCountDeleteLineSignal signal) {
         AudioSource.clip = _soundDestroydLine;
+        AudioSource.pitch = UnityEngine.Random.Range(0.85f, 1.15f);
         AudioSource.Play();
     }
 

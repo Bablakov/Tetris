@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SoundButton : Sound, IDisposable {
     private AudioClip _soundClickButton;
@@ -25,6 +26,7 @@ public class SoundButton : Sound, IDisposable {
 
     private void OnClickedButton(ClickedButtonSignal signal) {
         AudioSource.clip = _soundClickButton;
+        AudioSource.pitch = Random.Range(0.85f, 1.15f);
         AudioSource.Play();
     }
 

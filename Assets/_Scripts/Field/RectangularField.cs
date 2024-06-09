@@ -21,9 +21,9 @@ public class RectangularField : Field {
         return true;
     }
 
-    public override void ShowNewCells(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Material materialeCell) {
+    public override void ShowNewCells(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Color colorCell) {
         HideCells(oldPositionCells);
-        ShowCells(newPositionCells, materialeCell);
+        ShowCells(newPositionCells, colorCell);
     }
 
     public override void ShowNewCellsGhost(IEnumerable<Vector3Int> newPositionCells) {
@@ -76,9 +76,9 @@ public class RectangularField : Field {
         }
     }
 
-    private void ShowCells(IEnumerable<Vector3Int> currentPositionFigures, Material materialCell) {
+    private void ShowCells(IEnumerable<Vector3Int> currentPositionFigures, Color colorCell) {
         foreach (var cell in currentPositionFigures) {
-            ShowCell(cell, materialCell);
+            ShowCell(cell, colorCell);
         }
     }
 
@@ -92,7 +92,7 @@ public class RectangularField : Field {
             for (int x = 0; x < _width; x++) {
                 if (Cells[y][x].IsVisible) {
                     Cells[y][x].Hide();
-                    Cells[y - 1][x].Show(Cells[y][x].Material);
+                    Cells[y - 1][x].Show(Cells[y][x].Color);
                 }
             }
         }
@@ -121,8 +121,8 @@ public class RectangularField : Field {
         return Cells[cell.y][cell.x].IsVisible;
     }
 
-    private void ShowCell(Vector3Int cell, Material materialCell) {
-        Cells[cell.y][cell.x].Show(materialCell);
+    private void ShowCell(Vector3Int cell, Color colorCell) {
+        Cells[cell.y][cell.x].Show(colorCell);
     }
 
     private void HideCell(Vector3Int cell) {

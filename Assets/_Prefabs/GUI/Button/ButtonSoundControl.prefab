@@ -141,5 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44b5e91c3a540d45aa5c24b5339b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundOn: {fileID: 21300000, guid: 1ee747b2ab6e11e4aaafeeaf02fb99fb, type: 3}
-  _soundOff: {fileID: 21300000, guid: 4f75f166ad441454fb30f5afe099748e, type: 3}
+  _soundOn: {fileID: -1668442867, guid: 72c735097c2350b44a89e9ed155f0767, type: 3}
+  _soundOff: {fileID: 285466079, guid: 72c735097c2350b44a89e9ed155f0767, type: 3}

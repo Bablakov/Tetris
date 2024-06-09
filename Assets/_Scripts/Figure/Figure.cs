@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Figure {
     private readonly IReadOnlyList<FigureShape> _rotateFigure;
-    private readonly Material _materialCell;
+    private readonly Color _colorCell;
     private readonly Cell _cell;
     private int _currentRotateFigure;
     private Sprite _spriteFigure;
@@ -22,12 +22,12 @@ public class Figure {
     public Vector3Int Position { get; private set; }
     public FigureShape PositionCells => _rotateFigure[_currentRotateFigure];
     public FigureShape NextPositionRotateCells => _rotateFigure[(_currentRotateFigure + 1) % _rotateFigure.Count];
-    public Material MaterialCells => _materialCell;
+    public Color colorCells => _colorCell;
     public Sprite SpriteFigure => _spriteFigure;
 
     public Figure(FigureConfig figureConfig, Vector3Int startPosition, EventBus eventBus) {
         _rotateFigure = figureConfig.RotateFigure;
-        _materialCell = figureConfig.MaterialCell;
+        _colorCell = figureConfig.ColorCell;
         _cell = figureConfig.Cell;
         _spriteFigure = figureConfig.SpriteFigure;
         Position = startPosition;

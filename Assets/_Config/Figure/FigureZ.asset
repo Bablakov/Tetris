@@ -33,6 +33,6 @@ MonoBehaviour:
     - {x: 1, y: 1, z: 0}
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: -1, z: 0}
-  materialCell: {fileID: 2100000, guid: beb68e71ed56e4940a5e9aee0a3e895c, type: 2}
-  spriteFigure: {fileID: -1841699883, guid: 21edf43d83c5bd84895befa1e4633deb, type: 3}
+  color: {r: 0, g: 1, b: 0.2957747, a: 1}
+  spriteFigure: {fileID: -454741546, guid: 72c735097c2350b44a89e9ed155f0767, type: 3}
   cell: {fileID: 1816408370631526072, guid: 545cdc6b68d96c44bbedb812322b2308, type: 3}

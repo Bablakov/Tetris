@@ -31,6 +31,7 @@ public class SoundPutFigure : Sound{
         } else {
             AudioSource.clip = _soundSoftDrop;
         }
+        AudioSource.pitch = Random.Range(0.85f, 1.15f);
         AudioSource.Play();
     }
 

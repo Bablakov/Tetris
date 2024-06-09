@@ -19,8 +19,8 @@ public class FieldController : IService, IDisposable {
         return _field.ICanMoveHere(positionCellsFigure);
     }
 
-    public void ShowNewCells(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Material materialeCell) {
-        _field.ShowNewCells(newPositionCells, oldPositionCells, materialeCell);
+    public void ShowNewCells(IEnumerable<Vector3Int> newPositionCells, IEnumerable<Vector3Int> oldPositionCells, Color colorCell) {
+        _field.ShowNewCells(newPositionCells, oldPositionCells, colorCell);
     }
 
     public void ShowNewCellsGhost(IEnumerable<Vector3Int> newPositionCells) {

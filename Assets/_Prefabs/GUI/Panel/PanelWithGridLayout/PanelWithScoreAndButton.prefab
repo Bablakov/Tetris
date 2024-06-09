@@ -157,7 +157,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -357,7 +357,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lines: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -644,7 +644,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Swap
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -775,13 +775,13 @@ PrefabInstance:
         type: 3}
       propertyPath: _soundOn
       value: 
-      objectReference: {fileID: -1367754294, guid: 21edf43d83c5bd84895befa1e4633deb,
+      objectReference: {fileID: -1668442867, guid: 72c735097c2350b44a89e9ed155f0767,
         type: 3}
     - target: {fileID: 3794678487230791593, guid: 15517f875e73dd247bba351d936cae30,
         type: 3}
       propertyPath: _soundOff
       value: 
-      objectReference: {fileID: -1018279425, guid: 21edf43d83c5bd84895befa1e4633deb,
+      objectReference: {fileID: 285466079, guid: 72c735097c2350b44a89e9ed155f0767,
         type: 3}
     - target: {fileID: 8810092534732570710, guid: 15517f875e73dd247bba351d936cae30,
         type: 3}
