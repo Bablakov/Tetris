@@ -155,11 +155,11 @@ MonoBehaviour:
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "W\n\u0432\u0440\u0430\u0449\u0430\u0442\u044C"
+  ru: "\u0426\n\u0432\u0440\u0430\u0449\u0430\u0442\u044C"
   en: 'W
 
     rotate'
-  tr: "W\nd\xF6nd\xFCrmek"
+  tr: "G\nd\xF6nd\xFCrmek"
   az: 
   be: 
   he: 
@@ -347,11 +347,11 @@ MonoBehaviour:
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "S\n\u0412\u043D\u0438\u0437"
+  ru: "\u044B\n\u0412\u043D\u0438\u0437"
   en: 'S
 
     Down'
-  tr: "S\nA\u015Fa\u011F\u0131"
+  tr: "i\nA\u015Fa\u011F\u0131"
   az: 
   be: 
   he: 
@@ -539,11 +539,11 @@ MonoBehaviour:
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "A/D\n\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435"
+  ru: "\u0424/\u0412\n\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435"
   en: 'A/D
 
     move'
-  tr: 'A/D
+  tr: 'U/E
 
     hareket'
   az: 
@@ -733,11 +733,11 @@ MonoBehaviour:
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "CTRL\n\u043C\u0435\u043D\u044F\u0442\u044C"
+  ru: "\u041A\u043E\u043D\u0442\u0440\u043E\u043B\n\u043C\u0435\u043D\u044F\u0442\u044C"
   en: 'CTRL
 
     swap'
-  tr: 'CTRL
+  tr: 'kontrol
 
     takas'
   az: 
@@ -927,11 +927,11 @@ MonoBehaviour:
   textLComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "SPACE\n\u0423\u0440\u043E\u043D\u0438\u0442\u044C"
-  en: 'SPACE
+  ru: "\u0428\u0438\u0444\u0442\n\u0423\u0440\u043E\u043D\u0438\u0442\u044C"
+  en: 'Shift
 
     Drop'
-  tr: "SPACE\nD\xFC\u015F\xFCrmek"
+  tr: "vardiya\nD\xFC\u015F\xFCrmek"
   az: 
   be: 
   he: 

@@ -1,14 +1,17 @@
-<mxfile host="Electron" modified="2024-06-08T16:11:12.765Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="oXwF47Ro6TVQe6kdyuGw" version="24.0.4" type="device">
+<mxfile host="Electron" modified="2024-06-10T08:42:54.044Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="YcCHvrzNsEg1ZXEhMuho" version="24.0.4" type="device">
   <diagram name="Page-1" id="9ERZN32lPl3h9mEKJxOg">
-    <mxGraphModel dx="1434" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="474" dy="1944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="PodBbFc40IM1UIUFSGZW-1" value="Что нужно реализовать" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-1100" width="240" height="50" as="geometry" />
+          <mxGeometry y="-1100" width="240" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="lr5BNcyBudKeCvHIE3vW-4" value="+ Оптимизировать игру" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
-          <mxGeometry y="26" width="240" height="24" as="geometry" />
+        <mxCell id="e1N6svaxcovmsEYnr25i-4" value="+ Узнать правила модерация и главные ошибки, чтобы мне их не допустить самому" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="26" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e1N6svaxcovmsEYnr25i-3" value="+ Сделать описания и различные марофеты в яндекс играх и отправить на модерацию" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="PodBbFc40IM1UIUFSGZW-1" vertex="1">
+          <mxGeometry y="78" width="240" height="52" as="geometry" />
         </mxCell>
         <mxCell id="zjJiLorLlID6DXoC11au-1" value="Основные механики тетриса" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="560" y="-1100" width="210" height="300" as="geometry" />
@@ -32,13 +35,13 @@
           <mxGeometry y="250" width="210" height="50" as="geometry" />
         </mxCell>
         <mxCell id="zjJiLorLlID6DXoC11au-8" value="Основные проблемы" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="280" y="-1100" width="240" height="94" as="geometry" />
+          <mxGeometry x="280" y="-1100" width="240" height="86" as="geometry" />
         </mxCell>
-        <mxCell id="lr5BNcyBudKeCvHIE3vW-2" value="+ Сильно лагает на телефоне, надо оптимизировать" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
-          <mxGeometry y="26" width="240" height="34" as="geometry" />
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-7" value="+ Панель управления не перевелась" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zjJiLorLlID6DXoC11au-8">
+          <mxGeometry y="26" width="240" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="saTp-i909C--JHliL5JW-3" value="&lt;div&gt;+ Фигуры спавняться в чистом рандоме, такого не должно быть&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="zjJiLorLlID6DXoC11au-8" vertex="1">
-          <mxGeometry y="60" width="240" height="34" as="geometry" />
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-8" value="+ Не отображается лого" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="zjJiLorLlID6DXoC11au-8">
+          <mxGeometry y="56" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="uNBo-7ra3uC1L5kDhG56-1" value="Какой класс за что отвечает" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="-800" width="240" height="390" as="geometry" />
@@ -229,23 +232,35 @@
         <mxCell id="5YNu1GTEXiOttsThYkZK-5" value="+ Патерн Observe" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="5YNu1GTEXiOttsThYkZK-1" vertex="1">
           <mxGeometry y="130" width="210" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-1" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Чтобы сделать адаптивный UI&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-727" width="240" height="244" as="geometry" />
+        <mxCell id="jhqYmVA9L_Ns_93SPDkG-1" value="&lt;div style=&quot;text-align: left;&quot;&gt;+ Сделать описания и различные марофеты в яндекс играх и отправить на модерацию&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=40;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry y="-900" width="240" height="256" as="geometry" />
         </mxCell>
-        <mxCell id="Y2EHFbW52lyREjFwW4vY-4" value="+ В самом начале узнаём размер экрана, для расчёта размера, ячеек в gridLayout" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="26" width="240" height="50" as="geometry" />
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-3" value="+ Сделать горизонтальное видео" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhqYmVA9L_Ns_93SPDkG-1">
+          <mxGeometry y="40" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="Y2EHFbW52lyREjFwW4vY-5" value="+ Отслеживаем изменение экрана, чтобы при изменении ширины или высоты, у нас шёл перерасчёт значений в gridLayout" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="76" width="240" height="64" as="geometry" />
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-5" value="+ Сделать вертикальное видео" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhqYmVA9L_Ns_93SPDkG-1">
+          <mxGeometry y="66" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-2" value="&lt;div&gt;+ Переделать систему спавна ячеек, чтобы они создавались не в сцене, а на полотне с LayoutGridGroup&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="140" width="240" height="50" as="geometry" />
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-6" value="+ Сделать GIF" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhqYmVA9L_Ns_93SPDkG-1">
+          <mxGeometry y="92" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="jhqYmVA9L_Ns_93SPDkG-9" value="+ Нужно переработать логику ячеек, чтобы они были не кубами, а UI элементами" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
-          <mxGeometry y="190" width="240" height="54" as="geometry" />
+        <mxCell id="Y2EHFbW52lyREjFwW4vY-4" value="+ Подобрать ключевые слова" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
+          <mxGeometry y="118" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="jhqYmVA9L_Ns_93SPDkG-9" value="+ Сделать иконку" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="jhqYmVA9L_Ns_93SPDkG-1" vertex="1">
+          <mxGeometry y="148" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-1" value="+ Сделать Maskable иконку" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhqYmVA9L_Ns_93SPDkG-1">
+          <mxGeometry y="178" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-2" value="+ Сделать обложку" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhqYmVA9L_Ns_93SPDkG-1">
+          <mxGeometry y="204" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="XZlnuxt8oQTbao-7U4Ig-4" value="+ Сделать скриншоты" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="jhqYmVA9L_Ns_93SPDkG-1">
+          <mxGeometry y="230" width="240" height="26" as="geometry" />
         </mxCell>
         <mxCell id="0s5GoLE-p8NNyCNVPjf8-2" value="&lt;div style=&quot;&quot;&gt;Добавить сохранения и лидерборды для YG&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry y="-440" width="240" height="76" as="geometry" />
+          <mxGeometry y="-600" width="240" height="76" as="geometry" />
         </mxCell>
         <mxCell id="0s5GoLE-p8NNyCNVPjf8-3" value="+ Сохранять нужно только, наилучший результат, то есть кол-во очков и кол-во уничтоженных линий" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="0s5GoLE-p8NNyCNVPjf8-2" vertex="1">
           <mxGeometry y="26" width="240" height="50" as="geometry" />

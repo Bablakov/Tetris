@@ -30,12 +30,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5310937204004398080}
+  - {fileID: 5159401809380981339}
+  - {fileID: 5499215560524034156}
   - {fileID: 9093431752995371650}
   - {fileID: 5261934336644439213}
   - {fileID: 5686328617953733471}
-  - {fileID: 5499215560524034156}
-  - {fileID: 5159401809380981339}
-  - {fileID: 5310937204004398080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5704649168512279941
@@ -1856,6 +1856,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasDefault (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6877169832163544206, guid: a2a29c1a33652cf4e8e4ad347dfc701b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1983,6 +1988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasDefault (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6877169832163544206, guid: a2a29c1a33652cf4e8e4ad347dfc701b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

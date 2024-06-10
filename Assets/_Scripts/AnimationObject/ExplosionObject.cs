@@ -2,13 +2,13 @@
 
 public class ExplosionObject : MonoBehaviour {
     [SerializeField, Range(0.1f, 10f)] private float lifeTime = 1f;
-    private Renderer[] _renderers;
+    private ParticleSystem _particleSystem;
 
     public void Initialize(Color color) {
-        _renderers = GetComponentsInChildren<Renderer>();
-        foreach (var r in _renderers) {
-            r.material.color = color;
-        }
+        var _particleSystem = GetComponentInChildren<ParticleSystem>();
+
+        _particleSystem.startColor = color;
+
         Destroy(gameObject, lifeTime);
     }
 }
