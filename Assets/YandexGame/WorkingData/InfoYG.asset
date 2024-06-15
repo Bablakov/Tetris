@@ -332,7 +332,7 @@ MonoBehaviour:
   metricaCounterID: 0
   debug: 1
   archivingBuild: 1
-  logoImageFormat: 2
+  logoImageFormat: 1
   backgroundImageFormat: 3
   pixelRatioEnable: 0
   pixelRatioValue: 1
