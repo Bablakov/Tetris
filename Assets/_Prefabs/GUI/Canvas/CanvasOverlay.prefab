@@ -8,10 +8,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 797887411372792135, guid: a9af77bed21fe5943a9c80dc3c3d9f8a,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3664803628681705937, guid: a9af77bed21fe5943a9c80dc3c3d9f8a,
         type: 3}
       propertyPath: m_Name
-      value: CanvasDefault
+      value: CanvasOverlay
       objectReference: {fileID: 0}
     - target: {fileID: 7205572698633338861, guid: a9af77bed21fe5943a9c80dc3c3d9f8a,
         type: 3}

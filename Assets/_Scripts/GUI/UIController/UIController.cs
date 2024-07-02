@@ -11,10 +11,10 @@ public abstract class UIController : MonoBehaviour {
 
     protected virtual void GetComponents() {
         EventBus = ServiceLocator.Current.Get<EventBus>();
-        PanelSettings = GetComponentInChildren<PanelSettings>();
+        //PanelSettings = GetComponentInChildren<PanelSettings>();
     }
 
     protected virtual void InitializeComponents() {
-        PanelSettings.Initialize(EventBus); 
+        //PanelSettings.Initialize(EventBus); 
     }
 }

@@ -30,10 +30,12 @@ public class UIControllerGame : UIController, IDisposable {
         _panelFinished = GetComponentInChildren<PanelFinished>();
         _panelWithNextFigure = GetComponentInChildren<PanelWithNextFigure>();
         _panelWithScoreAndButton = GetComponentInChildren<PanelWithScoreAndButton>();
+        PanelSettings = GetComponentInChildren<PanelSettings>();
     }
 
     protected override void InitializeComponents() {
         base.InitializeComponents();
+        PanelSettings.Initialize(EventBus);
         _panelFinished.Initialize(EventBus);
         _panelWithNextFigure.Initialize(EventBus);
         _panelWithScoreAndButton.Initialize(EventBus);
